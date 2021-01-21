@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="105.2025"
+   height="76.406532"
+   viewBox="0 0 27.834827 20.215893"
+   version="1.1"
+   id="svg2942"
+   inkscape:version="1.0.1 (c497b03c, 2020-09-10)"
+   sodipodi:docname="computer.svg">
+  <defs
+     id="defs2936">
+    <inkscape:perspective
+       sodipodi:type="inkscape:persp3d"
+       inkscape:vp_x="0 : -7.6140284 : 1"
+       inkscape:vp_y="0 : 999.99988 : 0"
+       inkscape:vp_z="74.868168 : -7.6140284 : 1"
+       inkscape:persp3d-origin="37.434084 : -16.89067 : 1"
+       id="perspective76394" />
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="2.236773"
+     inkscape:cx="13.11732"
+     inkscape:cy="17.072718"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     inkscape:document-rotation="0"
+     showgrid="false"
+     units="px"
+     inkscape:window-width="1440"
+     inkscape:window-height="847"
+     inkscape:window-x="0"
+     inkscape:window-y="25"
+     inkscape:window-maximized="0"
+     showguides="false">
+    <inkscape:grid
+       type="xygrid"
+       id="grid8442"
+       originx="-95.144898"
+       originy="60.636369" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata2939">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-132.39558,43.574867)">
+    <g
+       id="$computerWhole">
+      <rect
+         style="fill:#1a1a1a;fill-opacity:1;stroke:#000000;stroke-width:0.0953595;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="rect77196"
+         width="17.141142"
+         height="1.5848145"
+         x="137.4691"
+         y="-24.991468"
+         ry="0.79240727" />
+      <rect
+         style="fill:#1a1a1a;fill-opacity:1;stroke:#000000;stroke-width:0.0572288;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="rect77196-6"
+         width="6.0286016"
+         height="1.6229452"
+         x="-30.751646"
+         y="-146.71376"
+         ry="0.81147259"
+         transform="rotate(90)" />
+      <rect
+         style="fill:#666666;fill-opacity:1;stroke:#000000;stroke-width:0.648758;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="$computerScreen"
+         width="27.186069"
+         height="14.06602"
+         x="132.71996"
+         y="-43.250488"
+         ry="1.2324382" />
+    </g>
+  </g>
+</svg>

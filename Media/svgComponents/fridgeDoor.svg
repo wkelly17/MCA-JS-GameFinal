@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="144.33821"
+   height="181.62039"
+   viewBox="0 0 38.18949 48.053728"
+   version="1.1"
+   id="svg2942"
+   inkscape:version="1.0.1 (c497b03c, 2020-09-10)"
+   sodipodi:docname="fridgeDoor.svg">
+  <defs
+     id="defs2936" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.95576319"
+     inkscape:cx="-31.798151"
+     inkscape:cy="83.007774"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     inkscape:document-rotation="0"
+     showgrid="false"
+     units="px"
+     inkscape:window-width="1440"
+     inkscape:window-height="847"
+     inkscape:window-x="0"
+     inkscape:window-y="25"
+     inkscape:window-maximized="0"
+     showguides="false">
+    <inkscape:grid
+       type="xygrid"
+       id="grid8442"
+       originx="-31.701209"
+       originy="-19.633724" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata2939">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-68.951942,-36.695253)">
+    <g
+       id="$fridgeDoor"
+       transform="translate(38.138439,-3.0025999)">
+      <rect
+         style="opacity:1;fill:#cccccc;fill-opacity:1;stroke:#1a1a1a;stroke-width:0.80124;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="rect68260-8"
+         width="37.388248"
+         height="47.252491"
+         x="31.214123"
+         y="40.098473"
+         ry="0" />
+      <path
+         id="$fridgeDoorHandle"
+         style="opacity:1;fill:#f2f2f2;fill-opacity:1;stroke:none;stroke-width:0.651097;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         d="m 63.670274,46.852025 h 1.927011 c 0.49538,8.727116 0.27871,17.233572 0,25.720799 h -1.927011 c -0.716669,-8.430826 -0.499858,-17.047618 0,-25.720799 z"
+         sodipodi:nodetypes="ccccc" />
+    </g>
+  </g>
+</svg>

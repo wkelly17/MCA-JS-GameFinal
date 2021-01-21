@@ -1,0 +1,37 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./CSS/styles.css" />
+    <title>Escape Game</title>
+  </head>
+  <body>
+    <div class="pageView">
+      <div id="gameContainer">
+        <!-- top row -->
+        <div class="navBtnsContainer" id="navBtnsContainer"></div>
+        <div class="room" id="RoomContainer">
+          <!-- <div class="frontWall"></div>
+          <div class="rightWall"></div>
+          <div class="leftWall"></div>
+          <div class="floor"></div> -->
+        </div>
+
+        <!-- !Modal blur works:  Apply when looking at "Close Scenes" -->
+        <!-- <div class="modal-blur"></div> -->
+        <!-- ! Could use some stylistic tweaking -->
+        <div class="inventory"></div>
+        <div class="messagesArea">
+          <h2 class="messagesHeader">Messages</h2>
+          <div class="messageContainer" data-role="messageFeedbackContainer">
+            <p class="messageContent">I'm the message</p>
+            <!-- <img src='' alt=''> -->
+          </div>
+        </div>
+        <div class="timer" style="text-align: center">Timer</div>
+      </div>
+    </div>
+
+    <script src="./JS/app.js" type="module"></script>
+  </body>
+</html>

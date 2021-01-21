@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="50.814255"
+   height="78.982994"
+   viewBox="0 0 13.444606 20.897584"
+   version="1.1"
+   id="svg2942"
+   inkscape:version="1.0.1 (c497b03c, 2020-09-10)"
+   sodipodi:docname="cabinetDoor.svg">
+  <defs
+     id="defs2936" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="2.8412049"
+     inkscape:cx="5.2875948"
+     inkscape:cy="32.561746"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     inkscape:document-rotation="0"
+     showgrid="false"
+     units="px"
+     inkscape:window-width="1440"
+     inkscape:window-height="847"
+     inkscape:window-x="0"
+     inkscape:window-y="25"
+     inkscape:window-maximized="0"
+     showguides="false">
+    <inkscape:grid
+       type="xygrid"
+       id="grid8442"
+       originx="-76.498904"
+       originy="-4.3922596" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata2939">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-113.74961,-21.453789)">
+    <g
+       id="$cabinetDoor1"
+       transform="translate(68.374878,-55.404953)">
+      <rect
+         style="fill:#fcfcfc;fill-opacity:1;stroke:none;stroke-width:0.47625;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="rect67765"
+         width="13.444606"
+         height="20.897585"
+         x="45.374729"
+         y="76.858742" />
+      <path
+         style="fill:#aa8800;fill-opacity:1;stroke:none;stroke-width:0.264583;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="$cabinetDoorKnob"
+         sodipodi:type="arc"
+         sodipodi:cx="56.47879"
+         sodipodi:cy="85.959236"
+         sodipodi:rx="0.50420684"
+         sodipodi:ry="0.54454339"
+         sodipodi:start="0"
+         sodipodi:end="6.270968"
+         sodipodi:open="true"
+         sodipodi:arc-type="arc"
+         d="m 56.982997,85.959236 a 0.50420684,0.54454339 0 0 1 -0.502667,0.544541 0.50420684,0.54454339 0 0 1 -0.505737,-0.541214 0.50420684,0.54454339 0 0 1 0.499577,-0.547847 0.50420684,0.54454339 0 0 1 0.508789,0.537867" />
+      <rect
+         style="fill:none;fill-opacity:0.166667;stroke:#464646;stroke-width:0.264583;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.479532"
+         id="rect67816"
+         width="10.922863"
+         height="18.575407"
+         x="46.631489"
+         y="77.988342" />
+    </g>
+  </g>
+</svg>

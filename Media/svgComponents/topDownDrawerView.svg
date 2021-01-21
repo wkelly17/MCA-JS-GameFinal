@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" width="444.76395" height="413.26767"
+   viewBox="0 0 117.67713 109.34374" version="1.1" id="svg2942" inkscape:version="1.0.1 (c497b03c, 2020-09-10)"
+   sodipodi:docname="topDownDrawerView.svg">
+   <defs id="defs2936" />
+   <sodipodi:namedview id="base" pagecolor="#ffffff" bordercolor="#666666" borderopacity="1.0"
+      inkscape:pageopacity="0.0" inkscape:pageshadow="2" inkscape:zoom="0.66074319" inkscape:cx="554.90804"
+      inkscape:cy="217.2659" inkscape:document-units="px" inkscape:current-layer="layer1" inkscape:document-rotation="0"
+      showgrid="false" units="px" inkscape:window-width="1920" inkscape:window-height="1027" inkscape:window-x="1440"
+      inkscape:window-y="25" inkscape:window-maximized="0" showguides="false">
+      <inkscape:grid type="xygrid" id="grid8442" originx="-7.6708986e-07" originy="-3.9575196e-07" />
+   </sodipodi:namedview>
+   <metadata id="metadata2939">
+      <rdf:RDF>
+         <cc:Work rdf:about="">
+            <dc:format>image/svg+xml</dc:format>
+            <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+            <dc:title />
+         </cc:Work>
+      </rdf:RDF>
+   </metadata>
+   <g inkscape:label="Layer 1" inkscape:groupmode="layer" id="layer1" transform="translate(-37.250774,-17.061487)">
+      <g id="g79578">
+         <g id="$lookingDownDrawerHandle" transform="matrix(1,0,0,1.0807623,0,-10.208782)">
+            <rect style="fill:#999999;fill-opacity:0.971774;stroke:none;stroke-width:15.7524" id="rect6575"
+               width="4.187799" height="6.3293004" x="95.880005" y="117.91882" />
+            <ellipse style="fill:#999999;fill-opacity:0.971774;stroke:none;stroke-width:14.7492" id="ellipse7282"
+               cx="97.764542" cy="124.93643" rx="6.9098678" ry="1.4687973" />
+         </g>
+         <rect style="fill:#b3b3b3;fill-opacity:0.971774;stroke:none;stroke-width:20.3806" id="rect6567"
+            width="103.84914" height="52.566921" x="45.646389" y="59.823441" />
+         <rect style="fill:#999999;fill-opacity:0.971774;stroke:none;stroke-width:22.6924" id="$lookingDownDrawerBotoom"
+            width="94.564598" height="43.591114" x="50.151764" y="63.403473" />
+         <rect style="fill:#b3b3b3;fill-opacity:0.971774;stroke:none;stroke-width:16.6052" id="$lookingDownDrawerFront"
+            width="110.40773" height="8.1599846" x="42.039864" y="112.04366" />
+         <rect style="fill:#b3b3b3;fill-opacity:0.971774;stroke:none;stroke-width:12.8628" id="$lookingDownSurface"
+            width="117.67713" height="42.946392" x="37.250774" y="17.061487" />
+      </g>
+   </g>
+</svg>

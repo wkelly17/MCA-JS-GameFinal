@@ -1,0 +1,679 @@
+/* ==== Basic CSS Reset ==== */
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ol,
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+/* ==== End CSS Reset ==== */
+
+/* ! Variables */
+
+:root {
+  --color-frontWall: #f4e6bc;
+  --color-sideWalls: #b08b1e;
+  --color-floor: #f9f2dc;
+  --color-icon-inactive: rgb(92, 92, 92);
+  --color-icon-hover: rgb(0, 0, 0);
+}
+
+/* ! Variables */
+
+/* GLOBALS */
+.dNone {
+  display: none !important;
+}
+.dVisible {
+  display: initial !important;
+}
+
+.huge {
+  font-size: 40px;
+}
+
+.closeZoomButton {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 18px;
+  border: none;
+  color: var(--color-icon);
+}
+.closeZoomButton:hover {
+  color: red;
+}
+
+.lamp-inspected {
+  filter: drop-shadow(10px 10px 70px yellow) drop-shadow(20px 20px 70px yellow)
+    drop-shadow(-10px -10px 70px yellow) drop-shadow(-20px -20px 70px yellow);
+}
+
+.modal-blur {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(48, 45, 45, 0.753);
+  /* background-color: orange; */
+  z-index: 5;
+}
+
+/* ? Maybe do this since I've been resizing to canvas thus far for svgs; So When i translate or animate they do not cut off...display */
+
+/* svg {
+  overflow: visible;
+} */
+
+/* @#===============  CONTAINERS   =============   */
+
+#gameContainer {
+  margin-top: 10px;
+  margin-left: 10px;
+  width: 900px;
+  max-width: 900px;
+  height: 600px;
+  display: grid;
+  grid-template-columns: 900px 250px;
+  grid-template-rows: 350px 200px 50px;
+  grid-template-areas:
+    'game inv'
+    'game messages'
+    'game timer';
+}
+
+#navBtnsContainer,
+#RoomContainer {
+  width: 100%;
+  max-width: 900px;
+  height: 100%;
+  position: relative;
+  grid-area: game;
+}
+
+#navBtnsContainer .icon {
+  position: absolute;
+}
+
+/* turning lights off */
+
+/* ! Room Icons */
+
+.icon {
+  position: absolute;
+  pointer-events: all;
+  z-index: 3;
+}
+.icon path {
+  pointer-events: none;
+}
+
+.icon-LeftArrow,
+.icon-RightArrow,
+.icon-arrow-up,
+.icon-arrow-down {
+  width: 25px;
+  height: 25px;
+  pointer-events: all;
+
+  fill: var(--color-icon-inactive);
+}
+.icon-LeftArrow:hover,
+.icon-RightArrow:hover,
+.icon-arrow-up:hover,
+.icon-arrow-down:hover {
+  fill: var(--color-icon-hover);
+  width: 30px;
+  height: 30px;
+  z-index: 100;
+}
+
+.icon-LeftArrow {
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+}
+.icon-RightArrow {
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+}
+.icon-arrow-up {
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.icon-arrow-down {
+  display: none;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.icon-arrow-down.displayed {
+  display: block;
+}
+
+/* @# ===============  ROOM RULES   =============   */
+
+.room.lightsOff {
+  --color-frontWall: #02105c;
+  --color-sideWalls: #4c369e;
+  --color-floor: #041431;
+  --color-icon-inactive: rgb(218, 214, 214);
+  --color-icon-hover: rgb(255, 255, 255);
+}
+
+/*! EVERYTHING IN ROOM IS ABSOLUTELY POSITIONED FOR PRECISON */
+.room > * {
+  position: absolute;
+}
+
+.frontWall,
+.rightWall,
+.leftWall,
+.floor {
+  border: solid 1px black;
+}
+
+.room .frontWall {
+  width: 900px;
+  height: 500px;
+  top: 0;
+  left: 0;
+  background: var(--color-frontWall);
+  z-index: -1;
+}
+
+.room .leftWall,
+.room .rightWall {
+  height: 100%;
+  background: var(--color-sideWalls);
+  z-index: -1;
+}
+
+.room .leftWall {
+  /* clip-path: polygon(0 0, 22% 0, 22% 61%, 0 100%); */
+  top: 0;
+  left: 0;
+  width: 136px;
+}
+
+.room .rightWall {
+  /* clip-path: polygon(78% 0, 100% 0, 78% 61%, 100% 100%); */
+  top: 0;
+  right: 0;
+  width: 134px;
+}
+
+.room .floor {
+  clip-path: polygon(15% 0%, 85% 0%, 100% 100%, 0% 100%);
+  width: 900px;
+  height: 185px;
+  bottom: 0;
+  left: 0;
+  background: var(--color-floor);
+}
+
+.room .ceiling-side {
+  background: var(--color-sideWalls);
+  border: solid 1px black;
+}
+
+.room .leftCeiling,
+.room .rightCeiling {
+  height: 100%;
+  width: 60px;
+}
+.leftCeiling {
+  left: 0;
+  top: 0;
+}
+
+.rightCeiling {
+  right: 0;
+  top: 0;
+}
+
+.room .topCeiling,
+.room .bottomCeiling {
+  width: 100%;
+  height: 40px;
+  background: var(--color-floor);
+}
+.bottomCeiling {
+  bottom: 0;
+  clip-path: polygon(7% 0%, 93% 0%, 100% 100%, 0% 100%);
+}
+
+.topCeiling {
+  top: 0;
+  clip-path: polygon(0 0, 100% 0, 93% 100%, 7% 100%);
+}
+
+.centerCeiling {
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  background: var(--color-frontWall);
+}
+
+/* @#===============  INVENTORY   =============   */
+.inventory {
+  grid-area: inv;
+  border: solid 1px rgb(219, 72, 72);
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.inventoryItemUsed {
+  filter: brightness(0.3);
+  pointer-events: none;
+}
+
+/* leave strange phantom space between flex-rows */
+
+.inventory > * {
+  width: 62px;
+  height: 62px;
+  object-fit: contain;
+  border: solid 1px white;
+  display: block;
+  padding: 0;
+  margin: 0;
+  padding: 5px;
+  text-align: center;
+  font-size: 14px;
+  background: rgb(85, 84, 84);
+  color: white;
+  z-index: 2;
+}
+
+.inventoryGlow {
+  box-shadow: 1px 1px 3px 5px rgba(238, 255, 0, 0.164),
+    -1px -1px 3px 5px rgba(238, 255, 0, 0.175);
+  z-index: 2;
+}
+
+/* @# ===============  messages section   =============   */
+
+.messagesArea {
+  border: solid green 1px;
+  padding: 0 0.25em;
+  text-align: center;
+  font-size: 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.messagesHeader {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.messageContainer {
+  width: 100%;
+  overflow: scroll;
+  text-align: left;
+}
+
+.messageContent {
+  text-align: left;
+}
+.messageEntry {
+  border-bottom: solid 1px gray;
+}
+
+/* @#===============  TIMER   =============   */
+.timer {
+  grid-area: timer;
+  border: solid 1px blue;
+}
+
+/* @#===============  GAME COMPONENTS   =============   */
+
+#book {
+  position: absolute;
+  top: 227px;
+  left: 300px;
+  padding: 1px;
+  z-index: 300;
+}
+
+/* dropping svg's instead of images straight into html from JS?  Template Literal in a file;  Add Id's to moving parts;   */
+
+/* E.g. blanket opening to show an item;  (have to make sure that the item underneath receives a click though and doesn't bubble;  I've had weirdness with clicking svgs before; But that was with use, so I think I'd be ok;  Could likely pad the absolutely posiontioned key; */
+
+.room1Door {
+  top: 32%;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+#room1Key {
+  display: none;
+  top: 412px;
+  left: 580px;
+  transform: rotate(90deg);
+}
+
+.filingCabinet {
+  top: 152px;
+  right: 180px;
+}
+.rotatedLock {
+  transform: rotate(90deg);
+  transition-duration: 0.3s;
+}
+
+.filingCabinet.open {
+  fill: pink;
+  border: solid red 10px;
+}
+
+.keypad {
+  width: 50px;
+  height: 50px;
+  top: 180px;
+  left: 150px;
+}
+
+#keypadZoomedContainer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  height: 500px;
+  margin: 0 auto;
+  border: solid 1px gray;
+  padding: 30px;
+  background: gray;
+  z-index: 7;
+}
+
+#keypadZoomedContainer [data-fxn='close'] {
+  position: absolute;
+  top: 3px;
+  right: 5px;
+  background: none;
+  border: none;
+  font-size: 22px;
+  color: white;
+  cursor: pointer;
+}
+
+.keypad-controls {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+
+.keypadBtnsContainer {
+  /* width: 90%; */
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.display {
+  height: 60px;
+  background: green;
+  color: white;
+  text-align: right;
+  letter-spacing: 4px;
+  line-height: 65px;
+  padding: 5px;
+  margin-bottom: 20px;
+  font-size: 55px;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.keypadButton {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  margin-right: 5px;
+  font-size: 30px;
+}
+
+.card-slot {
+  width: 15px;
+  height: 300px;
+  background: #555555;
+  border-radius: 5px;
+  /* margin-left: 30px; */
+}
+
+/* @@ ------------------------------- */
+/* ------------- BEDROOM1 ---------- */
+/* @% ---------------------------- */
+
+.frontWallSVG {
+  fill: var(--color-frontWall);
+}
+.floorSVG {
+  fill: var(--color-floor);
+}
+
+.bedroom1_bedWhole {
+  bottom: 90px;
+  right: 120px;
+}
+
+.bedroom1_blanket {
+  transition-duration: 0.2s;
+}
+
+.bedroom1_blanket.blanket-inspected {
+  transform: translateX(7px);
+  transition-duration: 0.2s;
+}
+
+.bedroom1__bedUnderView {
+  pointer-events: all;
+}
+
+.bedroom1__bedUnderView {
+  top: 0;
+  left: 0;
+}
+
+.bedroom1_lamp {
+  top: 159px;
+  left: 350px;
+}
+
+.bedroom1_nightStand {
+  top: 267px;
+  left: 350px;
+}
+
+.bedroom1_flashLight {
+  top: 180px;
+  left: 70px;
+}
+.bedroom1_roomWindow {
+  top: 85px;
+  left: 143px;
+}
+.windowImage {
+  top: 95px;
+  left: 196px;
+  width: 180px;
+  height: 121px;
+}
+.windowCrossBar {
+  top: 150px;
+  left: 186px;
+  width: 200px;
+  height: 5px;
+  background: rgb(187, 184, 184);
+}
+.windowVertBar {
+  top: 85px;
+  left: 280px;
+  width: 5px;
+  height: 141px;
+  background: rgb(187, 184, 184);
+}
+
+.bedroom1_alexa {
+  top: 221px;
+  left: 380px;
+}
+
+.bedroom1_closet {
+  top: 131px;
+  left: 170px;
+}
+.bedroom1_closetDoorRight {
+  transition-duration: 0.7s;
+}
+
+.bedroom1_closetDoorRight-inspected {
+  /* adjust next to last number 213 */
+  transform: matrix(-1.2326684, 0, 0, 1.0782371, 213.16294, -4.6019451);
+  transition-duration: 0.8s;
+  transform-origin: left;
+}
+
+.bedroom1_closetDoorLeft-inspected {
+  transform: matrix(1.0782371, 0, 0, 1.0782371, -3.411329, -4.847331);
+  transition-duration: 0.8s;
+  transform-origin: left;
+}
+
+.bedroom1_hamper {
+  top: 296px;
+  left: 530px;
+}
+
+.bedroom1_dresser {
+  top: 211px;
+  left: 530px;
+}
+
+#SwitchToggle {
+  transition-duration: 0.15s;
+}
+
+#SwitchToggle.switched {
+  transform-origin: center center;
+  transform: rotateX(9deg);
+  transition-duration: 0.15s;
+}
+
+.bedroom1_lightSwitch {
+  top: 211px;
+  left: 170px;
+}
+
+.bedroom1_television {
+  top: 140px;
+  left: 560px;
+}
+
+.bedroom1_ceilingFan {
+  width: 600px;
+  height: 400px;
+  top: 100px;
+  left: 150px;
+  transform: translate(-50%, -50%);
+  animation-name: rotateFan;
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+  animation-direction: normal;
+  animation-timing-function: linear;
+}
+
+@keyframes rotateFan {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.bedroom1_ceilingVent {
+  top: 130px;
+  left: 450px;
+}
+
+.bedroom1_doorWhole {
+  top: 193px;
+  left: 335px;
+}
+
+.doorOpen {
+  transform: rotateY(35deg);
+  transform-origin: left;
+  transition-duration: 0.3s;
+}
+
+.doorBackground {
+  width: 138.36726px;
+  height: 222.61232px;
+  background: black;
+  top: 193px;
+  left: 335px;
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* .bedroom1_{
+
+} */
+/* .bedroom1_{
+
+} */
+
+/* @@ ------------------------------- */
+/* ------------- LIVINGROOM ---------- */
+/* @% ---------------------------- */
+
+/* @@ ------------------------------- */
+/* ------------- STUDY ---------- */
+/* @% ---------------------------- */
+
+/* @@ ------------------------------- */
+/* ------------- BEDROOM2 ---------- */
+/* @% ---------------------------- */
+
+/* @@ ------------------------------- */
+/* ------------- KITCHEN ---------- */
+/* @% ---------------------------- */ ;

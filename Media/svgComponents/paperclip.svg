@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="27.483053"
+   height="6.7003956"
+   viewBox="0 0 7.2715566 1.7728127"
+   version="1.1"
+   id="svg2942"
+   inkscape:version="1.0.1 (c497b03c, 2020-09-10)"
+   sodipodi:docname="paperclip.svg">
+  <defs
+     id="defs2936">
+    <inkscape:perspective
+       sodipodi:type="inkscape:persp3d"
+       inkscape:vp_x="0 : -26.057107 : 1"
+       inkscape:vp_y="0 : 999.99982 : 0"
+       inkscape:vp_z="74.868157 : -26.057107 : 1"
+       inkscape:persp3d-origin="37.43408 : -35.333747 : 1"
+       id="perspective76394" />
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.9721201"
+     inkscape:cx="-26.970129"
+     inkscape:cy="65.465619"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     inkscape:document-rotation="0"
+     showgrid="false"
+     units="px"
+     inkscape:window-width="1440"
+     inkscape:window-height="847"
+     inkscape:window-x="0"
+     inkscape:window-y="25"
+     inkscape:window-maximized="0"
+     showguides="false">
+    <inkscape:grid
+       type="xygrid"
+       id="grid8442"
+       originx="-112.01213"
+       originy="72.671782" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata2939">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-149.26281,55.610296)">
+    <path
+       style="fill:none;stroke:#333333;stroke-width:0.239448;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 155.3655,-54.469608 -5.00446,0.05503 c -0.26772,0.02505 -0.32614,0.03634 -0.36847,-0.295819 -0.0573,-0.186838 0.11858,-0.323269 0.50779,-0.288958 l 4.88678,-0.02156 c 0.67415,-0.12808 1.00008,0.120838 1.02648,0.344515 -0.061,0.420596 -0.12013,0.607345 -0.84562,0.617235 -1.92798,0.03224 -5.6761,0.124839 -5.78395,0.09671 -0.4814,-0.254848 -0.37584,-0.311045 -0.40112,-0.703186 0.0468,-0.452322 0.01,-0.691115 0.86454,-0.773847 l 5.14964,-0.05109"
+       id="$paperclip"
+       sodipodi:nodetypes="ccccccccccc" />
+  </g>
+</svg>
