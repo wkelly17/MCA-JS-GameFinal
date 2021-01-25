@@ -1,0 +1,982 @@
+export default function kitchenUpperCabinet2(room) {
+  // functions here
+
+  function kitchenUpperCabinetClassNames() {
+    if (room.$kitchenUpperCabinet.inspected) {
+      return `${room.name}_kitchenUpperCabinet ${room.name}kitchenUpperCabinet-inspected`;
+    } else {
+      return `${room.name}_kitchenUpperCabinet`;
+    }
+  }
+  // class = 'kitchenUpperCabinetClassNames()}'
+  // data-selector = 'kitchenUpperCabinet'
+  let kitchenUpperCabinet = `
+  <svg
+  id = '${room.name}_kitchenUpperCabinet2'
+  class = '${room.name}_kitchenUpperCabinet'
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:cc="http://creativecommons.org/ns#"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:svg="http://www.w3.org/2000/svg"
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+  xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+  width="638.36871"
+  height="145.38417"
+  viewBox="0 0 168.90173 38.466228"
+  version="1.1"
+  id="svg2942"
+  inkscape:version="1.0.1 (c497b03c, 2020-09-10)"
+  sodipodi:docname="kitchenUpperCabinet.svg">
+ <defs
+	 id="defs2936" />
+ <sodipodi:namedview
+	 id="base"
+	 pagecolor="#ffffff"
+	 bordercolor="#666666"
+	 borderopacity="1.0"
+	 inkscape:pageopacity="0.0"
+	 inkscape:pageshadow="2"
+	 inkscape:zoom="0.76794631"
+	 inkscape:cx="136.59356"
+	 inkscape:cy="261.95866"
+	 inkscape:document-units="px"
+	 inkscape:current-layer="g3059"
+	 inkscape:document-rotation="0"
+	 showgrid="false"
+	 units="px"
+	 inkscape:window-width="1440"
+	 inkscape:window-height="847"
+	 inkscape:window-x="0"
+	 inkscape:window-y="25"
+	 inkscape:window-maximized="0" />
+ <metadata
+	 id="metadata2939">
+	<rdf:RDF>
+	  <cc:Work
+		  rdf:about="">
+		 <dc:format>image/svg+xml</dc:format>
+		 <dc:type
+			 rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+		 <dc:title></dc:title>
+	  </cc:Work>
+	</rdf:RDF>
+ </metadata>
+ <g
+	 inkscape:label="Layer 1"
+	 inkscape:groupmode="layer"
+	 id="layer1"
+	 transform="translate(-35.496287,-17.736899)">
+	<g
+		id="g3059"
+		transform="translate(2.2754507,17.387206)">
+	  <rect
+		  style="fill:#8d7248;fill-opacity:1;stroke-width:0.264583"
+		  id="rect2465"
+		  width="168.90173"
+		  height="38.466228"
+		  x="33.220837"
+		  y="0.349693" />
+	  <g
+		  id="g3741"
+		  transform="translate(3.6914373,-0.10076718)">
+		 <rect
+			 style="fill:#f5f2ec;fill-opacity:1;stroke-width:0.264583"
+			 id="rect2469-1"
+			 width="21.003489"
+			 height="27.892632"
+			 x="40.133408"
+			 y="5.8884706" />
+		 <rect
+			 style="fill:#8d7248;fill-opacity:1;stroke-width:0.264583"
+			 id="rect3676"
+			 width="24.917202"
+			 height="1.8457186"
+			 x="38.022743"
+			 y="12.144293" />
+		 <rect
+			 style="fill:#8d7248;fill-opacity:1;stroke-width:0.264583"
+			 id="rect3676-0"
+			 width="24.917202"
+			 height="1.8457187"
+			 x="38.176548"
+			 y="23.218605" />
+	  </g>
+	  <g
+		  id="g3695"
+		  transform="translate(-48.936802,-15.037445)">
+		 <rect
+			 style="fill:#665334;fill-opacity:1;stroke-width:0.264583"
+			 id="rect2469"
+			 width="21.003489"
+			 height="27.892632"
+			 x="15.549083"
+			 y="73.221275" />
+		 <ellipse
+			 style="fill:#c5c48e;fill-opacity:1;stroke-width:0.174461"
+			 id="path3049"
+			 cx="33.247597"
+			 cy="87.139153"
+			 rx="1.2602092"
+			 ry="1.3442231" />
+	  </g>
+	  <g
+		  id="g3776"
+		  transform="translate(8.5620871,0.82209182)">
+		 <rect
+			 style="fill:#f5f2ec;fill-opacity:1;stroke-width:0.264583"
+			 id="rect2469-1-9"
+			 width="21.003489"
+			 height="27.892632"
+			 x="78.355164"
+			 y="4.9656115" />
+		 <rect
+			 style="fill:#8d7248;fill-opacity:1;stroke-width:0.264583"
+			 id="rect3676-3"
+			 width="24.917202"
+			 height="1.8457187"
+			 x="76.244499"
+			 y="11.221433" />
+		 <rect
+			 style="fill:#8d7248;fill-opacity:1;stroke-width:0.264583"
+			 id="rect3676-0-0"
+			 width="24.917202"
+			 height="1.8457187"
+			 x="76.3983"
+			 y="22.295744" />
+	  </g>
+	  <g
+		  id="g3781"
+		  transform="translate(17.81631,2.0525708)">
+		 <rect
+			 style="fill:#f5f2ec;fill-opacity:1;stroke-width:0.264583"
+			 id="rect2469-1-5"
+			 width="21.003489"
+			 height="27.892632"
+			 x="112.19334"
+			 y="3.7351322" />
+		 <rect
+			 style="fill:#8d7248;fill-opacity:1;stroke-width:0.264583"
+			 id="rect3676-2"
+			 width="24.917202"
+			 height="1.8457187"
+			 x="110.08267"
+			 y="9.9909534" />
+		 <rect
+			 style="fill:#8d7248;fill-opacity:1;stroke-width:0.264583"
+			 id="rect3676-0-3"
+			 width="24.917202"
+			 height="1.8457187"
+			 x="110.23648"
+			 y="21.065266" />
+	  </g>
+	  <g
+		  id="g3786"
+		  transform="translate(3.6914373,1.4373308)">
+		 <rect
+			 style="fill:#f5f2ec;fill-opacity:1;stroke-width:0.264583"
+			 id="rect2469-1-8"
+			 width="21.003489"
+			 height="27.892632"
+			 x="169.41061"
+			 y="4.3503718" />
+		 <rect
+			 style="fill:#8d7248;fill-opacity:1;stroke-width:0.264583"
+			 id="rect3676-7"
+			 width="24.917202"
+			 height="1.8457187"
+			 x="167.29996"
+			 y="10.606193" />
+		 <rect
+			 style="fill:#8d7248;fill-opacity:1;stroke-width:0.264583"
+			 id="rect3676-0-8"
+			 width="24.917202"
+			 height="1.8457187"
+			 x="167.45375"
+			 y="21.680506" />
+	  </g>
+	</g>
+ </g>
+</svg>
+
+ `;
+  // todo: inspected class name for doors
+  let cabinetDoor1 = `
+  <svg
+  id = '${room.name}_upperCabinetDoor1'
+  class = '${room.name}_upperCabinetDoor1'
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="82.383263"
+   height="108.42097"
+   viewBox="0 0 21.003489 27.892631"
+   version="1.1"
+   id="svg2942"
+   inkscape:version="1.0.1 (c497b03c, 2020-09-10)"
+   sodipodi:docname="kitchenUpperCabinetDoor.svg">
+  <defs
+     id="defs2936" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.76794631"
+     inkscape:cx="-50.490336"
+     inkscape:cy="247.81432"
+     inkscape:document-units="px"
+     inkscape:current-layer="g3059"
+     inkscape:document-rotation="0"
+     showgrid="false"
+     units="px"
+     inkscape:window-width="1440"
+     inkscape:window-height="847"
+     inkscape:window-x="0"
+     inkscape:window-y="25"
+     inkscape:window-maximized="0" />
+  <metadata
+     id="metadata2939">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-84.995567,-21.479255)">
+    <g
+       id="g3059"
+       transform="translate(2.2754507,17.387206)">
+      <g
+         id="g3695"
+         transform="translate(67.171034,-69.129226)">
+        <rect
+           style="fill:#665334;fill-opacity:1;stroke-width:0.264583"
+           id="rect2469"
+           width="21.003489"
+           height="27.892632"
+           x="15.549083"
+           y="73.221275" />
+        <ellipse
+           style="fill:#c5c48e;fill-opacity:1;stroke-width:0.174461"
+           id="path3049"
+           cx="33.247597"
+           cy="87.139153"
+           rx="1.2602092"
+           ry="1.3442231" />
+      </g>
+      <g
+         id="g3823"
+         transform="translate(-8.2688073,74.419266)">
+        <rect
+           style="fill:#8d7248;fill-opacity:1;stroke-width:0.264583"
+           id="rect2465"
+           width="168.90173"
+           height="38.466228"
+           x="33.220837"
+           y="0.349693" />
+        <g
+           id="g3741"
+           transform="translate(3.6914373,-0.10076718)">
+          <rect
+             style="fill:#f5f2ec;fill-opacity:1;stroke-width:0.264583"
+             id="rect2469-1"
+             width="21.003489"
+             height="27.892632"
+             x="40.133408"
+             y="5.8884706" />
+          <rect
+             style="fill:#8d7248;fill-opacity:1;stroke-width:0.264583"
+             id="rect3676"
+             width="24.917202"
+             height="1.8457186"
+             x="38.022743"
+             y="12.144293" />
+          <rect
+             style="fill:#8d7248;fill-opacity:1;stroke-width:0.264583"
+             id="rect3676-0"
+             width="24.917202"
+             height="1.8457187"
+             x="38.176548"
+             y="23.218605" />
+        </g>
+        <g
+           id="g3776"
+           transform="translate(8.5620871,0.82209182)">
+          <rect
+             style="fill:#f5f2ec;fill-opacity:1;stroke-width:0.264583"
+             id="rect2469-1-9"
+             width="21.003489"
+             height="27.892632"
+             x="78.355164"
+             y="4.9656115" />
+          <rect
+             style="fill:#8d7248;fill-opacity:1;stroke-width:0.264583"
+             id="rect3676-3"
+             width="24.917202"
+             height="1.8457187"
+             x="76.244499"
+             y="11.221433" />
+          <rect
+             style="fill:#8d7248;fill-opacity:1;stroke-width:0.264583"
+             id="rect3676-0-0"
+             width="24.917202"
+             height="1.8457187"
+             x="76.3983"
+             y="22.295744" />
+        </g>
+        <g
+           id="g3781"
+           transform="translate(17.81631,2.0525708)">
+          <rect
+             style="fill:#f5f2ec;fill-opacity:1;stroke-width:0.264583"
+             id="rect2469-1-5"
+             width="21.003489"
+             height="27.892632"
+             x="112.19334"
+             y="3.7351322" />
+          <rect
+             style="fill:#8d7248;fill-opacity:1;stroke-width:0.264583"
+             id="rect3676-2"
+             width="24.917202"
+             height="1.8457187"
+             x="110.08267"
+             y="9.9909534" />
+          <rect
+             style="fill:#8d7248;fill-opacity:1;stroke-width:0.264583"
+             id="rect3676-0-3"
+             width="24.917202"
+             height="1.8457187"
+             x="110.23648"
+             y="21.065266" />
+        </g>
+        <g
+           id="g3786"
+           transform="translate(3.6914373,1.4373308)">
+          <rect
+             style="fill:#f5f2ec;fill-opacity:1;stroke-width:0.264583"
+             id="rect2469-1-8"
+             width="21.003489"
+             height="27.892632"
+             x="169.41061"
+             y="4.3503718" />
+          <rect
+             style="fill:#8d7248;fill-opacity:1;stroke-width:0.264583"
+             id="rect3676-7"
+             width="24.917202"
+             height="1.8457187"
+             x="167.29996"
+             y="10.606193" />
+          <rect
+             style="fill:#8d7248;fill-opacity:1;stroke-width:0.264583"
+             id="rect3676-0-8"
+             width="24.917202"
+             height="1.8457187"
+             x="167.45375"
+             y="21.680506" />
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
+ `;
+  let cabinetDoor2 = `
+  <svg
+  id = '${room.name}_upperCabinetDoor2'
+  class = '${room.name}_upperCabinetDoor2'
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="82.383263"
+   height="108.42097"
+   viewBox="0 0 21.003489 27.892631"
+   version="1.1"
+   id="svg2942"
+   inkscape:version="1.0.1 (c497b03c, 2020-09-10)"
+   sodipodi:docname="kitchenUpperCabinetDoor.svg">
+  <defs
+     id="defs2936" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.76794631"
+     inkscape:cx="-50.490336"
+     inkscape:cy="247.81432"
+     inkscape:document-units="px"
+     inkscape:current-layer="g3059"
+     inkscape:document-rotation="0"
+     showgrid="false"
+     units="px"
+     inkscape:window-width="1440"
+     inkscape:window-height="847"
+     inkscape:window-x="0"
+     inkscape:window-y="25"
+     inkscape:window-maximized="0" />
+  <metadata
+     id="metadata2939">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-84.995567,-21.479255)">
+    <g
+       id="g3059"
+       transform="translate(2.2754507,17.387206)">
+      <g
+         id="g3695"
+         transform="translate(67.171034,-69.129226)">
+        <rect
+           style="fill:#665334;fill-opacity:1;stroke-width:0.264583"
+           id="rect2469"
+           width="21.003489"
+           height="27.892632"
+           x="15.549083"
+           y="73.221275" />
+        <ellipse
+           style="fill:#c5c48e;fill-opacity:1;stroke-width:0.174461"
+           id="path3049"
+           cx="33.247597"
+           cy="87.139153"
+           rx="1.2602092"
+           ry="1.3442231" />
+      </g>
+      <g
+         id="g3823"
+         transform="translate(-8.2688073,74.419266)">
+        <rect
+           style="fill:#8d7248;fill-opacity:1;stroke-width:0.264583"
+           id="rect2465"
+           width="168.90173"
+           height="38.466228"
+           x="33.220837"
+           y="0.349693" />
+        <g
+           id="g3741"
+           transform="translate(3.6914373,-0.10076718)">
+          <rect
+             style="fill:#f5f2ec;fill-opacity:1;stroke-width:0.264583"
+             id="rect2469-1"
+             width="21.003489"
+             height="27.892632"
+             x="40.133408"
+             y="5.8884706" />
+          <rect
+             style="fill:#8d7248;fill-opacity:1;stroke-width:0.264583"
+             id="rect3676"
+             width="24.917202"
+             height="1.8457186"
+             x="38.022743"
+             y="12.144293" />
+          <rect
+             style="fill:#8d7248;fill-opacity:1;stroke-width:0.264583"
+             id="rect3676-0"
+             width="24.917202"
+             height="1.8457187"
+             x="38.176548"
+             y="23.218605" />
+        </g>
+        <g
+           id="g3776"
+           transform="translate(8.5620871,0.82209182)">
+          <rect
+             style="fill:#f5f2ec;fill-opacity:1;stroke-width:0.264583"
+             id="rect2469-1-9"
+             width="21.003489"
+             height="27.892632"
+             x="78.355164"
+             y="4.9656115" />
+          <rect
+             style="fill:#8d7248;fill-opacity:1;stroke-width:0.264583"
+             id="rect3676-3"
+             width="24.917202"
+             height="1.8457187"
+             x="76.244499"
+             y="11.221433" />
+          <rect
+             style="fill:#8d7248;fill-opacity:1;stroke-width:0.264583"
+             id="rect3676-0-0"
+             width="24.917202"
+             height="1.8457187"
+             x="76.3983"
+             y="22.295744" />
+        </g>
+        <g
+           id="g3781"
+           transform="translate(17.81631,2.0525708)">
+          <rect
+             style="fill:#f5f2ec;fill-opacity:1;stroke-width:0.264583"
+             id="rect2469-1-5"
+             width="21.003489"
+             height="27.892632"
+             x="112.19334"
+             y="3.7351322" />
+          <rect
+             style="fill:#8d7248;fill-opacity:1;stroke-width:0.264583"
+             id="rect3676-2"
+             width="24.917202"
+             height="1.8457187"
+             x="110.08267"
+             y="9.9909534" />
+          <rect
+             style="fill:#8d7248;fill-opacity:1;stroke-width:0.264583"
+             id="rect3676-0-3"
+             width="24.917202"
+             height="1.8457187"
+             x="110.23648"
+             y="21.065266" />
+        </g>
+        <g
+           id="g3786"
+           transform="translate(3.6914373,1.4373308)">
+          <rect
+             style="fill:#f5f2ec;fill-opacity:1;stroke-width:0.264583"
+             id="rect2469-1-8"
+             width="21.003489"
+             height="27.892632"
+             x="169.41061"
+             y="4.3503718" />
+          <rect
+             style="fill:#8d7248;fill-opacity:1;stroke-width:0.264583"
+             id="rect3676-7"
+             width="24.917202"
+             height="1.8457187"
+             x="167.29996"
+             y="10.606193" />
+          <rect
+             style="fill:#8d7248;fill-opacity:1;stroke-width:0.264583"
+             id="rect3676-0-8"
+             width="24.917202"
+             height="1.8457187"
+             x="167.45375"
+             y="21.680506" />
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
+ `;
+  let cabinetDoor3 = `
+  <svg
+  id = '${room.name}_upperCabinetDoor3'
+  class = '${room.name}_upperCabinetDoor3'
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="82.383263"
+   height="108.42097"
+   viewBox="0 0 21.003489 27.892631"
+   version="1.1"
+   id="svg2942"
+   inkscape:version="1.0.1 (c497b03c, 2020-09-10)"
+   sodipodi:docname="kitchenUpperCabinetDoor.svg">
+  <defs
+     id="defs2936" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.76794631"
+     inkscape:cx="-50.490336"
+     inkscape:cy="247.81432"
+     inkscape:document-units="px"
+     inkscape:current-layer="g3059"
+     inkscape:document-rotation="0"
+     showgrid="false"
+     units="px"
+     inkscape:window-width="1440"
+     inkscape:window-height="847"
+     inkscape:window-x="0"
+     inkscape:window-y="25"
+     inkscape:window-maximized="0" />
+  <metadata
+     id="metadata2939">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-84.995567,-21.479255)">
+    <g
+       id="g3059"
+       transform="translate(2.2754507,17.387206)">
+      <g
+         id="g3695"
+         transform="translate(67.171034,-69.129226)">
+        <rect
+           style="fill:#665334;fill-opacity:1;stroke-width:0.264583"
+           id="rect2469"
+           width="21.003489"
+           height="27.892632"
+           x="15.549083"
+           y="73.221275" />
+        <ellipse
+           style="fill:#c5c48e;fill-opacity:1;stroke-width:0.174461"
+           id="path3049"
+           cx="33.247597"
+           cy="87.139153"
+           rx="1.2602092"
+           ry="1.3442231" />
+      </g>
+      <g
+         id="g3823"
+         transform="translate(-8.2688073,74.419266)">
+        <rect
+           style="fill:#8d7248;fill-opacity:1;stroke-width:0.264583"
+           id="rect2465"
+           width="168.90173"
+           height="38.466228"
+           x="33.220837"
+           y="0.349693" />
+        <g
+           id="g3741"
+           transform="translate(3.6914373,-0.10076718)">
+          <rect
+             style="fill:#f5f2ec;fill-opacity:1;stroke-width:0.264583"
+             id="rect2469-1"
+             width="21.003489"
+             height="27.892632"
+             x="40.133408"
+             y="5.8884706" />
+          <rect
+             style="fill:#8d7248;fill-opacity:1;stroke-width:0.264583"
+             id="rect3676"
+             width="24.917202"
+             height="1.8457186"
+             x="38.022743"
+             y="12.144293" />
+          <rect
+             style="fill:#8d7248;fill-opacity:1;stroke-width:0.264583"
+             id="rect3676-0"
+             width="24.917202"
+             height="1.8457187"
+             x="38.176548"
+             y="23.218605" />
+        </g>
+        <g
+           id="g3776"
+           transform="translate(8.5620871,0.82209182)">
+          <rect
+             style="fill:#f5f2ec;fill-opacity:1;stroke-width:0.264583"
+             id="rect2469-1-9"
+             width="21.003489"
+             height="27.892632"
+             x="78.355164"
+             y="4.9656115" />
+          <rect
+             style="fill:#8d7248;fill-opacity:1;stroke-width:0.264583"
+             id="rect3676-3"
+             width="24.917202"
+             height="1.8457187"
+             x="76.244499"
+             y="11.221433" />
+          <rect
+             style="fill:#8d7248;fill-opacity:1;stroke-width:0.264583"
+             id="rect3676-0-0"
+             width="24.917202"
+             height="1.8457187"
+             x="76.3983"
+             y="22.295744" />
+        </g>
+        <g
+           id="g3781"
+           transform="translate(17.81631,2.0525708)">
+          <rect
+             style="fill:#f5f2ec;fill-opacity:1;stroke-width:0.264583"
+             id="rect2469-1-5"
+             width="21.003489"
+             height="27.892632"
+             x="112.19334"
+             y="3.7351322" />
+          <rect
+             style="fill:#8d7248;fill-opacity:1;stroke-width:0.264583"
+             id="rect3676-2"
+             width="24.917202"
+             height="1.8457187"
+             x="110.08267"
+             y="9.9909534" />
+          <rect
+             style="fill:#8d7248;fill-opacity:1;stroke-width:0.264583"
+             id="rect3676-0-3"
+             width="24.917202"
+             height="1.8457187"
+             x="110.23648"
+             y="21.065266" />
+        </g>
+        <g
+           id="g3786"
+           transform="translate(3.6914373,1.4373308)">
+          <rect
+             style="fill:#f5f2ec;fill-opacity:1;stroke-width:0.264583"
+             id="rect2469-1-8"
+             width="21.003489"
+             height="27.892632"
+             x="169.41061"
+             y="4.3503718" />
+          <rect
+             style="fill:#8d7248;fill-opacity:1;stroke-width:0.264583"
+             id="rect3676-7"
+             width="24.917202"
+             height="1.8457187"
+             x="167.29996"
+             y="10.606193" />
+          <rect
+             style="fill:#8d7248;fill-opacity:1;stroke-width:0.264583"
+             id="rect3676-0-8"
+             width="24.917202"
+             height="1.8457187"
+             x="167.45375"
+             y="21.680506" />
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
+ `;
+  let cabinetDoor4 = `
+  <svg
+  id = '${room.name}_upperCabinetDoor4'
+  class = '${room.name}_upperCabinetDoor4'
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="82.383263"
+   height="108.42097"
+   viewBox="0 0 21.003489 27.892631"
+   version="1.1"
+   id="svg2942"
+   inkscape:version="1.0.1 (c497b03c, 2020-09-10)"
+   sodipodi:docname="kitchenUpperCabinetDoor.svg">
+  <defs
+     id="defs2936" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.76794631"
+     inkscape:cx="-50.490336"
+     inkscape:cy="247.81432"
+     inkscape:document-units="px"
+     inkscape:current-layer="g3059"
+     inkscape:document-rotation="0"
+     showgrid="false"
+     units="px"
+     inkscape:window-width="1440"
+     inkscape:window-height="847"
+     inkscape:window-x="0"
+     inkscape:window-y="25"
+     inkscape:window-maximized="0" />
+  <metadata
+     id="metadata2939">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-84.995567,-21.479255)">
+    <g
+       id="g3059"
+       transform="translate(2.2754507,17.387206)">
+      <g
+         id="g3695"
+         transform="translate(67.171034,-69.129226)">
+        <rect
+           style="fill:#665334;fill-opacity:1;stroke-width:0.264583"
+           id="rect2469"
+           width="21.003489"
+           height="27.892632"
+           x="15.549083"
+           y="73.221275" />
+        <ellipse
+           style="fill:#c5c48e;fill-opacity:1;stroke-width:0.174461"
+           id="path3049"
+           cx="33.247597"
+           cy="87.139153"
+           rx="1.2602092"
+           ry="1.3442231" />
+      </g>
+      <g
+         id="g3823"
+         transform="translate(-8.2688073,74.419266)">
+        <rect
+           style="fill:#8d7248;fill-opacity:1;stroke-width:0.264583"
+           id="rect2465"
+           width="168.90173"
+           height="38.466228"
+           x="33.220837"
+           y="0.349693" />
+        <g
+           id="g3741"
+           transform="translate(3.6914373,-0.10076718)">
+          <rect
+             style="fill:#f5f2ec;fill-opacity:1;stroke-width:0.264583"
+             id="rect2469-1"
+             width="21.003489"
+             height="27.892632"
+             x="40.133408"
+             y="5.8884706" />
+          <rect
+             style="fill:#8d7248;fill-opacity:1;stroke-width:0.264583"
+             id="rect3676"
+             width="24.917202"
+             height="1.8457186"
+             x="38.022743"
+             y="12.144293" />
+          <rect
+             style="fill:#8d7248;fill-opacity:1;stroke-width:0.264583"
+             id="rect3676-0"
+             width="24.917202"
+             height="1.8457187"
+             x="38.176548"
+             y="23.218605" />
+        </g>
+        <g
+           id="g3776"
+           transform="translate(8.5620871,0.82209182)">
+          <rect
+             style="fill:#f5f2ec;fill-opacity:1;stroke-width:0.264583"
+             id="rect2469-1-9"
+             width="21.003489"
+             height="27.892632"
+             x="78.355164"
+             y="4.9656115" />
+          <rect
+             style="fill:#8d7248;fill-opacity:1;stroke-width:0.264583"
+             id="rect3676-3"
+             width="24.917202"
+             height="1.8457187"
+             x="76.244499"
+             y="11.221433" />
+          <rect
+             style="fill:#8d7248;fill-opacity:1;stroke-width:0.264583"
+             id="rect3676-0-0"
+             width="24.917202"
+             height="1.8457187"
+             x="76.3983"
+             y="22.295744" />
+        </g>
+        <g
+           id="g3781"
+           transform="translate(17.81631,2.0525708)">
+          <rect
+             style="fill:#f5f2ec;fill-opacity:1;stroke-width:0.264583"
+             id="rect2469-1-5"
+             width="21.003489"
+             height="27.892632"
+             x="112.19334"
+             y="3.7351322" />
+          <rect
+             style="fill:#8d7248;fill-opacity:1;stroke-width:0.264583"
+             id="rect3676-2"
+             width="24.917202"
+             height="1.8457187"
+             x="110.08267"
+             y="9.9909534" />
+          <rect
+             style="fill:#8d7248;fill-opacity:1;stroke-width:0.264583"
+             id="rect3676-0-3"
+             width="24.917202"
+             height="1.8457187"
+             x="110.23648"
+             y="21.065266" />
+        </g>
+        <g
+           id="g3786"
+           transform="translate(3.6914373,1.4373308)">
+          <rect
+             style="fill:#f5f2ec;fill-opacity:1;stroke-width:0.264583"
+             id="rect2469-1-8"
+             width="21.003489"
+             height="27.892632"
+             x="169.41061"
+             y="4.3503718" />
+          <rect
+             style="fill:#8d7248;fill-opacity:1;stroke-width:0.264583"
+             id="rect3676-7"
+             width="24.917202"
+             height="1.8457187"
+             x="167.29996"
+             y="10.606193" />
+          <rect
+             style="fill:#8d7248;fill-opacity:1;stroke-width:0.264583"
+             id="rect3676-0-8"
+             width="24.917202"
+             height="1.8457187"
+             x="167.45375"
+             y="21.680506" />
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
+ `;
+
+  return kitchenUpperCabinet
+    .concat(cabinetDoor1)
+    .concat(cabinetDoor2)
+    .concat(cabinetDoor3)
+    .concat(cabinetDoor4);
+}

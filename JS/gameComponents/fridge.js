@@ -1,0 +1,428 @@
+export default function fridge(room) {
+  // functions here
+
+  function fridgeClassNames() {
+    if (room.$fridge.inspected) {
+      return `${room.name}_fridge ${room.name}fridge-inspected`;
+    } else {
+      return `${room.name}_fridge`;
+    }
+  }
+  // class = 'fridgeClassNames()}'
+  // data-selector = 'fridge'
+  let fridge = `
+  <svg
+  id = '${room.name}_fridge'
+  class = '${room.name}_fridge'
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:cc="http://creativecommons.org/ns#"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:svg="http://www.w3.org/2000/svg"
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+  xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+  width="144.36473"
+  height="254.5188"
+  viewBox="0 0 38.196507 67.341431"
+  version="1.1"
+  id="svg2942"
+  inkscape:version="1.0.1 (c497b03c, 2020-09-10)"
+  sodipodi:docname="frideInside.svg">
+ <defs
+	 id="defs2936" />
+ <sodipodi:namedview
+	 id="base"
+	 pagecolor="#ffffff"
+	 bordercolor="#666666"
+	 borderopacity="1.0"
+	 inkscape:pageopacity="0.0"
+	 inkscape:pageshadow="2"
+	 inkscape:zoom="0.95576319"
+	 inkscape:cx="-67.34731"
+	 inkscape:cy="197.2693"
+	 inkscape:document-units="px"
+	 inkscape:current-layer="layer1"
+	 inkscape:document-rotation="0"
+	 showgrid="false"
+	 units="px"
+	 inkscape:window-width="1440"
+	 inkscape:window-height="847"
+	 inkscape:window-x="0"
+	 inkscape:window-y="25"
+	 inkscape:window-maximized="0"
+	 showguides="false">
+	<inkscape:grid
+		type="xygrid"
+		id="grid8442"
+		originx="-31.141064"
+		originy="-3.7971578" />
+ </sodipodi:namedview>
+ <metadata
+	 id="metadata2939">
+	<rdf:RDF>
+	  <cc:Work
+		  rdf:about="">
+		 <dc:format>image/svg+xml</dc:format>
+		 <dc:type
+			 rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+		 <dc:title></dc:title>
+	  </cc:Work>
+	</rdf:RDF>
+ </metadata>
+ <g
+	 inkscape:label="Layer 1"
+	 inkscape:groupmode="layer"
+	 id="layer1"
+	 transform="translate(-68.391799,-20.858685)">
+	<g
+		id="$fridgeInside">
+	  <rect
+		  style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:#1a1a1a;stroke-width:0.80124;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+		  id="rect68260-8-0"
+		  width="37.388248"
+		  height="47.252491"
+		  x="68.792419"
+		  y="40.547009"
+		  ry="0" />
+	  <rect
+		  style="opacity:1;fill:#999999;fill-opacity:1;stroke:none;stroke-width:0.381064;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+		  id="rect70191"
+		  width="36.851742"
+		  height="1.3122282"
+		  x="69.189507"
+		  y="50.787979" />
+	  <g
+		  id="g70202"
+		  transform="matrix(0.62910491,0,0,0.62910491,2.6501891,1.6963643)">
+		 <path
+			 style="fill:#ffff00;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+			 d="m 135.89961,63.741647 0.0726,1.692374 c 1.58517,0.67035 1.71089,1.643978 0.75808,2.948684 -0.95106,1.126426 -2.8186,0.677008 -3.1612,-0.855938 -0.32365,-1.21882 0.19492,-1.972995 1.09372,-2.073009 v -1.688445 z"
+			 id="path70198"
+			 sodipodi:nodetypes="ccccccc" />
+		 <rect
+			 style="opacity:1;fill:#ececec;fill-opacity:1;stroke:none;stroke-width:0.582083;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+			 id="rect70193"
+			 width="2.187047"
+			 height="3.1712182"
+			 x="134.17534"
+			 y="61.237316" />
+	  </g>
+	  <rect
+		  style="opacity:1;fill:#999999;fill-opacity:1;stroke:none;stroke-width:0.381064;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+		  id="rect70191-7"
+		  width="36.851742"
+		  height="1.3122282"
+		  x="69.155754"
+		  y="61.292694" />
+	  <rect
+		  style="opacity:1;fill:#999999;fill-opacity:1;stroke:none;stroke-width:0.381064;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+		  id="rect70191-2"
+		  width="36.851742"
+		  height="1.3122282"
+		  x="69.215897"
+		  y="74.510803" />
+	  <rect
+		  style="opacity:1;fill:#b3b3b3;fill-opacity:1;stroke:#1a1a1a;stroke-width:0.561991;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+		  id="rect70225"
+		  width="18.634048"
+		  height="11.846957"
+		  x="69.082451"
+		  y="75.64669" />
+	  <rect
+		  style="opacity:1;fill:#b3b3b3;fill-opacity:1;stroke:#1a1a1a;stroke-width:0.554538;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+		  id="rect70225-1"
+		  width="18.069349"
+		  height="11.895278"
+		  x="88.241684"
+		  y="75.691772" />
+	  <path
+		  style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+		  d="m 74.402087,78.2598 c 2.53759,0.833 5.07517,0.62453 7.61276,0.06563"
+		  id="path70242"
+		  sodipodi:nodetypes="cc" />
+	  <path
+		  style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+		  d="m 93.710447,78.249428 c 2.53759,0.832992 5.07517,0.624522 7.612763,0.06563"
+		  id="path70242-4"
+		  sodipodi:nodetypes="cc" />
+	</g>
+	<g
+		id="$freezerInside">
+	  <rect
+		  style="opacity:1;fill:#f9f9f9;fill-opacity:1;stroke:#1a1a1a;stroke-width:0.505264;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+		  id="rect68260-7"
+		  width="37.413654"
+		  height="18.777769"
+		  x="68.772827"
+		  y="21.111317"
+		  ry="0.9883036" />
+	  <rect
+		  style="opacity:1;fill:#cccccc;fill-opacity:1;stroke:none;stroke-width:0.582083;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+		  id="rect70370"
+		  width="9.5988903"
+		  height="7.6502438"
+		  x="68.926338"
+		  y="21.324318"
+		  ry="0.98830348" />
+	  <path
+		  style="fill:#cccccc;fill-opacity:1;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+		  d="m 77.504077,28.839043 c 0.78592,0.649375 1.54899,1.303768 1.03539,2.238723 l -3.68133,0.129728 c -0.28447,-0.859863 0.24689,-1.645504 1.12379,-2.399707 z"
+		  id="path70372"
+		  sodipodi:nodetypes="ccccc" />
+	  <path
+		  style="fill:#cccccc;fill-opacity:1;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+		  d="m 69.142856,31.717102 -0.216522,8.155449 11.980573,-0.36086 V 26.737226 l -2.38168,0.144346 0.14435,4.907703 z"
+		  id="path70374" />
+	  <rect
+		  style="opacity:1;fill:#999999;fill-opacity:1;stroke:none;stroke-width:0.243608;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+		  id="rect70191-8"
+		  width="25.088263"
+		  height="0.7877419"
+		  x="80.927216"
+		  y="31.321224" />
+	  <g
+		  id="$IceCubeTray">
+		 <rect
+			 style="fill:#000080;fill-opacity:1;stroke:none;stroke-width:0.281269;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+			 id="rect70736"
+			 width="10.639696"
+			 height="2.1479075"
+			 x="81.731438"
+			 y="29.261902"
+			 ry="0.62176257" />
+		 <path
+			 style="fill:#ececec;fill-opacity:1;stroke:#000000;stroke-width:0.0621302;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+			 d="m 82.02429,30.785934 c 0.409655,-0.0057 1.093564,-0.01141 1.817606,-0.01712 -0.181573,0.270631 -0.550965,0.387986 -1.015027,0.428083 -0.562245,-0.08765 -0.691171,-0.247841 -0.802579,-0.410963 z"
+			 id="path70738"
+			 sodipodi:nodetypes="cccc" />
+		 <path
+			 style="fill:#ececec;fill-opacity:1;stroke:#000000;stroke-width:0.0621303;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+			 d="m 82.017449,30.17634 c 0.409656,-0.0057 1.093564,-0.01141 1.817606,-0.01712 -0.181572,0.270631 -0.550964,0.387986 -1.015026,0.428083 -0.562245,-0.08765 -0.691171,-0.247841 -0.80258,-0.410963 z"
+			 id="path70738-8"
+			 sodipodi:nodetypes="cccc" />
+		 <path
+			 style="fill:#ececec;fill-opacity:1;stroke:#000000;stroke-width:0.0621303;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+			 d="m 82.004174,29.569645 c 0.409655,-0.0057 1.093564,-0.01141 1.817606,-0.01712 -0.181572,0.270631 -0.550964,0.387986 -1.015027,0.428083 -0.562245,-0.08765 -0.691171,-0.247841 -0.802579,-0.410963 z"
+			 id="path70738-7"
+			 sodipodi:nodetypes="cccc" />
+		 <path
+			 style="fill:#ececec;fill-opacity:1;stroke:#000000;stroke-width:0.0621303;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+			 d="m 84.543074,30.750306 c 0.409655,-0.0057 1.093564,-0.01141 1.817606,-0.01712 -0.181573,0.270631 -0.550965,0.387986 -1.015027,0.428083 -0.562245,-0.08765 -0.691171,-0.247841 -0.802579,-0.410963 z"
+			 id="path70738-6"
+			 sodipodi:nodetypes="cccc" />
+		 <path
+			 style="fill:#ececec;fill-opacity:1;stroke:#000000;stroke-width:0.0621303;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+			 d="m 84.536233,30.140712 c 0.409656,-0.0057 1.093564,-0.01141 1.817606,-0.01712 -0.181572,0.270631 -0.550964,0.387986 -1.015026,0.428083 -0.562245,-0.08765 -0.691171,-0.247841 -0.80258,-0.410963 z"
+			 id="path70738-8-8"
+			 sodipodi:nodetypes="cccc" />
+		 <path
+			 style="fill:#ececec;fill-opacity:1;stroke:#000000;stroke-width:0.0621303;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+			 d="m 84.522958,29.534017 c 0.409655,-0.0057 1.093564,-0.01141 1.817606,-0.01712 -0.181572,0.270631 -0.550964,0.387986 -1.015027,0.428083 -0.562245,-0.08765 -0.691171,-0.247841 -0.802579,-0.410963 z"
+			 id="path70738-7-6"
+			 sodipodi:nodetypes="cccc" />
+		 <path
+			 style="fill:#ececec;fill-opacity:1;stroke:#000000;stroke-width:0.0621303;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+			 d="m 86.954931,30.702546 c 0.409655,-0.0057 1.093564,-0.01141 1.817606,-0.01712 -0.181573,0.270631 -0.550965,0.387986 -1.015027,0.428083 -0.562245,-0.08765 -0.691171,-0.247841 -0.802579,-0.410963 z"
+			 id="path70738-72"
+			 sodipodi:nodetypes="cccc" />
+		 <path
+			 style="fill:#ececec;fill-opacity:1;stroke:#000000;stroke-width:0.0621303;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+			 d="m 86.94809,30.092952 c 0.409656,-0.0057 1.093564,-0.01141 1.817606,-0.01712 -0.181572,0.270631 -0.550964,0.387986 -1.015026,0.428083 -0.562245,-0.08765 -0.691171,-0.247841 -0.80258,-0.410963 z"
+			 id="path70738-8-6"
+			 sodipodi:nodetypes="cccc" />
+		 <path
+			 style="fill:#ececec;fill-opacity:1;stroke:#000000;stroke-width:0.0621303;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+			 d="m 86.934815,29.486257 c 0.409655,-0.0057 1.093564,-0.01141 1.817606,-0.01712 -0.181572,0.270631 -0.550964,0.387986 -1.015027,0.428083 -0.562245,-0.08765 -0.691171,-0.247841 -0.802579,-0.410963 z"
+			 id="path70738-7-4"
+			 sodipodi:nodetypes="cccc" />
+		 <path
+			 style="fill:#ececec;fill-opacity:1;stroke:#000000;stroke-width:0.0621303;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+			 d="m 89.605586,30.678667 c 0.409655,-0.0057 1.093564,-0.01141 1.817606,-0.01712 -0.181573,0.270631 -0.550965,0.387986 -1.015027,0.428083 -0.562245,-0.08765 -0.691171,-0.247841 -0.802579,-0.410963 z"
+			 id="path70738-2"
+			 sodipodi:nodetypes="cccc" />
+		 <path
+			 style="fill:#ececec;fill-opacity:1;stroke:#000000;stroke-width:0.0621303;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+			 d="m 89.598745,30.069073 c 0.409656,-0.0057 1.093564,-0.01141 1.817606,-0.01712 -0.181572,0.270631 -0.550964,0.387986 -1.015026,0.428083 -0.562245,-0.08765 -0.691171,-0.247841 -0.80258,-0.410963 z"
+			 id="path70738-8-65"
+			 sodipodi:nodetypes="cccc" />
+		 <path
+			 style="fill:#ececec;fill-opacity:1;stroke:#000000;stroke-width:0.0621303;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+			 d="m 89.58547,29.462378 c 0.409655,-0.0057 1.093564,-0.01141 1.817606,-0.01712 -0.181572,0.270631 -0.550964,0.387986 -1.015027,0.428083 -0.562245,-0.08765 -0.691171,-0.247841 -0.802579,-0.410963 z"
+			 id="path70738-7-9"
+			 sodipodi:nodetypes="cccc" />
+	  </g>
+	</g>
+ </g>
+</svg>`;
+
+  let fridgeDoor = `
+  <svg
+  id = '${room.name}_fridgeDoor'
+  class = '${room.name}_fridgeDoor'
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:cc="http://creativecommons.org/ns#"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:svg="http://www.w3.org/2000/svg"
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+  xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+  width="144.33821"
+  height="181.62039"
+  viewBox="0 0 38.18949 48.053728"
+  version="1.1"
+  id="svg2942"
+  inkscape:version="1.0.1 (c497b03c, 2020-09-10)"
+  sodipodi:docname="fridgeDoor.svg">
+ <defs
+	 id="defs2936" />
+ <sodipodi:namedview
+	 id="base"
+	 pagecolor="#ffffff"
+	 bordercolor="#666666"
+	 borderopacity="1.0"
+	 inkscape:pageopacity="0.0"
+	 inkscape:pageshadow="2"
+	 inkscape:zoom="0.95576319"
+	 inkscape:cx="-31.798151"
+	 inkscape:cy="83.007774"
+	 inkscape:document-units="px"
+	 inkscape:current-layer="layer1"
+	 inkscape:document-rotation="0"
+	 showgrid="false"
+	 units="px"
+	 inkscape:window-width="1440"
+	 inkscape:window-height="847"
+	 inkscape:window-x="0"
+	 inkscape:window-y="25"
+	 inkscape:window-maximized="0"
+	 showguides="false">
+	<inkscape:grid
+		type="xygrid"
+		id="grid8442"
+		originx="-31.701209"
+		originy="-19.633724" />
+ </sodipodi:namedview>
+ <metadata
+	 id="metadata2939">
+	<rdf:RDF>
+	  <cc:Work
+		  rdf:about="">
+		 <dc:format>image/svg+xml</dc:format>
+		 <dc:type
+			 rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+		 <dc:title></dc:title>
+	  </cc:Work>
+	</rdf:RDF>
+ </metadata>
+ <g
+	 inkscape:label="Layer 1"
+	 inkscape:groupmode="layer"
+	 id="layer1"
+	 transform="translate(-68.951942,-36.695253)">
+	<g
+		id="$fridgeDoor"
+		transform="translate(38.138439,-3.0025999)">
+	  <rect
+		  style="opacity:1;fill:#cccccc;fill-opacity:1;stroke:#1a1a1a;stroke-width:0.80124;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+		  id="rect68260-8"
+		  width="37.388248"
+		  height="47.252491"
+		  x="31.214123"
+		  y="40.098473"
+		  ry="0" />
+	  <path
+		  id="$fridgeDoorHandle"
+		  style="opacity:1;fill:#f2f2f2;fill-opacity:1;stroke:none;stroke-width:0.651097;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+		  d="m 63.670274,46.852025 h 1.927011 c 0.49538,8.727116 0.27871,17.233572 0,25.720799 h -1.927011 c -0.716669,-8.430826 -0.499858,-17.047618 0,-25.720799 z"
+		  sodipodi:nodetypes="ccccc" />
+	</g>
+ </g>
+</svg>`;
+
+  let freezerDoor = `
+  <svg
+  id = '${room.name}_freezerDoor'
+  class = '${room.name}_freezerDoor'
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="143.3156"
+   height="72.880753"
+   viewBox="0 0 37.918923 19.283032"
+   version="1.1"
+   id="svg2942"
+   inkscape:version="1.0.1 (c497b03c, 2020-09-10)"
+   sodipodi:docname="freezerDoor.svg">
+  <defs
+     id="defs2936" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.95576319"
+     inkscape:cx="-73.139055"
+     inkscape:cy="105.84645"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     inkscape:document-rotation="0"
+     showgrid="false"
+     units="px"
+     inkscape:window-width="1440"
+     inkscape:window-height="847"
+     inkscape:window-x="0"
+     inkscape:window-y="25"
+     inkscape:window-maximized="0"
+     showguides="false">
+    <inkscape:grid
+       type="xygrid"
+       id="grid8442"
+       originx="-42.639326"
+       originy="-13.590988" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata2939">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-79.890057,-30.652518)">
+    <g
+       id="$freezerDoor"
+       transform="translate(-35.518184,-11.595963)">
+      <rect
+         style="opacity:1;fill:#cccccc;fill-opacity:1;stroke:#1a1a1a;stroke-width:0.505265;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="rect68260"
+         width="37.413654"
+         height="18.777769"
+         x="115.66087"
+         y="42.501114"
+         ry="0.9883036" />
+      <path
+         id="$freezerDoorHandle"
+         style="opacity:1;fill:#f2f2f2;fill-opacity:1;stroke:none;stroke-width:0.396194;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         d="m 148.64475,47.145452 h 1.92701 c 0.49538,3.231439 0.27871,6.381172 0,9.523786 h -1.92701 c -0.71667,-3.12173 -0.49986,-6.312318 0,-9.523786 z"
+         sodipodi:nodetypes="ccccc" />
+    </g>
+  </g>
+</svg>
+  `;
+
+  return fridge.concat(fridgeDoor).concat(freezerDoor);
+}

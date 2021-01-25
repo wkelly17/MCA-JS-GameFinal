@@ -13,7 +13,7 @@
    version="1.1"
    id="svg2942"
    inkscape:version="1.0.1 (c497b03c, 2020-09-10)"
-   sodipodi:docname="cabinetDoor.svg">
+   sodipodi:docname="cabinetDoor.svg.svg">
   <defs
      id="defs2936" />
   <sodipodi:namedview
@@ -23,9 +23,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.27707042"
-     inkscape:cx="-120.42633"
-     inkscape:cy="203.63923"
+     inkscape:zoom="0.76794631"
+     inkscape:cx="-58.554189"
+     inkscape:cy="-88.95435"
      inkscape:document-units="px"
      inkscape:current-layer="g3059"
      inkscape:document-rotation="0"
@@ -360,7 +360,7 @@
       </g>
       <g
          id="g3976"
-         transform="matrix(0.86238855,0,0,0.87369703,-56.03,9.6649248)">
+         transform="matrix(1.5367444,0,0,1.4862223,-161.35021,-48.892729)">
         <rect
            style="fill:#f7f7f7;fill-opacity:1;stroke:#000000;stroke-width:0.287016;stroke-opacity:1"
            id="rect2469-6"

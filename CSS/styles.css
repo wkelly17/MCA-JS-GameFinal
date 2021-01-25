@@ -69,6 +69,19 @@ img {
 .closeZoomButton:hover {
   color: red;
 }
+.doorBackground {
+  width: 138.36726px;
+  height: 222.61232px;
+  background: black;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.doorOpen {
+  transform: rotateY(35deg);
+  transform-origin: left;
+  transition-duration: 0.3s;
+}
 
 .lamp-inspected {
   filter: drop-shadow(10px 10px 70px yellow) drop-shadow(20px 20px 70px yellow)
@@ -530,20 +543,20 @@ img {
   top: 85px;
   left: 143px;
 }
-.windowImage {
+.bedroom1_windowImage {
   top: 95px;
   left: 196px;
   width: 180px;
   height: 121px;
 }
-.windowCrossBar {
+.bedroom1_windowCrossBar {
   top: 150px;
   left: 186px;
   width: 200px;
   height: 5px;
   background: rgb(187, 184, 184);
 }
-.windowVertBar {
+.bedroom1_windowVertBar {
   top: 85px;
   left: 280px;
   width: 5px;
@@ -603,6 +616,8 @@ img {
 }
 
 .bedroom1_television {
+  width: 113px;
+  height: 84px;
   top: 140px;
   left: 560px;
 }
@@ -634,9 +649,11 @@ img {
   left: 450px;
 }
 
-.bedroom1_doorWhole {
+.bedroom1_door {
   top: 193px;
   left: 335px;
+  transition-duration: 0.2s;
+  transform-origin: left;
 }
 
 .doorOpen {
@@ -645,7 +662,7 @@ img {
   transition-duration: 0.3s;
 }
 
-.doorBackground {
+.bedroom1_doorBackground {
   width: 138.36726px;
   height: 222.61232px;
   background: black;
@@ -666,14 +683,504 @@ img {
 /* ------------- LIVINGROOM ---------- */
 /* @% ---------------------------- */
 
+.livingRoom_coffeeTable {
+  top: 448px;
+  left: 300px;
+}
+
+.livingRoom_mediaStand {
+  top: 300px;
+  left: 300px;
+}
+.livingRoom_leftMediaDoor {
+  top: 317px;
+  left: 310px;
+  transform: rotateY(0deg);
+  transform-origin: left;
+  transition-duration: 0.3s;
+}
+
+.livingRoom_leftMediaDoor-inspected {
+  transform: rotateY(180deg);
+  transition-duration: 0.3s;
+}
+.livingRoom_rightMediaDoor {
+  top: 314px;
+  left: 501px;
+  transform: rotateY(0deg);
+  transform-origin: right;
+  transition-duration: 0.3s;
+}
+
+.livingRoom_rightMediaDoor-inspected {
+  transform: rotateY(180deg);
+  transition-duration: 0.3s;
+}
+
+.livingRoom_television {
+  width: 214px;
+  height: 132px;
+  top: 178px;
+  left: 337px;
+}
+
+.livingRoom_gameShelf {
+  top: 170px;
+  left: 130px;
+}
+
+.livingRoom_standingLamp {
+  top: 100px;
+  left: 640px;
+}
+
+.livingRoom_standingLamp-inspected {
+  filter: drop-shadow(10px -80px 190px yellow)
+    drop-shadow(20px -80px 90px yellow) drop-shadow(-10px -60px 190px yellow)
+    drop-shadow(-20px -60px 90px yellow) drop-shadow(-40px -90px 180px yellow)
+    drop-shadow(40px -60px 380px yellow) drop-shadow(-40px -90px 180px yellow);
+}
+
+/* ! Left living room */
+.livingRoom_standingLamp2 {
+  top: 100px;
+  left: 140px;
+}
+
+.livingRoom_standingLamp2-inspected {
+  filter: drop-shadow(10px -80px 190px yellow)
+    drop-shadow(20px -80px 90px yellow) drop-shadow(-10px -60px 190px yellow)
+    drop-shadow(-20px -60px 90px yellow) drop-shadow(-40px -90px 180px yellow)
+    drop-shadow(40px -60px 380px yellow) drop-shadow(-40px -90px 180px yellow);
+}
+
+.livingRoom_thermostat {
+  top: 200px;
+  left: 570px;
+}
+
+.livingRoom_bookShelf {
+  top: 160px;
+  left: 500px;
+  opacity: 0.2;
+}
+/* .livingRoom_safeInterior{
+  top: 100px;
+  left: 100px;
+} */
+
+.livingRoom_safeExterior {
+  top: 210px;
+  left: 540px;
+}
+
+.livingRoom_safeInterior {
+  top: 206px;
+  left: 529px;
+  z-index: -1;
+}
+.livingRoom_couch {
+  top: 220px;
+  left: 300px;
+}
+.livingRoom_couchPillow {
+  top: 270px;
+  left: 320px;
+}
+.livingRoom_couchPillow2 {
+  top: 270px;
+  left: 490px;
+  fill: rgb(167, 108, 0);
+  transform: rotate(115deg);
+}
+
+.livingRoom_ceilingFan {
+  width: 600px;
+  height: 400px;
+  top: 100px;
+  left: 160px;
+  /* ! turn on if you want fan to spin */
+  /* animation-name: rotateFan; */
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+  animation-direction: normal;
+  animation-timing-function: linear;
+}
+
+.livingRoom_ceilingVent {
+  top: 130px;
+  left: 450px;
+}
+
+.livingRoom_door,
+.livingRoom_doorBackground {
+  top: 193px;
+  left: 415px;
+  transition-duration: 0.2s;
+  transform-origin: left;
+}
+.livingRoom_door2,
+.livingRoom_doorBackground2 {
+  top: 193px;
+  left: 615px;
+  transition-duration: 0.2s;
+  transform-origin: left;
+}
+.livingRoom_door3,
+.livingRoom_doorBackground3 {
+  top: 193px;
+  left: 315px;
+  transition-duration: 0.2s;
+  transform-origin: left;
+}
+
+/* .livingRoom_couch {
+  top: 100px;
+  left: 100px;
+} */
+/* .livingRoom_couch {
+  top: 100px;
+  left: 100px;
+} */
+/* .livingRoom_couch {
+  top: 100px;
+  left: 100px;
+} */
+/* .livingRoom_couch {
+  top: 100px;
+  left: 100px;
+} */
+/* .livingRoom_couch {
+  top: 100px;
+  left: 100px;
+} */
+
 /* @@ ------------------------------- */
 /* ------------- STUDY ---------- */
 /* @% ---------------------------- */
 
-/* @@ ------------------------------- */
-/* ------------- BEDROOM2 ---------- */
-/* @% ---------------------------- */
+.study_desk {
+  top: 269px;
+  left: 138px;
+}
+.study_officeChair {
+  top: 253px;
+  left: 261px;
+}
+.study_computer {
+  top: 194px;
+  left: 381px;
+}
+.study_mousePad {
+  top: 277px;
+  left: 388px;
+}
+.study_mouse {
+  top: 285px;
+  left: 409px;
+}
+.study_bottomMug {
+  top: 250px;
+  left: 150px;
+}
+.study_upperMug {
+  top: 244px;
+  left: 149px;
+}
+
+.study_trashCan {
+  top: 350px;
+  left: 185px;
+}
+
+.study_inkBottle {
+  top: 244px;
+  left: 239px;
+}
+
+.study_pen {
+  top: 233px;
+  left: 156px;
+}
+.study_pencil {
+  top: 233px;
+  left: 169px;
+}
+.study_roomWindow {
+  top: 50px;
+  left: 490px;
+}
+.study_windowImage {
+  top: 65px;
+  left: 542px;
+  width: 180px;
+  height: 121px;
+}
+
+.study_windowCrossBar {
+  top: 121px;
+  left: 537px;
+  width: 192px;
+  height: 5px;
+  background: rgb(187, 184, 184);
+}
+.study_windowVertBar {
+  top: 55px;
+  left: 632px;
+  width: 5px;
+  height: 141px;
+  background: rgb(187, 184, 184);
+}
+.study_curtains {
+  top: 15px;
+  left: 490px;
+}
+.study_standingLamp {
+  top: 15px;
+  left: 490px;
+}
+
+.study_standingLamp-inspected {
+  filter: drop-shadow(10px -80px 190px yellow)
+    drop-shadow(20px -80px 90px yellow) drop-shadow(-10px -60px 190px yellow)
+    drop-shadow(-20px -60px 90px yellow) drop-shadow(-40px -90px 180px yellow)
+    drop-shadow(40px -60px 380px yellow) drop-shadow(-40px -90px 180px yellow);
+}
+
+.study_dryEraseBoard {
+  top: 100px;
+  left: 550px;
+}
+
+.study_eraser {
+  top: 108px;
+  left: 680px;
+}
+.study_expoMarker {
+  top: 106px;
+  left: 560px;
+}
+.study_standingLamp {
+  top: 106px;
+  left: 160px;
+}
+
+.study_printerStation {
+  top: 106px;
+  left: 160px;
+}
+.study_lamp {
+  top: 80px;
+  left: 380px;
+}
+
+.study_door,
+.study_doorBackground {
+  top: 195px;
+  left: 380px;
+  transition-duration: 0.2s;
+  transform-origin: left;
+}
 
 /* @@ ------------------------------- */
 /* ------------- KITCHEN ---------- */
-/* @% ---------------------------- */ ;
+/* @% ---------------------------- */
+
+.kitchen_oven {
+  top: 240px;
+  left: 360px;
+}
+.kitchen_ovenDoor {
+  top: 320px;
+  left: 375px;
+}
+.kitchen_ovenDoor-inspected {
+  transform: rotateX(180deg);
+  transform-origin: bottom;
+  transition-duration: 0.3s;
+}
+.kitchen_kettle {
+  top: 255px;
+  left: 462px;
+}
+
+.kitchen_kitchenUpperCabinet {
+  top: 0px;
+  left: 132px;
+}
+.kitchen_cabinetDoor1 {
+  top: 18px;
+  left: 171px;
+}
+.kitchen_upperCabinetDoor1 {
+  top: 18px;
+  left: 171px;
+}
+.kitchen_upperCabinetDoor2 {
+  top: 18px;
+  left: 334px;
+}
+.kitchen_upperCabinetDoor3 {
+  top: 18px;
+  left: 497px;
+}
+.kitchen_upperCabinetDoor4 {
+  top: 18px;
+  left: 658px;
+}
+.kitchen_cabinetDoor-inspected {
+  transform: rotateY(180deg);
+  transform-origin: left;
+  transition-duration: 0.3s;
+}
+.kitchen_kitchenCabinet {
+  top: 225px;
+  left: 137px;
+}
+.kitchen_kitchenCabinet2 {
+  top: 223px;
+  left: 545px;
+}
+.kitchen_cabinetDoor1 {
+  top: 294px;
+  left: 143px;
+}
+.kitchen_cabinetDoor2 {
+  top: 294px;
+  left: 213px;
+}
+.kitchen_cabinetDoor3 {
+  top: 294px;
+  left: 283px;
+}
+.kitchen_cabinetDoor4 {
+  top: 294px;
+  left: 550px;
+}
+.kitchen_cabinetDoor5 {
+  top: 294px;
+  left: 625px;
+}
+.kitchen_cabinetDoor6 {
+  top: 294px;
+  left: 695px;
+}
+.kitchen_oliveOilBottle {
+  top: 161px;
+  left: 547px;
+}
+.kitchen_kitchenTowel {
+  top: 318px;
+  left: 401px;
+}
+.kitchen_table {
+  top: 323px;
+  left: 204px;
+}
+.kitchen_fruitBowl {
+  top: 273px;
+  left: 254px;
+}
+
+.kitchen_kitchenChair1 {
+  top: 306px;
+  left: 172px;
+}
+.kitchen_pepperShaker {
+  top: 301px;
+  left: 372px;
+}
+.kitchen_saltShaker {
+  top: 301px;
+  left: 392px;
+}
+
+.kitchen_kitchenChair2 {
+  top: 306px;
+  left: 386px;
+  transform: rotateY(180deg);
+}
+.kitchen_coffeeStand {
+  top: 310px;
+  left: 550px;
+}
+.kitchen_coffeeMaker {
+  top: 254px;
+  left: 640px;
+}
+.kitchen_blender {
+  top: 229px;
+  left: 560px;
+}
+.kitchen_kitchenCabinetry2 {
+  top: 225px;
+  left: 357px;
+}
+
+.kitchen_cabinetDoor4Set2 {
+  top: 294px;
+  left: 367px;
+}
+.kitchen_cabinetDoor5Set2 {
+  top: 294px;
+  left: 437px;
+}
+.kitchen_cabinetDoor6Set2 {
+  top: 294px;
+  left: 505px;
+}
+.kitchen_dishwasher {
+  top: 240px;
+  left: 576px;
+}
+.kitchen_dishwasherDoor {
+  top: 265px;
+  left: 592px;
+}
+/* todo add x rotation for door */
+
+.kitchen_toaster {
+  top: 187px;
+  left: 151px;
+}
+
+.kitchen_knifeBlock {
+  top: 197px;
+  left: 504px;
+}
+.kitchen_fridge {
+  top: 163px;
+  left: 340px;
+}
+.kitchen_fridgeDoor {
+  top: 236px;
+  left: 340px;
+}
+.kitchen_freezerDoor {
+  top: 163px;
+  left: 340px;
+}
+.kitchen_trashCan {
+  top: 300px;
+  left: 148px;
+}
+
+.kitchen_lightSwitch {
+  top: 210px;
+  left: 158px;
+}
+.kitchen_door {
+  top: 194px;
+  left: 558px;
+  transition-duration: 0.2s;
+  transform-origin: left;
+}
+.kitchen_doorBackground {
+  top: 194px;
+  left: 558px;
+}
+
+.kitchen_ceilingVent {
+  top: 150px;
+  left: 150px;
+}

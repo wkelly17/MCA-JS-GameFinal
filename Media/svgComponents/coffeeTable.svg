@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" width="316.40305" height="108.48103"
+   viewBox="0 0 83.714976 28.702271" version="1.1" id="svg2942" inkscape:version="1.0.1 (c497b03c, 2020-09-10)"
+   sodipodi:docname="coffeeTable.svg">
+   <defs id="defs2936" />
+   <sodipodi:namedview id="base" pagecolor="#ffffff" bordercolor="#666666" borderopacity="1.0"
+      inkscape:pageopacity="0.0" inkscape:pageshadow="2" inkscape:zoom="1.4304395" inkscape:cx="115.19348"
+      inkscape:cy="197.56368" inkscape:document-units="px" inkscape:current-layer="coffeeTable"
+      inkscape:document-rotation="0" showgrid="false" units="px" inkscape:window-width="1252"
+      inkscape:window-height="847" inkscape:window-x="0" inkscape:window-y="25" inkscape:window-maximized="0" />
+   <metadata id="metadata2939">
+      <rdf:RDF>
+         <cc:Work rdf:about="">
+            <dc:format>image/svg+xml</dc:format>
+            <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+            <dc:title></dc:title>
+         </cc:Work>
+      </rdf:RDF>
+   </metadata>
+   <g inkscape:label="Layer 1" inkscape:groupmode="layer" id="layer1" transform="translate(-58.372328,-55.481113)">
+      <g id="coffeeTable" transform="translate(-69.76285,-156.71072)" data-selector="coffeeTable">
+         <rect style="fill:#552200;stroke-width:0.297846" id="rect996" width="83.714973" height="7.7906179"
+            x="128.13518" y="212.19183" />
+         <rect style="fill:#552200;stroke-width:0.297846" id="rect998" width="6.855968" height="22.141756" x="133.18694"
+            y="218.75235" />
+         <rect style="fill:#552200;stroke-width:0.306431" id="rect998-7" width="6.855968" height="23.436522"
+            x="200.84451" y="217.9323" />
+         <rect style="fill:#552200;stroke-width:0.269541" id="rect996-0" width="68.559685" height="7.7906179"
+            x="136.43449" y="229.20819" />
+      </g>
+   </g>
+</svg>

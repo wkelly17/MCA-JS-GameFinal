@@ -18,8 +18,6 @@ export default function television(room) {
   class = '${room.name}_television'
   data-selector = 'television'
   xmlns="http://www.w3.org/2000/svg"
-  width="113.409531"
-  height="84.620338"
   viewBox="0 0 22.068774 11.805798">
  <g
 	 inkscape:label="Layer 1"

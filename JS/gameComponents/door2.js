@@ -1,11 +1,11 @@
-export default function door(room) {
+export default function door2(room) {
   // functions here
 
-  function doorClassNames() {
-    if (room.$door.open) {
-      return `${room.name}_door doorOpen`;
+  function door2ClassNames() {
+    if (room.$door2 && room.$door2.open) {
+      return `${room.name}_door2 doorOpen`;
     } else {
-      return `${room.name}_door`;
+      return `${room.name}_door2`;
     }
   }
   // id = '${room.name}_door'
@@ -14,9 +14,9 @@ export default function door(room) {
   // data-selector = 'door'
   let html = `
   <svg
-  id = '${room.name}_door'
-  class = '${room.name}_door'
-  data-selector = 'door'
+  id = '${room.name}_door2'
+  class = '${room.name}_door2'
+  data-selector = 'door2'
   xmlns="http://www.w3.org/2000/svg"
   width="138.36726"
   height="222.61232"
@@ -39,7 +39,6 @@ export default function door(room) {
 			 ry="0" />
 		 <g
 			 id="Door"
-			 class = ''
 			 transform="translate(40.121847,-0.59883354)">
 			<rect
 				style="fill:#552200;stroke-width:0.254519"
@@ -79,7 +78,7 @@ export default function door(room) {
 		ry="1.3864541" />
  </g>
 </svg>
-<div class = '${room.name}_doorBackground doorBackground'> </div>
+<div class = '${room.name}_doorBackground2 doorBackground'> </div>
  `;
   return html;
 }

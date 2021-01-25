@@ -5,7 +5,7 @@ export default function lamp(room) {
 
   // functions here
   function lampClassNames() {
-    if (room.$lamp.inspected) {
+    if (room.$lamp && room.$lamp.inspected) {
       return `${room.name}_lamp lamp-inspected`;
     } else {
       return `${room.name}_lamp`;

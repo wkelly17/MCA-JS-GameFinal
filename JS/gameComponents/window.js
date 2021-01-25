@@ -10,6 +10,14 @@ export default function roomWindow(room) {
       return `${room.name}_thing`;
     }
   }
+  function windowBackground() {
+    if (room.name == 'study') {
+      return './Media/imgs/outDoors.jpg';
+    } else {
+      return './Media/imgs/outDoors.jpg';
+    }
+  }
+
   // id = '${room.name}thing'
   // class = '${thingClassNames()}
   // data-selector = 'THING'
@@ -85,9 +93,11 @@ export default function roomWindow(room) {
 	</g>
  </g>
 </svg>
-<img class = 'windowImage' src = './Media/imgs/outDoors.jpg' alt = "outdoor Scenery" />
-<div class = "windowCrossBar"> </div>
-<div class = "windowVertBar"> </div>
+<img class = '${
+    room.name
+  }_windowImage' src = '${windowBackground()}' alt = "outdoor Scenery" />
+<div class = "${room.name}_windowCrossBar"> </div>
+<div class = "${room.name}_windowVertBar"> </div>
  `;
   return html;
 }

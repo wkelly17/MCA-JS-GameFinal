@@ -1,6 +1,6 @@
 function lightSwitch(room) {
   function getLightsClasses() {
-    if (room.$lightSwitch.lightsOff) {
+    if (room.$lightSwitch && room.$lightSwitch.lightsOff) {
       return `${room.name}_lightSwitch`;
     } else {
       return `${room.name}_lightSwitch switched`;
@@ -281,7 +281,7 @@ function lightSwitch(room) {
 				  y="83.30954"
 				  ry="2.8421808e-14"
 				/>
-				<g id="switchToggle" class = '${room.$lightSwitch.lightsOff && 'switched'}'>
+				<g id="switchToggle" class = '${room.$lightSwitch?.lightsOff && 'switched'}'>
 				  <path
 					 id="rect12436-4"
 					 style="

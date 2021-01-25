@@ -13,6 +13,9 @@ todo:
 //@#=============== IMPORTS  =============
 
 import bedroom1 from './rooms/bedroom1.js';
+import livingRoom from './rooms/livingRoom.js';
+import kitchen from './rooms/kitchen.js';
+import study from './rooms/study.js';
 import navControls from './utils/navDefs.js';
 import navigate from './utils/navigation.js';
 
@@ -36,7 +39,7 @@ let game = {
   messageContainer: messageContainer,
 
   // pieces of global game state;
-  currentRoom: bedroom1,
+  currentRoom: livingRoom,
   timer: null,
 
   //   game/non room methods;

@@ -1,5 +1,8 @@
 //@@=============== ROOMS AND FUNCTIONALITY IMPORTS  =============
 import game from '../app.js';
+import bedroom1 from './bedroom1.js';
+import kitchen from './kitchen.js';
+import study from './study.js';
 import {
   interactLockedItem,
   render,
@@ -16,7 +19,34 @@ import defaultRoom from './defaultRoom.js';
 import ceilingView from './defaultCeilingView.js';
 
 //@@=============== DOM SVG IMPORTS  =============
-// import bedSVG from '../game-components/bed.js';
+// import mediaStand from '../gameComponents/';
+import coffeeTable from '../gameComponents/coffeeTable.js';
+import mediaStand from '../gameComponents/mediaStand.js';
+import television from '../gameComponents/tv.js';
+
+// right
+import gameShelf from '../gameComponents/gameShelf.js';
+import standingLamp from '../gameComponents/standingLamp.js';
+import thermostat from '../gameComponents/thermostat.js';
+
+// left
+import standingLamp2 from '../gameComponents/standingLamp2.js';
+import bookCase from '../gameComponents/bookshelf.js';
+import safe from '../gameComponents/safe.js';
+
+// back
+import couch from '../gameComponents/couch.js';
+// todo ? side table?
+
+// ceiling:
+import ceilingFan from '../gameComponents/ceilingFan.js';
+import ceilingVent from '../gameComponents/ceilingVent.js';
+
+import door from '../gameComponents/door.js';
+import door2 from '../gameComponents/door2.js';
+import door3 from '../gameComponents/door3.js';
+// import X from '../gameComponents/';
+// import X from '../gameComponents/';
 
 let livingRoom = {
   // @# CORE PIECES OF GLOBAL ROOM STATE;
@@ -54,98 +84,60 @@ let livingRoom = {
   $door: {
     name: '$door',
     nodes: null,
-    selector: '#Door',
+    selector: '[data-selector = "door"]',
     listenerType: 'click',
-    directionLeadsTo: 'front',
-    roomLeadsTo: 'livingRoom',
+    directionLeadsTo: 'right',
+    roomLeadsTo: 'study',
+    open: true,
     fxn: goToRoom,
   },
-  $key: {
-    objName: '$key',
+  $door2: {
+    name: '$door2',
     nodes: null,
-    selector: '[data-selector = "room1$key"]',
-    inventorySelector: 'room1$key',
+    selector: '[data-selector = "door2"]',
     listenerType: 'click',
-    found: false,
-    solves: '$filingCabinet',
-    imgSrc: './Media/SVG-Components/key.svg',
-    altText: 'key',
-    fxn: addtoInventory,
+    directionLeadsTo: 'back',
+    roomLeadsTo: 'bedroom1',
+    open: true,
+    fxn: goToRoom,
   },
-  $filingCabinet: {
-    name: '$filingCabinet',
+  $door3: {
+    name: '$door3',
     nodes: null,
-    //  subnodes are affected when the main node is solved;
-    affectedNodes: [
-      {
-        selector: '.filingCabinetLock',
-        class: 'rotatedLock',
-      },
-    ],
-    selector: '#filingCabinet',
+    selector: '[data-selector = "door3"]',
     listenerType: 'click',
-    open: false,
-    isSolvedBy: 'key',
-    solvedMessage:
-      'You feel the key catch and give it a turn;  The drawer pops open',
-    fxn: interactLockedItem,
-  },
-  $keypad: {
-    name: '$keypad',
-    nodes: null,
-    selector: '#keypad',
-    listenerType: 'click',
-    inspected: false,
-    fxn: focusView,
-  },
-  $keypadBtns: {
-    name: '$keypadBtns',
-    nodes: null,
-    selector: '[data-role = "keypadElement"]',
-    listenerType: 'click',
-    inspected: false,
-    fxn: manageKeypad,
+    directionLeadsTo: 'left',
+    roomLeadsTo: 'kitchen',
+    open: true,
+    fxn: goToRoom,
   },
 };
 
-// Will abstract out if needed in more than one room;
-function manageKeypad(event, obj, room) {
-  debugger;
-
-  //   Can make card slot a puzzle...
-  if (notALockedItem()) {
-    return;
-  }
-
-  //room for abstraction;
-  let display = document.querySelector('.display');
-  let btnPressed = event.target;
-  if (btnPressed.dataset.fxn == 'close') {
-    livingRoom.modalBlur = false; //room1
-    livingRoom.$keypad.inspected = false; //updating state;
-    toggleNavArrows();
-    livingRoom.render(game.roomContainer, livingRoom);
-    //   call a re-render to reflect state
-  } else {
-    display.textContent += event.target.textContent;
-    //  checkForSolved()    //doesn't exist yet;
-  }
-}
+// Room Specific functions
 
 //@# --------  ROOM HTML VIEWS; ------------
 
 livingRoom.frontHTML = function frontHTML() {
   let html = `
   ${defaultRoom}
+  ${coffeeTable(livingRoom)}
+  ${mediaStand(livingRoom)}
+  ${television(livingRoom)}
+
 
 	`;
-  //   ${bedSVG(livingRoom)}
+
   return html;
 };
 
 livingRoom.rightHTML = function () {
   let html = `
 	${defaultRoom}
+	${gameShelf(livingRoom)}
+	${standingLamp(livingRoom)}
+	${thermostat(livingRoom)}
+	${door(livingRoom)}
+	
 	<p>I'M THE RIGHT! </p>
 	`;
   return html;
@@ -154,7 +146,10 @@ livingRoom.rightHTML = function () {
 livingRoom.leftHTML = function leftHTML() {
   let html = `
 	${defaultRoom}
-
+	${standingLamp2(livingRoom)}
+	${bookCase(livingRoom)}
+  ${safe(livingRoom)}
+  ${door3(livingRoom)}
 	<p>I'M THE Left! </p>
 	
 	`;
@@ -164,6 +159,8 @@ livingRoom.leftHTML = function leftHTML() {
 livingRoom.backHTML = function backHTML() {
   let html = `
 	${defaultRoom}
+	${couch(livingRoom)}
+	${door2(livingRoom)}
 
 	<p>I'M THE back! </p>
 	`;
@@ -173,6 +170,8 @@ livingRoom.backHTML = function backHTML() {
 livingRoom.ceilingHTML = function backHTML() {
   let html = `
 	${ceilingView}
+	${ceilingVent(livingRoom)}
+	${ceilingFan(livingRoom)}
 	<p>I'M THE ceiling!!! </p>
 	`;
   return html;

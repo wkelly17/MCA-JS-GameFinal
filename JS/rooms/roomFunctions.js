@@ -1,5 +1,6 @@
 import game from '../app.js'; //mostly for Room Container
 import toggleArrows from '../utils/toggleArrows.js';
+import navigateRooms from '../utils/navigateRooms.js';
 
 //@#=============== CORE ROOM RENDERING LOGIC =============
 
@@ -101,6 +102,7 @@ function switchLights(event, { name, audio, ...rest }, room) {
   if (notALockedItem()) {
     return;
   }
+  // debugger;
   //   Room state change
   room.lightsAreOn = !room.lightsAreOn;
 
@@ -121,12 +123,7 @@ function interactLockedItem(
   room
 ) {
   // debugger;
-  if (open) {
-    if (type && type == 'door') {
-      goToRoom(event, open, { ...rest });
-    }
-    console.log('i am already open');
-  } else if (game.inventory.itemInUse) {
+  if (game.inventory.itemInUse) {
     let selectedItem = game.inventory.itemInUse;
 
     if (selectedItem.solves == name) {
@@ -200,22 +197,24 @@ function addtoInventory(event, { objName, ...rest }, room) {
   game.inventory.render(room[objName]);
 }
 
-function goToRoom(event, open, { directionLeadsTo, roomLeadsTo, gameMessage }) {
-  if (!open) {
-    return;
-  }
-  generalGameMessage(gameMessage);
-  game.currentRoom = roomLeadsTo;
-  game.currentRoom.directionFacing = directionLeadsTo;
+function goToRoom(event, { open, directionLeadsTo, roomLeadsTo, gameMessage }) {
+  if (!open && game.inventory.itemInUse) {
+    return; // try to open door
+  } else {
+    generalGameMessage(gameMessage);
+    let pickedRoom = navigateRooms(roomLeadsTo);
+    game.currentRoom = pickedRoom;
+    game.currentRoom.directionFacing = directionLeadsTo;
 
-  //@# door styling
-  event.target.ownerSVGElement.classList.add('doorOpen');
-  setTimeout(() => {
-    event.target.ownerSVGElement.classList.remove('doorOpen');
-  }, 1200);
-  setTimeout(() => {
-    roomLeadsTo.render(game.roomContainer, roomLeadsTo);
-  }, 1300);
+    //@# door styling
+    event.target.ownerSVGElement.classList.add('doorOpen');
+    setTimeout(() => {
+      event.target.ownerSVGElement.classList.remove('doorOpen');
+    }, 1200);
+    setTimeout(() => {
+      pickedRoom.render(game.roomContainer, pickedRoom);
+    }, 1300);
+  }
 }
 
 function closeZoomView(

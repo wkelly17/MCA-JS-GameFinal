@@ -40,7 +40,7 @@ let bedroom1 = {
   // @# CORE PIECES OF GLOBAL ROOM STATE;
   name: 'bedroom1',
   lightsAreOn: true,
-  directionFacing: 'back', //up for ceiling
+  directionFacing: 'front', //up for ceiling
   returnFromCeiling: null,
   modalBlur: false,
   specificViewActivated: false,
@@ -130,6 +130,8 @@ let bedroom1 = {
     solves: 'secretMessage',
     imgSrc: './Media/svgComponents/flashlight.svg',
     altText: 'flashLight',
+    //  todo: toggle body classList
+    triggerSpecificInventoryFunction: true,
     fxn: addtoInventory,
   },
   $alexa: {
@@ -206,11 +208,10 @@ let bedroom1 = {
     selector: '[data-selector = "door"]',
     listenerType: 'click',
     directionLeadsTo: 'front',
-    roomLeadsTo: livingRoom,
+    roomLeadsTo: 'livingRoom',
     open: true,
-    type: 'door',
     gameMessage: 'You go to the livingRoom',
-    fxn: interactLockedItem,
+    fxn: goToRoom,
   },
 
   //   !!!!!!!!!! bookmark !!!!!!!!!!!!

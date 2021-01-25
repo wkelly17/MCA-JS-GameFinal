@@ -23,7 +23,8 @@ class = "${topDownDrawerClass()}"
   xmlns="http://www.w3.org/2000/svg"
   width="444.76395"
   height="413.26767"
-  viewBox="0 0 117.67713 109.34374">
+  viewBox="0 0 117.67713 109.34374"
+  style = "margin: 0 auto">
  <g
 	 inkscape:label="Layer 1"
 	 inkscape:groupmode="layer"
@@ -54,14 +55,14 @@ class = "${topDownDrawerClass()}"
 		  id="rect6567"
 		  width="103.84914"
 		  height="52.566921"
-		  x="45.646389"
+		  x="42.646389"
 		  y="59.823441" />
 	  <rect
 		  style="fill:#999999;fill-opacity:0.971774;stroke:none;stroke-width:22.6924"
 		  id="$lookingDownDrawerBotoom"
 		  width="94.564598"
 		  height="43.591114"
-		  x="50.151764"
+		  x="47.151764"
 		  y="63.403473" />
 	  <rect
 		  style="fill:#b3b3b3;fill-opacity:0.971774;stroke:none;stroke-width:16.6052"

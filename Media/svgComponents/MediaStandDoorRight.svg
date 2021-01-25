@@ -1,186 +1,86 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg
-   xmlns:dc="http://purl.org/dc/elements/1.1/"
-   xmlns:cc="http://creativecommons.org/ns#"
-   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-   xmlns:svg="http://www.w3.org/2000/svg"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="83.733315"
-   height="102.90323"
-   viewBox="0 0 22.154441 27.22648"
-   version="1.1"
-   id="svg2942"
-   inkscape:version="1.0.1 (c497b03c, 2020-09-10)"
+<svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" width="83.733315" height="102.90323"
+   viewBox="0 0 22.154441 27.22648" version="1.1" id="svg2942" inkscape:version="1.0.1 (c497b03c, 2020-09-10)"
    sodipodi:docname="MediaStandDoorRight.svg">
-  <defs
-     id="defs2936" />
-  <sodipodi:namedview
-     id="base"
-     pagecolor="#ffffff"
-     bordercolor="#666666"
-     borderopacity="1.0"
-     inkscape:pageopacity="0.0"
-     inkscape:pageshadow="2"
-     inkscape:zoom="2.8412049"
-     inkscape:cx="-16.214852"
-     inkscape:cy="95.94697"
-     inkscape:document-units="px"
-     inkscape:current-layer="layer1"
-     inkscape:document-rotation="0"
-     showgrid="false"
-     units="px"
-     inkscape:window-width="1440"
-     inkscape:window-height="847"
-     inkscape:window-x="0"
-     inkscape:window-y="25"
-     inkscape:window-maximized="0"
-     showguides="false">
-    <inkscape:grid
-       type="xygrid"
-       id="grid8442"
-       originx="-84.888688"
-       originy="20.107676" />
-  </sodipodi:namedview>
-  <metadata
-     id="metadata2939">
-    <rdf:RDF>
-      <cc:Work
-         rdf:about="">
-        <dc:format>image/svg+xml</dc:format>
-        <dc:type
-           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
-      </cc:Work>
-    </rdf:RDF>
-  </metadata>
-  <g
-     inkscape:label="Layer 1"
-     inkscape:groupmode="layer"
-     id="layer1"
-     transform="translate(-122.13938,3.0461481)">
-    <g
-       id="$mediaStandDoorRight"
-       transform="translate(36.313935,-81.130066)">
-      <rect
-         style="fill:#5b5142;fill-opacity:1;stroke:#000000;stroke-width:0.264583;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-         id="$mediaDoor-0"
-         width="21.889858"
-         height="26.961899"
-         x="85.957741"
-         y="78.216209" />
-      <path
-         id="$mediaDoorHandle-2"
-         style="fill:#82542f;fill-opacity:1;stroke:none;stroke-width:0.103481;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-         d="m 89.79104,85.416954 h 0.309867 c 0.443827,3.612301 0.402177,6.921723 0,9.9981 H 89.79104 c -0.35074,-3.3327 -0.36474,-6.665399 0,-9.9981 z"
-         sodipodi:nodetypes="ccccc" />
-      <g
-         id="$halfHingeRight-9"
-         transform="translate(22.686933,20.252663)">
-        <g
-           id="$halfMediaHinge-56">
-          <g
-             id="g73409-7-0-13"
-             transform="matrix(0.31861024,0,0,1,57.094928,0)">
-            <rect
-               style="opacity:1;fill:#1a1a1a;fill-opacity:1;stroke:none;stroke-width:0.264583;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-               id="rect73345-1-9-31"
-               width="3.8961198"
-               height="2.2263541"
-               x="83.791878"
-               y="80.401749" />
-          </g>
-          <g
-             id="$flatheadScrew1-76-1-8">
-            <ellipse
-               style="opacity:1;fill:#b3b3b3;fill-opacity:1;stroke:none;stroke-width:0.145074;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-               id="path73349-5-2-2"
-               cx="84.144798"
-               cy="82.221146"
-               rx="0.16954157"
-               ry="0.16302076" />
-            <rect
-               style="opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-               id="rect73351-17-6-47"
-               width="0.24909563"
-               height="0.0470514"
-               x="84.014427"
-               y="82.19603" />
-          </g>
-          <g
-             id="$flatheadScrew1-0-7-4-2"
-             transform="translate(-0.03451307,-1.4995929)">
-            <ellipse
-               style="opacity:1;fill:#b3b3b3;fill-opacity:1;stroke:none;stroke-width:0.145074;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-               id="path73349-8-3-4-9"
-               cx="84.144798"
-               cy="82.221146"
-               rx="0.16954157"
-               ry="0.16302076" />
-            <rect
-               style="opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-               id="rect73351-1-22-1-4"
-               width="0.24909563"
-               height="0.0470514"
-               x="84.014427"
-               y="82.19603" />
-          </g>
-        </g>
+   <defs id="defs2936" />
+   <sodipodi:namedview id="base" pagecolor="#ffffff" bordercolor="#666666" borderopacity="1.0"
+      inkscape:pageopacity="0.0" inkscape:pageshadow="2" inkscape:zoom="2.8412049" inkscape:cx="-16.214852"
+      inkscape:cy="95.94697" inkscape:document-units="px" inkscape:current-layer="layer1" inkscape:document-rotation="0"
+      showgrid="false" units="px" inkscape:window-width="1440" inkscape:window-height="847" inkscape:window-x="0"
+      inkscape:window-y="25" inkscape:window-maximized="0" showguides="false">
+      <inkscape:grid type="xygrid" id="grid8442" originx="-84.888688" originy="20.107676" />
+   </sodipodi:namedview>
+   <metadata id="metadata2939">
+      <rdf:RDF>
+         <cc:Work rdf:about="">
+            <dc:format>image/svg+xml</dc:format>
+            <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+            <dc:title></dc:title>
+         </cc:Work>
+      </rdf:RDF>
+   </metadata>
+   <g inkscape:label="Layer 1" inkscape:groupmode="layer" id="layer1" transform="translate(-122.13938,3.0461481)">
+      <g id="$mediaStandDoorRight" transform="translate(36.313935,-81.130066)">
+         <rect
+            style="fill:#5b5142;fill-opacity:1;stroke:#000000;stroke-width:0.264583;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+            id="$mediaDoor-0" width="21.889858" height="26.961899" x="85.957741" y="78.216209" />
+         <path id="$mediaDoorHandle-2"
+            style="fill:#82542f;fill-opacity:1;stroke:none;stroke-width:0.103481;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+            d="m 89.79104,85.416954 h 0.309867 c 0.443827,3.612301 0.402177,6.921723 0,9.9981 H 89.79104 c -0.35074,-3.3327 -0.36474,-6.665399 0,-9.9981 z"
+            sodipodi:nodetypes="ccccc" />
+         <g id="$halfHingeRight-9" transform="translate(22.686933,20.252663)">
+            <g id="$halfMediaHinge-56">
+               <g id="g73409-7-0-13" transform="matrix(0.31861024,0,0,1,57.094928,0)">
+                  <rect
+                     style="opacity:1;fill:#1a1a1a;fill-opacity:1;stroke:none;stroke-width:0.264583;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+                     id="rect73345-1-9-31" width="3.8961198" height="2.2263541" x="83.791878" y="80.401749" />
+               </g>
+               <g id="$flatheadScrew1-76-1-8">
+                  <ellipse
+                     style="opacity:1;fill:#b3b3b3;fill-opacity:1;stroke:none;stroke-width:0.145074;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+                     id="path73349-5-2-2" cx="84.144798" cy="82.221146" rx="0.16954157" ry="0.16302076" />
+                  <rect
+                     style="opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+                     id="rect73351-17-6-47" width="0.24909563" height="0.0470514" x="84.014427" y="82.19603" />
+               </g>
+               <g id="$flatheadScrew1-0-7-4-2" transform="translate(-0.03451307,-1.4995929)">
+                  <ellipse
+                     style="opacity:1;fill:#b3b3b3;fill-opacity:1;stroke:none;stroke-width:0.145074;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+                     id="path73349-8-3-4-9" cx="84.144798" cy="82.221146" rx="0.16954157" ry="0.16302076" />
+                  <rect
+                     style="opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+                     id="rect73351-1-22-1-4" width="0.24909563" height="0.0470514" x="84.014427" y="82.19603" />
+               </g>
+            </g>
+         </g>
+         <g id="$halfHingeRight-2-5" transform="translate(22.73561,-0.31928449)">
+            <g id="$halfMediaHinge-5-0">
+               <g id="g73409-7-0-1-0" transform="matrix(0.31861024,0,0,1,57.094928,0)">
+                  <rect
+                     style="opacity:1;fill:#1a1a1a;fill-opacity:1;stroke:none;stroke-width:0.264583;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+                     id="rect73345-1-9-3-9" width="3.8961198" height="2.2263541" x="83.791878" y="80.401749" />
+               </g>
+               <g id="$flatheadScrew1-76-1-9-5">
+                  <ellipse
+                     style="opacity:1;fill:#b3b3b3;fill-opacity:1;stroke:none;stroke-width:0.145074;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+                     id="path73349-5-2-6-7" cx="84.144798" cy="82.221146" rx="0.16954157" ry="0.16302076" />
+                  <rect
+                     style="opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+                     id="rect73351-17-6-4-4" width="0.24909563" height="0.0470514" x="84.014427" y="82.19603" />
+               </g>
+               <g id="$flatheadScrew1-0-7-4-5-7" transform="translate(-0.03451307,-1.4995929)">
+                  <ellipse
+                     style="opacity:1;fill:#b3b3b3;fill-opacity:1;stroke:none;stroke-width:0.145074;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+                     id="path73349-8-3-4-6-4" cx="84.144798" cy="82.221146" rx="0.16954157" ry="0.16302076" />
+                  <rect
+                     style="opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+                     id="rect73351-1-22-1-5-8" width="0.24909563" height="0.0470514" x="84.014427" y="82.19603" />
+               </g>
+            </g>
+         </g>
       </g>
-      <g
-         id="$halfHingeRight-2-5"
-         transform="translate(22.73561,-0.31928449)">
-        <g
-           id="$halfMediaHinge-5-0">
-          <g
-             id="g73409-7-0-1-0"
-             transform="matrix(0.31861024,0,0,1,57.094928,0)">
-            <rect
-               style="opacity:1;fill:#1a1a1a;fill-opacity:1;stroke:none;stroke-width:0.264583;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-               id="rect73345-1-9-3-9"
-               width="3.8961198"
-               height="2.2263541"
-               x="83.791878"
-               y="80.401749" />
-          </g>
-          <g
-             id="$flatheadScrew1-76-1-9-5">
-            <ellipse
-               style="opacity:1;fill:#b3b3b3;fill-opacity:1;stroke:none;stroke-width:0.145074;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-               id="path73349-5-2-6-7"
-               cx="84.144798"
-               cy="82.221146"
-               rx="0.16954157"
-               ry="0.16302076" />
-            <rect
-               style="opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-               id="rect73351-17-6-4-4"
-               width="0.24909563"
-               height="0.0470514"
-               x="84.014427"
-               y="82.19603" />
-          </g>
-          <g
-             id="$flatheadScrew1-0-7-4-5-7"
-             transform="translate(-0.03451307,-1.4995929)">
-            <ellipse
-               style="opacity:1;fill:#b3b3b3;fill-opacity:1;stroke:none;stroke-width:0.145074;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-               id="path73349-8-3-4-6-4"
-               cx="84.144798"
-               cy="82.221146"
-               rx="0.16954157"
-               ry="0.16302076" />
-            <rect
-               style="opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-               id="rect73351-1-22-1-5-8"
-               width="0.24909563"
-               height="0.0470514"
-               x="84.014427"
-               y="82.19603" />
-          </g>
-        </g>
-      </g>
-    </g>
-  </g>
+   </g>
 </svg>
