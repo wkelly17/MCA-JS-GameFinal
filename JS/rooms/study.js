@@ -31,6 +31,7 @@ import whiteBoard from '../gameComponents/whiteBoard.js';
 import floorLamp from '../gameComponents/standingLamp.js';
 import printerStation from '../gameComponents/printerStation.js';
 import lamp from '../gameComponents/lamp.js';
+import sideWallWindow from '../gameComponents/studySideWallWindow.js';
 // import printerStand from '../gameComponents/printerStation.js';
 // import chest from '../gameComponents/';
 // import X from '../gameComponents/';
@@ -41,7 +42,7 @@ let study = {
   // @# CORE PIECES OF GLOBAL ROOM STATE;
   name: 'study',
   lightsAreOn: true,
-  directionFacing: 'left',
+  directionFacing: 'right',
   returnFromCeiling: null,
   modalBlur: false,
 
@@ -71,6 +72,63 @@ let study = {
     roomLeadsTo: 'livingRoom',
     fxn: goToRoom,
   },
+  $curtainLeft: {
+    name: '$curtainLeft',
+    nodes: null,
+    selector: '[data-selector = "curtainLeft"]',
+    inspected: false,
+    listenerType: 'click',
+    fxn: inspect,
+  },
+  $curtainRight: {
+    name: '$curtainRight',
+    nodes: null,
+    selector: '[data-selector = "curtainRight"]',
+    inspected: false,
+    listenerType: 'click',
+    fxn: inspect,
+  },
+  $lamp: {
+    name: '$lamp',
+    nodes: null,
+    selector: '[data-selector = "lamp"]',
+    inspected: false,
+    listenerType: 'click',
+    fxn: inspect,
+  },
+  $standingLamp: {
+    name: '$standingLamp',
+    nodes: null,
+    selector: '[data-selector = "standingLamp"]',
+    inspected: false,
+    listenerType: 'click',
+    fxn: inspect,
+  },
+  $rightWallCurtain: {
+    name: '$rightWallCurtain',
+    nodes: null,
+    selector: '[data-selector = "rightWallCurtain"]',
+    listenerType: 'click',
+    gameMessage: "I can't reach that from this side of the room",
+    fxn: inspectNoAction,
+  },
+  $leftWallCurtain: {
+    name: '$leftWallCurtain',
+    nodes: null,
+    selector: '[data-selector = "leftWallCurtain"]',
+    listenerType: 'click',
+    gameMessage: "I can't reach that from this side of the room",
+    fxn: inspectNoAction,
+  },
+  $lightSwitch: {
+    name: '$lightSwitch',
+    nodes: null,
+    selector: '[data-selector = "lightSwitch"]',
+    lightsOff: false,
+    audio: null,
+    listenerType: 'click',
+    fxn: switchLights,
+  },
 };
 
 // Room Specific functions
@@ -93,6 +151,7 @@ study.rightHTML = function () {
 	${defaultRoom}
   ${whiteBoard(study)}
   ${floorLamp(study)}
+  ${sideWallWindow(study)}
 	
 	<p>I'M THE RIGHT! </p>
 	`;
@@ -105,6 +164,7 @@ study.leftHTML = function leftHTML() {
   
 	${printerStation(study)}
 	${lamp(study)}
+	${lightSwitch(study)}
 	<p>I'M THE Left! </p>
 	
 	`;

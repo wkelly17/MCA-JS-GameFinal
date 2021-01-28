@@ -71,7 +71,7 @@ export default function bed(room) {
          style="fill:none;fill-opacity:0.971774;stroke:none;stroke-width:2.26126"
          id="underBedHitbox"
          data-selector = "underBedView"
-         class = 'bedroom1__bedUnderView'
+         class = 'bedroom1_bedUnderView'
          width="57.769047"
          height="6.7038579"
          x="130.3528"

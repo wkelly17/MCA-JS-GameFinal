@@ -39,7 +39,7 @@ let game = {
   messageContainer: messageContainer,
 
   // pieces of global game state;
-  currentRoom: livingRoom,
+  currentRoom: bedroom1,
   timer: null,
 
   //   game/non room methods;
@@ -70,29 +70,44 @@ let game = {
     items: [],
 
     //@# INVENTORY METHODS
-    render: function ({ objName, imgSrc, altText, inventorySelector }) {
+    render: function ({
+      name,
+      imgSrc,
+      altText,
+      inventorySelector,
+      triggerSpecificInventoryFunction,
+      inventorySpecificFunction,
+    }) {
       let img = document.createElement('img');
       img.src = imgSrc;
       img.alt = altText;
-      img.title = objName; //used to set current item as internal object instead of dom element since my objects have the obj state already;
+      img.title = name; //used to set current item as internal object instead of dom element since my objects have the obj state already;
       img.dataset.selector = inventorySelector;
       img.classList.add('dVisible');
       inventoryContainer.appendChild(img);
-      game.inventory.hydrateInventory();
+      game.inventory.hydrateInventory(
+        triggerSpecificInventoryFunction,
+        inventorySpecificFunction
+      );
       console.log(game.inventory);
     },
-    hydrateInventory: function () {
-      //  debugger;
-
+    hydrateInventory: function (
+      triggerSpecificInventoryFunction,
+      inventorySpecificFunction
+    ) {
       //preferable to just add event listener to last item;
       let newestItem = game.inventory.items[game.inventory.items.length - 1];
       // objects are reused and modified for inventory, hence qsa is used;
       newestItem.nodes = game.inventoryContainer.querySelectorAll(
-        newestItem.selector
+        `[data-selector = "${newestItem.inventorySelector}"]`
       );
       newestItem.nodes.forEach((node) =>
         node.addEventListener('click', (event) =>
-          game.inventory.handleInventoryClick(event)
+          game.inventory.handleInventoryClick(
+            event,
+            triggerSpecificInventoryFunction,
+            inventorySpecificFunction
+          )
         )
       );
       //? Legacy below; keeping in case
@@ -105,24 +120,37 @@ let game = {
       //   );
       // });
     },
-    handleInventoryClick: function (event) {
-      debugger;
+    handleInventoryClick: function (
+      event,
+      triggerSpecificInventoryFunction,
+      inventorySpecificFunction
+    ) {
+      // debugger;
+
       if (!game.inventory.itemInUse) {
+        if (triggerSpecificInventoryFunction) {
+          inventorySpecificFunction();
+        }
         event.target.classList.add('inventoryGlow');
 
         //setting item in use from inv;
         game.inventory.itemInUse = game.inventory.items.find(
-          (item) => item.objName == event.target.title
+          (item) => item.name == event.target.title
         );
       }
       // else if(event.target.parentElement == inventoryContainer) {
       // combine with other? don't allow inventory combining and just
       // }
       else {
-        game.inventory.clearInventoryGlow();
+        game.inventory.clearInventoryGlow(event);
       }
     },
-    clearInventoryGlow: function () {
+    clearInventoryGlow: function (event) {
+      // for flashlight
+      if (event.target.classList.contains('page')) {
+        return;
+      }
+
       if (!game.inventory.itemInUse) {
         return;
       }
@@ -130,6 +158,7 @@ let game = {
         item.nodes.forEach((node) => node.classList.remove('inventoryGlow'))
       );
       game.inventory.itemInUse = false;
+      game.roomContainer.classList.remove('flashLightOn');
       console.log('no more glow;');
       return;
     },

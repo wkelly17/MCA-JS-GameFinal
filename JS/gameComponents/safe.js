@@ -3,7 +3,7 @@ export default function safe(room) {
 
   function safeClassNames() {
     if (room.$safe.inspected) {
-      return `${room.name}_safeExterior ${room.name}safe-inspected`;
+      return `${room.name}_safeExterior  y180`;
     } else {
       return `${room.name}_safeExterior`;
     }
@@ -15,7 +15,8 @@ export default function safe(room) {
   let html = `
   <svg
   id = '${room.name}_safe'
-  class = '${room.name}_safeExterior'
+  class = '${safeClassNames()}'
+  data-selector = 'safe'
   xmlns:dc="http://purl.org/dc/elements/1.1/"
   xmlns:cc="http://creativecommons.org/ns#"
   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
@@ -81,8 +82,7 @@ export default function safe(room) {
 	 inkscape:label="Layer 1"
 	 inkscape:groupmode="layer"
 	 id="layer1"
-	 transform="translate(-139.05938,42.886922)">$couchLeftLeft=&quot;rect76132&quot;
-	 id=&quot;rect76329&quot; /&gt;
+	 transform="translate(-139.05938,42.886922)">
  <g
   id="SafeWhole"
   transform="translate(42.708332,-88.158506)">

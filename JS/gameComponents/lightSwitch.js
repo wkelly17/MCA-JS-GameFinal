@@ -13,7 +13,7 @@ function lightSwitch(room) {
 		height="62.102417"
 		viewBox="0 0 5.5302066 8.4937645"
 		id="${room.name}_lightSwitch"
-		class="${getLightsClasses()}"
+		class="${room.name}_lightSwitch"
 	 >
 		<defs id="defs2936">
 		  <linearGradient
@@ -281,7 +281,7 @@ function lightSwitch(room) {
 				  y="83.30954"
 				  ry="2.8421808e-14"
 				/>
-				<g id="switchToggle" class = '${room.$lightSwitch?.lightsOff && 'switched'}'>
+				<g id="switchToggle" class = '${getLightsClasses()}'>
 				  <path
 					 id="rect12436-4"
 					 style="

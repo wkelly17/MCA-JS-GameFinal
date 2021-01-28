@@ -120,7 +120,7 @@ let bedroom1 = {
     fxn: inspect,
   },
   $flashLight: {
-    objName: '$flashLight',
+    name: '$flashLight',
     nodes: null,
     selector: '[data-selector = "flashLight"]',
     inventorySelector: 'flashLight',
@@ -130,8 +130,44 @@ let bedroom1 = {
     solves: 'secretMessage',
     imgSrc: './Media/svgComponents/flashlight.svg',
     altText: 'flashLight',
-    //  todo: toggle body classList
+    //  todo: toggle body classList specific use function
     triggerSpecificInventoryFunction: true,
+    inventorySpecificFunction: function InventorySpecific() {
+      debugger;
+      if (game.roomContainer.classList.contains('flashLightOn')) {
+        game.roomContainer.classList.remove('flashLightOn');
+      } else {
+        game.roomContainer.classList.add('flashLightOn');
+      }
+    },
+    fxn: addtoInventory,
+  },
+  $underBedKey: {
+    name: '$underBedKey',
+    nodes: null,
+    selector: '[data-selector = "underBedKey"]',
+    inventorySelector: 'underBedKey',
+    listenerType: 'click',
+    found: false,
+    // ???????? solves here
+    solves: '$door',
+    imgSrc: './Media/svgComponents/inventoryKey.svg',
+    altText: 'key from under the bed',
+    triggerSpecificInventoryFunction: false,
+    fxn: addtoInventory,
+  },
+  $wireHanger: {
+    name: '$wireHanger',
+    nodes: null,
+    selector: '[data-selector = "wireHanger"]',
+    inventorySelector: 'wireHanger',
+    listenerType: 'click',
+    found: false,
+    // ???????? solves here
+    solves: 'ventKey',
+    imgSrc: './Media/svgComponents/inventoryHanger.svg',
+    altText: 'a Wire Hanger',
+    triggerSpecificInventoryFunction: false,
     fxn: addtoInventory,
   },
   $alexa: {
@@ -209,26 +245,29 @@ let bedroom1 = {
     listenerType: 'click',
     directionLeadsTo: 'front',
     roomLeadsTo: 'livingRoom',
-    open: true,
-    gameMessage: 'You go to the livingRoom',
+    open: false,
+    isSolvedBy: '$underBedKey',
+    gameMessage: 'You feel the key catch in the lock and spring open',
+    lockedMessage: "Hmm.. it's locked somehow",
     fxn: goToRoom,
   },
 
   //   !!!!!!!!!! bookmark !!!!!!!!!!!!
   //   !!!!!!!!!! OLD !!!!!!!!!!!!
 
-  $key: {
-    objName: '$key',
-    nodes: null,
-    selector: '[data-selector = "room1$key"]',
-    inventorySelector: 'room1$key',
-    listenerType: 'click',
-    found: false,
-    solves: '$filingCabinet',
-    imgSrc: './Media/SVG-Components/key.svg',
-    altText: 'key',
-    fxn: addtoInventory,
-  },
+  // $underBedKey: {
+  //   name: '$underBedKey',
+  //   nodes: null,
+  //   selector: '[data-selector = "underBedKey"]',
+  //   inventorySelector: 'underBedKey',
+  //   listenerType: 'click',
+  //   found: false,
+  //   solves: '$door',
+  //   imgSrc: './Media/SVG-Components/key.svg',
+  //   altText: 'key',
+  //   fxn: addtoInventory,
+  // },
+
   $filingCabinet: {
     name: '$filingCabinet',
     nodes: null,

@@ -24,6 +24,20 @@ function hydrateDomElements(roomContainer, room) {
       });
     });
   });
+  // for (let i = 0; i < room.DOM_Elements.length; i++) {
+  //   const object = room.DOM_Elements[i];
+  //   if (object.found) {
+  //     // !important to break out of loop since the room object NODES are moving to the invenotry and being re-assigned as an inventory node.  Otherwise on re-renders the node would drop it's handleInventory click function;
+  //     return;
+  //   } else {
+  //     object.nodes = roomContainer.querySelectorAll(object.selector);
+  //     object.nodes.forEach((node) => {
+  //       node.addEventListener(object.listenerType, (event) => {
+  //         object.fxn(event, object, room);
+  //       });
+  //     });
+  //   }
+  // }
 }
 
 // optional abstraction for room DOM item functions... I think would work well for booleans;
@@ -32,7 +46,8 @@ function gatherDomElements(room) {
   let keys = Object.keys(room).filter((key) => key.startsWith('$'));
   let domElements = [];
   keys.forEach((key) => domElements.push(room[key]));
-  return domElements;
+  let filteredItems = domElements.filter((item) => !item.found);
+  return filteredItems;
 }
 
 function chooseViewFxn(room, specificView, roomContainer) {
@@ -69,6 +84,8 @@ function checkForModalBlur(roomContainer, room) {
 function checkLights(roomContainer, room) {
   if (room.lightsAreOn) {
     roomContainer.classList.remove('lightsOff');
+  } else if (!room.lightsAreOn) {
+    roomContainer.classList.add('lightsOff');
   }
 }
 
@@ -88,6 +105,7 @@ function inspect(event, { name, inspected, specificView, ...rest }, room) {
   if (notALockedItem()) {
     return;
   }
+
   room[name].inspected = !room[name].inspected;
   inspectMessage(inspected, { ...rest });
   if (specificView) {
@@ -119,7 +137,7 @@ function switchLights(event, { name, audio, ...rest }, room) {
 
 function interactLockedItem(
   event,
-  { name, type, open, solvedMessage, affectedNodes, ...rest },
+  { name, open, lockedMessage, solvedMessage, affectedNodes, ...rest },
   room
 ) {
   // debugger;
@@ -158,13 +176,21 @@ function interactLockedItem(
     //   Probably some sort of additional logic if it's already open.. trigger a zoomed or other view? (event.target.cll.toggle(open) or zoom view or ?)
     //   Triger a re-render to new view or just add an item to inventory or ?... need to see;
     //if causes re-render... break and re-render in if.. some next.  else add to Inventory obj.addsToInventory?. prop?
+    inspect(
+      event,
+      { name, open, lockedMessage, solvedMessage, affectedNodes, ...rest },
+      room
+    );
     console.log('i am opened!');
   } else {
-    game.messageContainer.textContent = "I can't seem to get into that now";
+    if (lockedMessage) {
+      generalGameMessage(lockedMessage);
+    }
   }
 }
 
 function notALockedItem() {
+  // debugger;
   if (game.inventory.itemInUse) {
     game.inventory.clearInventoryGlow();
     game.messageContainer.textContent = "Hmm.. that doesn't work";
@@ -185,25 +211,33 @@ function focusView(event, { name, inspected, ...rest }, room) {
   render(game.roomContainer, room);
 }
 
-function addtoInventory(event, { objName, ...rest }, room) {
-  debugger;
+function addtoInventory(event, { name, ...rest }, room) {
+  // debugger;
   if (notALockedItem()) {
     return;
   }
-  room[objName].found = !room[objName].found;
+  room[name].found = !room[name].found;
   room.render(game.roomContainer, room);
   //   render to remove
-  game.inventory.items.push(room[objName]);
-  game.inventory.render(room[objName]);
+  game.inventory.items.push(room[name]);
+  game.inventory.render(room[name]);
 }
 
-function goToRoom(event, { open, directionLeadsTo, roomLeadsTo, gameMessage }) {
+function goToRoom(
+  event,
+  { open, directionLeadsTo, roomLeadsTo, gameMessage, lockedMessage, ...rest },
+  room
+) {
   if (!open && game.inventory.itemInUse) {
+    interactLockedItem(event, { open, ...rest }, room);
     return; // try to open door
+  } else if (!open) {
+    generalGameMessage(lockedMessage);
   } else {
     generalGameMessage(gameMessage);
     let pickedRoom = navigateRooms(roomLeadsTo);
     game.currentRoom = pickedRoom;
+    // debugger;
     game.currentRoom.directionFacing = directionLeadsTo;
 
     //@# door styling

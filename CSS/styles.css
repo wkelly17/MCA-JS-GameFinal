@@ -47,12 +47,6 @@ img {
 /* ! Variables */
 
 /* GLOBALS */
-.dNone {
-  display: none !important;
-}
-.dVisible {
-  display: initial !important;
-}
 
 .huge {
   font-size: 40px;
@@ -65,6 +59,7 @@ img {
   font-size: 18px;
   border: none;
   color: var(--color-icon);
+  z-index: 10;
 }
 .closeZoomButton:hover {
   color: red;
@@ -99,7 +94,7 @@ img {
   bottom: 0;
   background-color: rgba(48, 45, 45, 0.753);
   /* background-color: orange; */
-  z-index: 5;
+  z-index: 2;
 }
 
 /* ? Maybe do this since I've been resizing to canvas thus far for svgs; So When i translate or animate they do not cut off...display */
@@ -132,6 +127,11 @@ img {
   height: 100%;
   position: relative;
   grid-area: game;
+}
+
+#RoomContainer.flashLightOn {
+  cursor: url(/Media/imgs/BigGradientCursor.png) 50 50, auto;
+  pointer-events: all;
 }
 
 #navBtnsContainer .icon {
@@ -327,7 +327,7 @@ img {
   padding: 5px;
   text-align: center;
   font-size: 14px;
-  background: rgb(85, 84, 84);
+  background: rgb(143, 140, 140);
   color: white;
   z-index: 2;
 }
@@ -376,14 +376,6 @@ img {
 }
 
 /* @#===============  GAME COMPONENTS   =============   */
-
-#book {
-  position: absolute;
-  top: 227px;
-  left: 300px;
-  padding: 1px;
-  z-index: 300;
-}
 
 /* dropping svg's instead of images straight into html from JS?  Template Literal in a file;  Add Id's to moving parts;   */
 
@@ -516,13 +508,32 @@ img {
   transition-duration: 0.2s;
 }
 
-.bedroom1__bedUnderView {
+.bedroom1_bedUnderView {
   pointer-events: all;
+  fill: pink !important;
 }
 
-.bedroom1__bedUnderView {
+.bedroom1_bedUnderView {
   top: 0;
   left: 0;
+}
+.bedroom1_underBedKey {
+  top: 100px;
+  left: 700px;
+  z-index: 0;
+}
+.bedPost {
+  width: 90px;
+  height: 490px;
+  background: rgb(109, 51, 4);
+}
+.bedPostLeft {
+  top: 20px;
+  left: 120px;
+}
+.bedPostRight {
+  top: 20px;
+  left: 730px;
 }
 
 .bedroom1_lamp {
@@ -569,7 +580,7 @@ img {
   left: 380px;
 }
 
-.bedroom1_closet {
+.bedroom1_Closet {
   top: 131px;
   left: 170px;
 }
@@ -579,13 +590,13 @@ img {
 
 .bedroom1_closetDoorRight-inspected {
   /* adjust next to last number 213 */
-  transform: matrix(-1.2326684, 0, 0, 1.0782371, 213.16294, -4.6019451);
+  transform: matrix(-1.2326684, 0, 0, 1.0782371, 228.16294, -4.6019451);
   transition-duration: 0.8s;
   transform-origin: left;
 }
 
 .bedroom1_closetDoorLeft-inspected {
-  transform: matrix(1.0782371, 0, 0, 1.0782371, -3.411329, -4.847331);
+  transform: matrix(1.0782371, 0, 0, 1.0782371, -15.411329, -4.847331);
   transition-duration: 0.8s;
   transform-origin: left;
 }
@@ -604,7 +615,8 @@ img {
   transition-duration: 0.15s;
 }
 
-#SwitchToggle.switched {
+/* ! applies to all lightswitches; */
+.switched {
   transform-origin: center center;
   transform: rotateX(9deg);
   transition-duration: 0.15s;
@@ -687,6 +699,10 @@ img {
   top: 448px;
   left: 300px;
 }
+.livingRoom_bookSpine {
+  top: 488px;
+  left: 360px;
+}
 
 .livingRoom_mediaStand {
   top: 300px;
@@ -697,24 +713,12 @@ img {
   left: 310px;
   transform: rotateY(0deg);
   transform-origin: left;
-  transition-duration: 0.3s;
 }
 
-.livingRoom_leftMediaDoor-inspected {
-  transform: rotateY(180deg);
-  transition-duration: 0.3s;
-}
 .livingRoom_rightMediaDoor {
   top: 314px;
   left: 501px;
-  transform: rotateY(0deg);
   transform-origin: right;
-  transition-duration: 0.3s;
-}
-
-.livingRoom_rightMediaDoor-inspected {
-  transform: rotateY(180deg);
-  transition-duration: 0.3s;
 }
 
 .livingRoom_television {
@@ -743,8 +747,8 @@ img {
 
 /* ! Left living room */
 .livingRoom_standingLamp2 {
-  top: 100px;
-  left: 140px;
+  top: 120px;
+  left: 110px;
 }
 
 .livingRoom_standingLamp2-inspected {
@@ -761,24 +765,32 @@ img {
 
 .livingRoom_bookShelf {
   top: 160px;
-  left: 500px;
-  opacity: 0.2;
+  left: 550px;
+  opacity: 1;
+  transform: none;
 }
-/* .livingRoom_safeInterior{
-  top: 100px;
-  left: 100px;
+.livingRoom_bookShelf-inspected {
+  transform: translateX(-195px);
+  transition-duration: 0.4s;
+}
+
+/*! .livingRoom_bookShelf-inspectedBook {
+  transition-duration: 1s;
+  border: solid red 1px;
 } */
 
 .livingRoom_safeExterior {
   top: 210px;
-  left: 540px;
+  left: 590px;
+  transform-origin: right;
 }
 
 .livingRoom_safeInterior {
-  top: 206px;
-  left: 529px;
+  top: 205px;
+  left: 578px;
   z-index: -1;
 }
+
 .livingRoom_couch {
   top: 220px;
   left: 300px;
@@ -829,9 +841,128 @@ img {
 .livingRoom_door3,
 .livingRoom_doorBackground3 {
   top: 193px;
-  left: 315px;
+  left: 210px;
   transition-duration: 0.2s;
   transform-origin: left;
+}
+
+.livingRoom_lightSwitch {
+  top: 190px;
+  left: 150px;
+}
+
+/* @@===============  @# BOOK JOURNAL SPECIAL   =============   */
+
+/* .secretmessage {
+  transition-duration: 0.5s;
+  width: fit-content;
+  padding: 1em;
+  opacity: 0;
+  height: 100px;
+  border: solid red 1px;
+} */
+
+/* .shown {
+  transition-duration: 0.5s;
+  opacity: 1;
+} */
+
+.book {
+  position: initial;
+  width: 600px;
+  height: 400px;
+  margin: 3em auto;
+  /* border: solid blue 2px; */
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas: 'book';
+  justify-items: right;
+  z-index: 10;
+}
+
+.page {
+  grid-area: book;
+  /* justify-self: flex-end; */
+  width: 50%;
+  height: 100%;
+  border: solid black 1px;
+  transform-origin: left center;
+  pointer-events: none;
+  color: transparent;
+  background: rgb(139, 138, 137);
+  border-left: solid black 3px;
+  padding: 1em;
+  z-index: 3;
+}
+.journalCover {
+  background: rgb(59, 36, 3);
+}
+.journalBack.flipped {
+  background: rgb(59, 36, 3);
+}
+
+.unflipping {
+  animation-name: unflip;
+  animation-duration: 0.7s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease;
+}
+
+.flipped {
+  transform-origin: left;
+  pointer-events: all;
+  animation-name: flip;
+  animation-duration: 0.6s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease;
+}
+.page-active {
+  color: black;
+  pointer-events: all;
+  z-index: 4;
+}
+
+@keyframes flip {
+  0% {
+    color: initial;
+    transform: rotateY(0deg);
+  }
+  10% {
+    color: transparent;
+  }
+  40% {
+    transform: scale(1.03);
+  }
+
+  100% {
+    transform: rotateY(180deg) scale(1);
+  }
+}
+
+@keyframes unflip {
+  0% {
+    color: initial;
+    transform: rotateY(180deg) scale(1);
+  }
+  10% {
+    color: black;
+    transform: rotateY(162deg) scale(1.03);
+  }
+
+  100% {
+    transform: rotateY(0deg) scale(1);
+  }
+}
+
+.hidden {
+  color: black;
+  font-size: 28px;
+}
+.messageShown {
+  color: rgb(8, 219, 8);
+  font-size: 32px;
 }
 
 /* .livingRoom_couch {
@@ -935,6 +1066,14 @@ img {
   top: 15px;
   left: 490px;
 }
+
+.study_curtainLeft-inspected {
+  transform: translateX(-25px);
+}
+.study_curtainRight-inspected {
+  transform: translateX(25px);
+}
+
 .study_standingLamp {
   top: 15px;
   left: 490px;
@@ -945,6 +1084,34 @@ img {
     drop-shadow(20px -80px 90px yellow) drop-shadow(-10px -60px 190px yellow)
     drop-shadow(-20px -60px 90px yellow) drop-shadow(-40px -90px 180px yellow)
     drop-shadow(40px -60px 380px yellow) drop-shadow(-40px -90px 180px yellow);
+}
+
+.study_sideWindow {
+  top: 80px;
+  left: 5px;
+}
+.study_leftCurtain {
+  top: 84px;
+  left: 20px;
+}
+.study_rightCurtain {
+  top: 84px;
+  left: 65px;
+}
+.study_leftCurtain-inspected {
+  transform: translateX(-22px);
+}
+.study_rightCurtain-inspected {
+  transform: translateX(22px);
+}
+.studyWindowBackground {
+  top: 90px;
+  left: 40px;
+}
+
+.study_lightSwitch {
+  top: 150px;
+  left: 570px;
 }
 
 .study_dryEraseBoard {
@@ -1184,3 +1351,40 @@ img {
   top: 150px;
   left: 150px;
 }
+
+/* ! ===============  GLOBALS BOTTOM OF CASCADE   =============   */
+
+.dNone {
+  display: none !important;
+}
+.dVisible {
+  display: initial !important;
+}
+.y180 {
+  transform: rotateY(180deg);
+}
+
+.x180 {
+  transform: rotateX(180deg);
+}
+.r90 {
+  transform: rotate(90deg);
+  transition-duration: 0.3s;
+}
+/*  Causes weird animations due to forced re-rendering
+@keyframes y180 {
+  0% {
+    transform: initial;
+  }
+  100% {
+    transform: rotateY(180deg);
+  }
+}
+@keyframes x180 {
+  0% {
+    transform: initial;
+  }
+  100% {
+    transform: rotateX(180deg);
+  }
+} */

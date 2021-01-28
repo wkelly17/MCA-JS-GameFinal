@@ -14,6 +14,7 @@ import {
   switchLights,
   addtoInventory,
   goToRoom,
+  closeZoomView,
 } from './roomFunctions.js';
 import defaultRoom from './defaultRoom.js';
 import ceilingView from './defaultCeilingView.js';
@@ -45,7 +46,8 @@ import ceilingVent from '../gameComponents/ceilingVent.js';
 import door from '../gameComponents/door.js';
 import door2 from '../gameComponents/door2.js';
 import door3 from '../gameComponents/door3.js';
-// import X from '../gameComponents/';
+import lightSwitch from '../gameComponents/lightSwitch.js';
+import journal from '../gameComponents/journal.js';
 // import X from '../gameComponents/';
 
 let livingRoom = {
@@ -71,8 +73,8 @@ let livingRoom = {
     listenerType: 'click',
     fxn: inspect,
   },
-  $lightSwitch1: {
-    name: '$lightSwitch1',
+  $lightSwitch: {
+    name: '$lightSwitch',
     nodes: null,
     selector: '#lightSwitchHitbox',
     lightsOff: false,
@@ -111,6 +113,136 @@ let livingRoom = {
     open: true,
     fxn: goToRoom,
   },
+  $mediaStandDoorLeft: {
+    name: '$mediaStandDoorLeft',
+    nodes: null,
+    selector: '[data-selector = "mediaStandDoorLeft"]',
+    inspected: false,
+    className: 'inspected',
+    listenerType: 'click',
+    fxn: inspect,
+  },
+  $mediaStandDoorRight: {
+    name: '$mediaStandDoorRight',
+    nodes: null,
+    selector: '[data-selector = "mediaStandDoorRight"]',
+    inspected: false,
+    className: 'inspected',
+    listenerType: 'click',
+    fxn: inspect,
+  },
+  $bookSpine: {
+    name: '$bookSpine',
+    nodes: null,
+    selector: '[data-selector = "bookSpine"]',
+    inventorySelector: 'bookSpine',
+    listenerType: 'click',
+    found: false,
+    // ???????? solves here
+    solves: '',
+    imgSrc: './Media/svgComponents/bookSpine.svg',
+    altText: 'a Book',
+    triggerSpecificInventoryFunction: true,
+    inventorySpecificFunction: function InventorySpecific() {
+      debugger;
+
+      game.roomContainer.innerHTML += journal(livingRoom);
+      let pages = document.querySelectorAll('.page');
+      let hiddenLetters = document.querySelectorAll('.hiddenLetter');
+      let closeZoomButton = document.querySelector(
+        '[data-selector = "closeZoomButton"]'
+      );
+
+      function revealMessage(event) {
+        // debugger;
+        let letter = event.target;
+        if (game.roomContainer.classList.contains('flashLightOn')) {
+          letter.classList.add('messageShown');
+        } else {
+          return;
+        }
+      }
+      function hideMessage(event) {
+        let letter = event.target;
+        letter.classList.remove('messageShown');
+      }
+
+      function flipPage(event) {
+        if (!event.target.classList.contains('flipped')) {
+          event.target.classList.add('flipped');
+          event.target.classList.remove('page-active');
+          event.target.nextElementSibling?.classList.add('page-active');
+        } else {
+          // debugger;
+          event.target.classList.remove('flipped');
+          event.target.classList.add('unflipping');
+          setTimeout(() => {
+            event.target.classList.remove('unflipping');
+          }, 600);
+          event.target.classList.add('page-active');
+          event.target.nextElementSibling.classList.remove('page-active');
+        }
+      }
+
+      hiddenLetters.forEach((letter) =>
+        letter.addEventListener('mouseover', revealMessage)
+      );
+      hiddenLetters.forEach((letter) =>
+        letter.addEventListener('mouseout', hideMessage)
+      );
+      pages.forEach((page) => page.addEventListener('click', flipPage));
+
+      closeZoomButton.addEventListener('click', () => {
+        debugger;
+        let child = document.querySelector(
+          '[data-selector = "readableJournal"]'
+        );
+        game.roomContainer.removeChild(child);
+      });
+    },
+    fxn: addtoInventory,
+  },
+  $standingLamp: {
+    name: '$standingLamp',
+    nodes: null,
+    selector: '[data-selector = "standingLamp"]',
+    inspected: false,
+    className: 'inspected',
+    listenerType: 'click',
+    fxn: inspect,
+  },
+  $standingLamp2: {
+    name: '$standingLamp2',
+    nodes: null,
+    selector: '[data-selector = "standingLamp2"]',
+    inspected: false,
+    className: 'inspected',
+    listenerType: 'click',
+    fxn: inspect,
+  },
+  $specialBook: {
+    name: '$specialBook',
+    nodes: null,
+    selector: '[data-selector = "specialBook"]',
+    inspected: false,
+    className: 'livingRoom_bookShelf-inspected',
+    listenerType: 'click',
+    fxn: inspect,
+  },
+  $safe: {
+    name: '$safe',
+    nodes: null,
+    selector: '[data-selector = "safe"]',
+    inspected: false,
+    //  subnodes are affected when the main node is solved;
+    affectedNodes: [],
+    open: true,
+    isSolvedBy: 'x',
+    lockedMessage: "It's a safe, but I can't get into it right now.",
+    solvedMessage: 'You manage to open the safe',
+    listenerType: 'click',
+    fxn: interactLockedItem,
+  },
 };
 
 // Room Specific functions
@@ -147,8 +279,8 @@ livingRoom.leftHTML = function leftHTML() {
   let html = `
 	${defaultRoom}
 	${standingLamp2(livingRoom)}
-	${bookCase(livingRoom)}
   ${safe(livingRoom)}
+	${bookCase(livingRoom)}
   ${door3(livingRoom)}
 	<p>I'M THE Left! </p>
 	
@@ -161,6 +293,7 @@ livingRoom.backHTML = function backHTML() {
 	${defaultRoom}
 	${couch(livingRoom)}
 	${door2(livingRoom)}
+	${lightSwitch(livingRoom)}
 
 	<p>I'M THE back! </p>
 	`;

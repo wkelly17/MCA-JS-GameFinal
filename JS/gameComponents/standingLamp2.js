@@ -3,7 +3,7 @@ export default function standingLamp2(room) {
 
   function standingLamp2ClassNames() {
     if (room.$standingLamp2.inspected) {
-      return `${room.name}_standingLamp2 ${room.name}standingLamp2-inspected`;
+      return `${room.name}_standingLamp2 ${room.name}_standingLamp2-inspected`;
     } else {
       return `${room.name}_standingLamp2`;
     }
@@ -15,7 +15,7 @@ export default function standingLamp2(room) {
   let html = `
 	<svg 
 	id = '${room.name}_standingLamp2'
-	class = '${room.name}_standingLamp2'
+	class = '${standingLamp2ClassNames()}'
 	xmlns="http://www.w3.org/2000/svg" 
 	width="102.49359" 
 	height="319.89716" 
@@ -33,6 +33,7 @@ export default function standingLamp2(room) {
 				d="m 133.944,38.621889 c 4.54489,-3.368243 10.36034,-3.94127 11.50439,-14.791362 l -27.1175,0.547828 c -0.0677,7.925158 5.64272,11.356205 12.05222,14.243534 z"
 				id="path76457" sodipodi:nodetypes="ccccc" />
 			<path
+				data-selector = 'standingLamp2'
 				style="fill:#b79e00;fill-opacity:1;stroke:none;stroke-width:0.263344px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
 				d="m 132.83748,44.45069 c 2.04032,-1.758449 2.54563,-4.729181 3.34146,-7.47047 l -8.84503,0.09703 c 0.7573,2.67849 1.3956,5.39055 3.93113,7.567487 z"
 				id="path76459" sodipodi:nodetypes="ccccc" />

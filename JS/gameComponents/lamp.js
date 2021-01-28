@@ -15,7 +15,7 @@ export default function lamp(room) {
   <svg
   id = "${room.name}_lamp"
   class = "${lampClassNames()}"
-  data-selector = "lamp1"
+  data-selector = "lamp"
   xmlns="http://www.w3.org/2000/svg"
   width="68.715302"
   height="108.34307"

@@ -371,8 +371,8 @@ export default function mediaStand(room) {
  `;
 
   function leftDoorClassNames() {
-    if (room.$leftMediaDoor?.inspected) {
-      return `${room.name}_leftMediaDoor ${room.name}leftMediaDoor-inspected`;
+    if (room.$mediaStandDoorLeft?.inspected) {
+      return `${room.name}_leftMediaDoor y180`;
     } else {
       return `${room.name}_leftMediaDoor`;
     }
@@ -382,6 +382,7 @@ export default function mediaStand(room) {
 <svg 
 id = "leftMediaDoor"
 class = "${leftDoorClassNames()}"
+data-selector = 'mediaStandDoorLeft'
 xmlns="http://www.w3.org/2000/svg" 
 width="83.733315" 
 height="102.90324" 
@@ -451,8 +452,8 @@ viewBox="0 0 22.154441 27.226482">
 `;
 
   function rightDoorClassNames() {
-    if (room.$rightMediaDoor?.inspected) {
-      return `${room.name}_rightMediaDoor ${room.name}rightMediaDoor-inspected`;
+    if (room.$mediaStandDoorRight?.inspected) {
+      return `${room.name}_rightMediaDoor y180`;
     } else {
       return `${room.name}_rightMediaDoor`;
     }
@@ -460,7 +461,8 @@ viewBox="0 0 22.154441 27.226482">
   let rightDoor = `
   <svg
   id = "mediaStandDoorRight"
-  class = ${rightDoorClassNames()}
+  class = '${rightDoorClassNames()}'
+  data-selector = 'mediaStandDoorRight'
   xmlns="http://www.w3.org/2000/svg"
   width="83.733315"
   height="102.90323"

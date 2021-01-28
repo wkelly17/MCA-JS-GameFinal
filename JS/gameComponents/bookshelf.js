@@ -4,20 +4,27 @@ export default function bookShelf(room) {
   // todo: nodes for books to give a random message; Room level fxn;
 
   function bookShelfClassNames() {
-    if (room.$bookShelf.inspected) {
-      return `${room.name}_bookShelf ${room.name}bookShelf-inspected`;
+    if (room.$specialBook?.inspected) {
+      return `${room.name}_bookShelf 
+		${room.name}_bookShelf-inspected`;
     } else {
       return `${room.name}_bookShelf`;
     }
+  }
+  function specialBookClass() {
+    if (room.$specialBook?.inspected) {
+      return `${room.name}_bookShelf-inspectedBook`;
+    } else return '';
   }
   // id = '${room.name}_bookShelf'
   // class = 'bookShelfClassNames()}'
   // class = '${room.name}_bookShelf'
   // data-selector = 'bookShelf'
+  //   todo: CHANGE WHICH BOOK IS SECRET;
   let html = `
   <svg
   id = '${room.name}_bookShelf'
-  class = '${room.name}_bookShelf'
+  class = '${bookShelfClassNames()}'
   xmlns="http://www.w3.org/2000/svg"
   width="217.7345"
   height="253.75127"
@@ -88,6 +95,8 @@ export default function bookShelf(room) {
 	  <rect
 		  style="opacity:1;fill:#008000;fill-opacity:1;stroke:none;stroke-width:0.701381;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
 		  id="$book"
+		  class = '${specialBookClass()}'
+		  data-selector = 'specialBook'
 		  width="4.3160386"
 		  height="13.879036"
 		  x="-131.48784"
