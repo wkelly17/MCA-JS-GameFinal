@@ -62,8 +62,8 @@ let kitchen = {
     fxn: switchLights,
   },
   //   todo: change door leads to here
-  $door: {
-    name: '$door',
+  $kitchenDoor: {
+    name: '$kitchenDoor',
     nodes: null,
     selector: '#Door',
     listenerType: 'click',

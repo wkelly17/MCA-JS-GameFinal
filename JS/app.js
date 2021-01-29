@@ -39,11 +39,12 @@ let game = {
   messageContainer: messageContainer,
 
   // pieces of global game state;
-  currentRoom: bedroom1,
+  currentRoom: livingRoom,
   timer: null,
 
   //   game/non room methods;
   init: function () {
+    // debugger;
     // hook up clickable navigation;
     game.navArrows.forEach((arrow) =>
       arrow.addEventListener('click', function (event) {

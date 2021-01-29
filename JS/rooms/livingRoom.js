@@ -3,6 +3,7 @@ import game from '../app.js';
 import bedroom1 from './bedroom1.js';
 import kitchen from './kitchen.js';
 import study from './study.js';
+import toggleNavArrows from '../utils/toggleArrows.js';
 import {
   interactLockedItem,
   render,
@@ -34,6 +35,7 @@ import thermostat from '../gameComponents/thermostat.js';
 import standingLamp2 from '../gameComponents/standingLamp2.js';
 import bookCase from '../gameComponents/bookshelf.js';
 import safe from '../gameComponents/safe.js';
+import safeKeypadZoom from '../gameComponents/safeKeypadZoom.js';
 
 // back
 import couch from '../gameComponents/couch.js';
@@ -54,7 +56,7 @@ let livingRoom = {
   // @# CORE PIECES OF GLOBAL ROOM STATE;
   name: 'livingRoom',
   lightsAreOn: true,
-  directionFacing: 'front',
+  directionFacing: 'back',
   returnFromCeiling: null,
   modalBlur: false,
 
@@ -202,6 +204,34 @@ let livingRoom = {
     },
     fxn: addtoInventory,
   },
+  $safeKeyCard: {
+    name: '$safeKeyCard',
+    nodes: null,
+    selector: '[data-selector = "safeKeyCard"]',
+    inventorySelector: 'safeKeyCard',
+    listenerType: 'click',
+    found: false,
+    // ???????? solves here
+    solves: '$kitchenFinalDoor',
+    imgSrc: './Media/svgComponents/safeKeyCard.svg',
+    altText: 'keyCard from the safe',
+    triggerSpecificInventoryFunction: false,
+    fxn: addtoInventory,
+  },
+  $couchKey: {
+    name: '$couchKey',
+    nodes: null,
+    selector: '[data-selector = "couchKey"]',
+    inventorySelector: 'couchKey',
+    listenerType: 'click',
+    found: false,
+    // ???????? solves here must match object name in other room;
+    solves: '$kitchenEntryDoor',
+    imgSrc: './Media/svgComponents/key2.svg',
+    altText: 'keyCard from the safe',
+    triggerSpecificInventoryFunction: false,
+    fxn: addtoInventory,
+  },
   $standingLamp: {
     name: '$standingLamp',
     nodes: null,
@@ -229,6 +259,69 @@ let livingRoom = {
     listenerType: 'click',
     fxn: inspect,
   },
+  $thermostatSwitch: {
+    name: '$thermostatSwitch',
+    nodes: null,
+    selector: '[data-selector = "thermostatSwitch"]',
+    // todo: will connect to an air vent key
+    inspected: false,
+    gameMessageWhenInspecting: 'You turn the air on.  That breeze feels nice',
+    gameMessageWhenUninspecting:
+      'You turn the air off.  It is too cold in here',
+    listenerType: 'click',
+    fxn: inspect,
+  },
+  $couchPillow1: {
+    name: '$couchPillow1',
+    nodes: null,
+    selector: '[data-selector = "couchPillow1"]',
+    inspected: false,
+    gameMessageWhenInspecting: 'You pick up the couch pillow',
+    gameMessageWhenUninspecting: 'You set down the couch pillow',
+    listenerType: 'click',
+    fxn: inspect,
+  },
+  $couchPillow2: {
+    name: '$couchPillow2',
+    nodes: null,
+    selector: '[data-selector = "couchPillow2"]',
+    inspected: false,
+    gameMessageWhenInspecting: 'You pick up the couch pillow',
+    gameMessageWhenUninspecting: 'You set down the couch pillow',
+    listenerType: 'click',
+    fxn: inspect,
+  },
+  $sideCouchCushion2: {
+    name: '$sideCouchCushion2',
+    nodes: null,
+    selector: '[data-selector = "sideCouchCushion2"]',
+    inspected: false,
+    gameMessageWhenInspecting: null,
+    gameMessageWhenUninspecting: null,
+    listenerType: 'click',
+    fxn: inspect,
+  },
+  $sideCouchCushion: {
+    name: '$sideCouchCushion',
+    nodes: null,
+    selector: '[data-selector = "sideCouchCushion"]',
+    inspected: false,
+    gameMessageWhenInspecting: null,
+    gameMessageWhenUninspecting: null,
+    listenerType: 'click',
+    fxn: inspect,
+  },
+  $middleCouchCushion: {
+    name: '$middleCouchCushion',
+    nodes: null,
+    selector: '[data-selector = "middleCouchCushion"]',
+    inspected: false,
+    gameMessageWhenInspecting: 'You pick up the couch cushion',
+    gameMessageWhenUninspecting: 'You set down the couch cushion',
+    listenerType: 'click',
+    fxn: inspect,
+  },
+
   $safe: {
     name: '$safe',
     nodes: null,
@@ -236,16 +329,74 @@ let livingRoom = {
     inspected: false,
     //  subnodes are affected when the main node is solved;
     affectedNodes: [],
-    open: true,
+    open: false,
     isSolvedBy: 'x',
     lockedMessage: "It's a safe, but I can't get into it right now.",
     solvedMessage: 'You manage to open the safe',
     listenerType: 'click',
     fxn: interactLockedItem,
   },
+  $safeKeypad: {
+    name: '$safeKeypad',
+    nodes: null,
+    selector: '[data-selector = "safeKeypad"]',
+    inspected: false,
+    //  subnodes are affected when the main node is solved;
+    affectedNodes: [],
+    open: true,
+    // ? What code for keypad?
+    isSolvedBy: 'B',
+    lockedMessage: "It's a safe, but I can't get into it right now.",
+    solvedMessage: 'You manage to open the safe',
+    listenerType: 'click',
+    fxn: focusView,
+  },
+  $keypadBtns: {
+    name: '$keypadBtns',
+    nodes: null,
+    selector: '[data-selector = "safeKeypadBtn"]',
+    listenerType: 'click',
+    inspected: false,
+    fxn: manageKeypad,
+  },
 };
 
 // Room Specific functions
+function manageKeypad(event, obj, room) {
+  //   Can make card slot a puzzle...
+  if (notALockedItem()) {
+    return;
+  }
+
+  //room for abstraction;
+  let display = document.querySelector('.safeKeypad-display');
+  let btnPressed = event.target;
+  if (btnPressed.dataset.fxn == 'close') {
+    livingRoom.modalBlur = false; //room1
+    livingRoom.$safeKeypad.inspected = false; //updating state;
+    toggleNavArrows();
+    livingRoom.render(game.roomContainer, livingRoom);
+    //   call a re-render to reflect state
+  } else if (btnPressed.dataset.fxn == 'submit') {
+    if (display.textContent == livingRoom.$safeKeypad.isSolvedBy) {
+      livingRoom.$safe.open = true;
+      livingRoom.modalBlur = false;
+      display.classList.add('correct');
+      setTimeout(() => {
+        livingRoom.render(game.roomContainer, livingRoom);
+      }, 400);
+    } else {
+      display.textContent = '';
+      display.classList.add('error');
+      setTimeout(() => {
+        display.classList.remove('error');
+      }, 400);
+    }
+  } else {
+    display.textContent += event.target.textContent;
+    //  checkForSolved()    //doesn't exist yet;
+  }
+}
 
 //@# --------  ROOM HTML VIEWS; ------------
 
@@ -280,11 +431,13 @@ livingRoom.leftHTML = function leftHTML() {
 	${defaultRoom}
 	${standingLamp2(livingRoom)}
   ${safe(livingRoom)}
+  ${safeKeypadZoom(livingRoom)}
 	${bookCase(livingRoom)}
   ${door3(livingRoom)}
 	<p>I'M THE Left! </p>
 	
-	`;
+  `;
+  //
   return html;
 };
 

@@ -762,6 +762,9 @@ img {
   top: 200px;
   left: 570px;
 }
+.livingRoom_Switch-Inspected {
+  transform: translateX(3px);
+}
 
 .livingRoom_bookShelf {
   top: 160px;
@@ -790,10 +793,19 @@ img {
   left: 578px;
   z-index: -1;
 }
+.livingRoom_safeKeyCard {
+  top: 307px;
+  left: 678px;
+  transform: rotateX(65deg);
+}
 
-.livingRoom_couch {
+.livingRoom_couchBase {
   top: 220px;
   left: 300px;
+}
+.livingRoom_couchCushions {
+  top: 305px;
+  left: 330px;
 }
 .livingRoom_couchPillow {
   top: 270px;
@@ -805,8 +817,22 @@ img {
   fill: rgb(167, 108, 0);
   transform: rotate(115deg);
 }
+.livingRoom_couchPillow-inspected {
+  transform: translateY(-40px) rotate(115deg);
+}
 
-.livingRoom_ceilingFan {
+.livingRoom_couchCushionInspected {
+  transform: translateY(15px);
+}
+
+.livingRoom_couchKey {
+  top: 303px;
+  left: 513px;
+  transform: rotateX(61deg);
+  z-index: 2;
+}
+
+.livingRoom .livingRoom_ceilingFan {
   width: 600px;
   height: 400px;
   top: 100px;
@@ -849,6 +875,11 @@ img {
 .livingRoom_lightSwitch {
   top: 190px;
   left: 150px;
+}
+
+.livingRoom_safeKeypad {
+  left: 730px;
+  top: 170px;
 }
 
 /* @@===============  @# BOOK JOURNAL SPECIAL   =============   */
@@ -962,7 +993,7 @@ img {
 }
 .messageShown {
   color: rgb(8, 219, 8);
-  font-size: 32px;
+  font-size: 30px;
 }
 
 /* .livingRoom_couch {
@@ -985,6 +1016,75 @@ img {
   top: 100px;
   left: 100px;
 } */
+
+/* @#===============  SAFEKEYPADRULES   =============   */
+
+.livingRoom_safeKeypadZoom {
+  padding: 2em;
+  height: 400px;
+  background: gray;
+  z-index: 10;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.closeSafeKeypadBtn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}
+
+.safeKeypad-display {
+  padding: 1em 0.5em;
+  background: rgb(60, 61, 60);
+  font-size: 32px;
+  color: white;
+}
+.safeKeypad-display.error {
+  background: red;
+}
+.safeKeypad-display.correct {
+  background: green;
+}
+
+.safeKeypad-buttonsContainer {
+  border: solid black 1px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 500px;
+  margin: 20px auto;
+}
+
+.safeKeypad-button {
+  width: 45px;
+  height: 45px;
+  margin: 5px 0;
+  box-shadow: 1px 1px black;
+  background: #aaa;
+  padding: 0.5em;
+  font-size: 22px;
+}
+
+.safeKeypad-button:active,
+.submitEntry:active {
+  transform: scale(0.9);
+}
+.safeKeypad-button:focus {
+  outline: none;
+}
+
+.w100 {
+  width: 100%;
+}
+
+.submitEntry {
+  display: block;
+  margin: 10px auto;
+  padding: 1em 2em;
+  background: green;
+  color: white;
+}
 
 /* @@ ------------------------------- */
 /* ------------- STUDY ---------- */

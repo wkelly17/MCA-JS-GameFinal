@@ -7,21 +7,21 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="282.96631"
-   height="210.36794"
-   viewBox="0 0 74.868174 55.659851"
+   width="228.97031"
+   height="107.84049"
+   viewBox="0 0 60.581731 28.532798"
    version="1.1"
    id="svg2942"
    inkscape:version="1.0.1 (c497b03c, 2020-09-10)"
-   sodipodi:docname="couchWhole.svg">
+   sodipodi:docname="couchCushions.svg">
   <defs
      id="defs2936">
     <inkscape:perspective
        sodipodi:type="inkscape:persp3d"
-       inkscape:vp_x="0 : 27.829926 : 1"
+       inkscape:vp_x="0 : 0.70287268 : 1"
        inkscape:vp_y="0 : 1000 : 0"
-       inkscape:vp_z="74.868174 : 27.829926 : 1"
-       inkscape:persp3d-origin="37.434087 : 18.553284 : 1"
+       inkscape:vp_z="74.868174 : 0.70287268 : 1"
+       inkscape:persp3d-origin="37.434087 : -8.5737694 : 1"
        id="perspective76394" />
   </defs>
   <sodipodi:namedview
@@ -31,9 +31,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="2.0435778"
-     inkscape:cx="129.31435"
-     inkscape:cy="129.84101"
+     inkscape:zoom="1.3954665"
+     inkscape:cx="71.288696"
+     inkscape:cy="145.58079"
      inkscape:document-units="px"
      inkscape:current-layer="$couchWhole"
      inkscape:document-rotation="0"
@@ -48,8 +48,8 @@
     <inkscape:grid
        type="xygrid"
        id="grid8442"
-       originx="-60.960367"
-       originy="63.882115" />
+       originx="-69.081571"
+       originy="51.917493" />
   </sodipodi:namedview>
   <metadata
      id="metadata2939">
@@ -59,7 +59,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -67,7 +67,7 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(-98.211056,46.820592)">$couchLeftLeft=&quot;rect76132&quot;
+     transform="translate(-106.33226,34.85597)">$couchLeftLeft=&quot;rect76132&quot;
      id=&quot;rect76329&quot; /&gt;
   <g
    id="$couchWhole">
@@ -75,8 +75,8 @@
      style="fill:#382509;fill-opacity:1;stroke:none;stroke-width:1.50812;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
      width="3.2906032"
      height="5.4366484"
-     x="106.32941"
-     y="3.2108855"
+     x="27.075741"
+     y="33.168015"
      ry="0.50074422"
      id="rect76348" />
   <rect
@@ -84,35 +84,35 @@
      id="$couchLegRight"
      width="3.2906032"
      height="5.4366484"
-     x="160.91049"
-     y="2.4955382"
+     x="81.656822"
+     y="32.452667"
      ry="0.50074422" />
   <circle
      id="path76087"
      style="fill:#808000;stroke:#000000;stroke-width:0.264583"
-     cx="98.375816"
-     cy="8.6745024"
+     cx="19.12215"
+     cy="38.63163"
      r="0.032468773" />
   <rect
      style="opacity:1;fill:#5d2e00;fill-opacity:1;stroke:#000000;stroke-width:0.926042;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
      id="$couchBack"
      width="58.717255"
      height="26.533321"
-     x="106.48322"
-     y="-46.357571"
+     x="27.229557"
+     y="-16.400444"
      ry="2.6680324" />
   <rect
      style="opacity:1;fill:#808000;fill-opacity:1;stroke:#000000;stroke-width:1.50813;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
      id="rect76103-0"
      width="58.717255"
      height="26.533321"
-     x="106.36038"
-     y="-23.018074"
+     x="27.106716"
+     y="6.9390535"
      ry="2.6680324" />
   <g
      id="$couchCushions"
      style="fill:#5d2e00;fill-opacity:1"
-     transform="translate(64.316817,-19.074931)">
+     transform="translate(65.075225,-66.285847)">
     <rect
        style="opacity:1;fill:#5d2e00;fill-opacity:1;stroke:#000000;stroke-width:1.50812;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="rect76120"
@@ -143,16 +143,16 @@
      id="$couchArmrest"
      width="10.072835"
      height="19.162954"
-     x="162.25233"
-     y="-31.862516"
+     x="82.998665"
+     y="-1.905389"
      ry="2.6680324" />
   <rect
      style="opacity:1;fill:#5d2e00;fill-opacity:1;stroke:#000000;stroke-width:1.50812;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
      id="$couchArmrestLeft"
      width="9.8271561"
      height="18.917274"
-     x="99.112846"
-     y="-31.125479"
+     x="19.85918"
+     y="-1.1683513"
      ry="2.6680324" />
 </g>
 </g>

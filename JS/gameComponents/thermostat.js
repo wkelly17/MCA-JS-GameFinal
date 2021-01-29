@@ -3,11 +3,11 @@ export default function thermostat(room) {
 
   //   todo: zoom view puzzle on this later?
 
-  function thermostatClassNames() {
-    if (room.$thermostat.inspected) {
-      return `${room.name}_thermostat ${room.name}thermostat-inspected`;
+  function thermostatSwitchClassNames() {
+    if (room.$thermostatSwitch.inspected) {
+      return `${room.name}_Switch-Inspected`;
     } else {
-      return `${room.name}_thermostat`;
+      return '';
     }
   }
   // id = '${room.name}_thermostat'
@@ -97,6 +97,8 @@ export default function thermostat(room) {
 	 y="78.180649"
 	 ry="0.83032882" />
  <rect
+ data-selector = "thermostatSwitch"
+ class = ${thermostatSwitchClassNames()}
 	 style="opacity:1;fill:#1a1a1a;fill-opacity:1;stroke:none;stroke-width:1.79502;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
 	 id="rect76799"
 	 width="3.0877852"
