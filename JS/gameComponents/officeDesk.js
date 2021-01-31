@@ -1168,6 +1168,40 @@ class = '${room.name}_trashCan'
 </svg> 
   `;
 
+  function paperClipClass() {
+    if (room.$paperclip.found) {
+      return 'dNone';
+    } else {
+      return `${room.name}_paperclip`;
+    }
+  }
+
+  let paperclip = `
+  <svg
+  data-selector = "paperclip"
+  id = '${room.name}_paperclip'
+  class = '${paperClipClass()}'
+  xmlns="http://www.w3.org/2000/svg"
+  width="27.483053"
+  height="6.7003956"
+  viewBox="0 0 7.2715566 1.7728127"
+  >
+ <g
+	 inkscape:label="Layer 1"
+	 inkscape:groupmode="layer"
+	 id="layer1"
+	 transform="translate(-149.26281,55.610296)">
+	<path
+		style="fill:none;stroke:#333333;stroke-width:0.239448;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+		d="m 155.3655,-54.469608 -5.00446,0.05503 c -0.26772,0.02505 -0.32614,0.03634 -0.36847,-0.295819 -0.0573,-0.186838 0.11858,-0.323269 0.50779,-0.288958 l 4.88678,-0.02156 c 0.67415,-0.12808 1.00008,0.120838 1.02648,0.344515 -0.061,0.420596 -0.12013,0.607345 -0.84562,0.617235 -1.92798,0.03224 -5.6761,0.124839 -5.78395,0.09671 -0.4814,-0.254848 -0.37584,-0.311045 -0.40112,-0.703186 0.0468,-0.452322 0.01,-0.691115 0.86454,-0.773847 l 5.14964,-0.05109"
+		id="$paperclip"
+		sodipodi:nodetypes="ccccccccccc" />
+ </g>
+</svg>
+
+  
+  `;
+
   function curtainLeft() {
     if (room.$curtainLeft.inspected) {
       return `${room.name}_curtainLeft-inspected`;
@@ -1297,5 +1331,6 @@ class = '${room.name}_curtains'
     .concat(bottomMug)
     .concat(trashCan)
     .concat(inkBottle)
-    .concat(curtains);
+    .concat(curtains)
+    .concat(paperclip);
 }

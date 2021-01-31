@@ -2,8 +2,8 @@ export default function ceilingFan(room) {
   // functions here
 
   function ceilingFanClassNames() {
-    if (room.$ceilingFan.inspected) {
-      return `${room.name}_ceilingFan ${room.name}_ceilingFan-inspected`;
+    if (room.$fanSwitch?.inspected) {
+      return `${room.name}_ceilingFan ${room.name}_ceilingFan rotating`;
     } else {
       return `${room.name}_ceilingFan`;
     }
@@ -15,7 +15,7 @@ export default function ceilingFan(room) {
   let html = `
   <svg 
   id = '${room.name}_ceilingFan'
-  class = '${room.name}_ceilingFan'
+  class = '${ceilingFanClassNames()}'
   xmlns="http://www.w3.org/2000/svg" 
   viewBox="0 0 119.38429 137.81685"
   >

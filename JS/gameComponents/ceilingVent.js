@@ -92,5 +92,6 @@ export default function ceilingVent(room) {
   </g>
 </svg>
  `;
+
   return html;
 }

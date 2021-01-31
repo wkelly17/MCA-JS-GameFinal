@@ -12,6 +12,7 @@ import {
   switchLights,
   addtoInventory,
   goToRoom,
+  generalGameMessage,
 } from './roomFunctions.js';
 import defaultRoom from './defaultRoom.js';
 import ceilingView from './defaultCeilingView.js';
@@ -20,7 +21,7 @@ import ceilingView from './defaultCeilingView.js';
 
 // ceiling:
 import ceilingFan from '../gameComponents/ceilingFan.js';
-import ceilingVent from '../gameComponents/ceilingVent.js';
+import ceilingVentWithKey from '../gameComponents/ceilingVentWithKey.js';
 
 import door from '../gameComponents/door.js';
 import lightSwitch from '../gameComponents/lightSwitch.js';
@@ -32,6 +33,7 @@ import floorLamp from '../gameComponents/standingLamp.js';
 import printerStation from '../gameComponents/printerStation.js';
 import lamp from '../gameComponents/lamp.js';
 import sideWallWindow from '../gameComponents/studySideWallWindow.js';
+import fanSwitch from '../gameComponents/fanSwitch.js';
 // import printerStand from '../gameComponents/printerStation.js';
 // import chest from '../gameComponents/';
 // import X from '../gameComponents/';
@@ -42,7 +44,7 @@ let study = {
   // @# CORE PIECES OF GLOBAL ROOM STATE;
   name: 'study',
   lightsAreOn: true,
-  directionFacing: 'right',
+  directionFacing: 'front',
   returnFromCeiling: null,
   modalBlur: false,
 
@@ -66,10 +68,11 @@ let study = {
   $door: {
     name: '$door',
     nodes: null,
-    selector: '#Door',
+    selector: '[data-selector = "door"]',
     listenerType: 'click',
     directionLeadsTo: 'left',
     roomLeadsTo: 'livingRoom',
+    open: true,
     fxn: goToRoom,
   },
   $curtainLeft: {
@@ -129,6 +132,71 @@ let study = {
     listenerType: 'click',
     fxn: switchLights,
   },
+  $fanSwitch: {
+    name: '$fanSwitch',
+    nodes: null,
+    selector: '[data-selector = "fanSwitch"]',
+    inspected: false,
+    listenerType: 'click',
+    fxn: inspect,
+  },
+  $paperclip: {
+    name: '$paperclip',
+    nodes: null,
+    selector: '[data-selector = "paperclip"]',
+    inventorySelector: 'paperclip',
+    listenerType: 'click',
+    found: false,
+    // ???????? solves here
+    solves: '$kitchenReceptacle',
+    imgSrc: './Media/svgComponents/paperclip.svg',
+    altText: 'A paperclip.  Could be handy for something',
+    triggerSpecificInventoryFunction: false,
+    fxn: addtoInventory,
+  },
+  $studyKey: {
+    name: '$studyKey',
+    nodes: null,
+    selector: '[data-selector = "studyKey"]',
+    inventorySelector: 'studyKey',
+    listenerType: 'click',
+    found: false,
+    // ???????? solves here
+    solves: '$breakerBoxDoor',
+    imgSrc: './Media/svgComponents/key3.svg',
+    altText: 'A key I snagged from the air vent',
+    isAvailable: function isAvailable(event) {
+      debugger;
+      let unreachableMessage = "I can't quite reach that";
+      let wrongInventoryMessage = "That does't do anything";
+      console.log(game.inventory);
+      if (!game.inventory.itemInUse || !study.$fanSwitch.inspected) {
+        generalGameMessage(unreachableMessage);
+        return false; //must be accessed via an item
+      } else if (game.inventory.itemInUse != study.$wireHanger) {
+        game.inventory.clearInventoryGlow(event);
+        generalGameMessage(wrongInventoryMessage);
+        return false;
+      } else {
+        return true;
+      }
+    },
+    fxn: addtoInventory,
+  },
+  $safe: {
+    name: '$safe',
+    nodes: null,
+    selector: '[data-selector = "safe"]',
+    inspected: false,
+    //  subnodes are affected when the main node is solved;
+    affectedNodes: [],
+    open: false,
+    isSolvedBy: 'x',
+    lockedMessage: "It's a safe, but I can't get into it right now.",
+    solvedMessage: 'You manage to open the safe',
+    listenerType: 'click',
+    fxn: interactLockedItem,
+  },
 };
 
 // Room Specific functions
@@ -175,6 +243,7 @@ study.backHTML = function backHTML() {
   let html = `
 	${defaultRoom}
 	${door(study)}
+	${fanSwitch(study)}
 
 	<p>I'M THE back! </p>
 	`;
@@ -183,8 +252,9 @@ study.backHTML = function backHTML() {
 
 study.ceilingHTML = function backHTML() {
   let html = `
-	${ceilingView}
-	${ceilingVent(study)}
+  ${ceilingView}
+	${ceilingVentWithKey(study)}
+  ${ceilingFan(study)}
 	<p>I'M THE ceiling!!! </p>
 	`;
   return html;

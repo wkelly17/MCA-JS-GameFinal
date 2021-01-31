@@ -211,10 +211,16 @@ function focusView(event, { name, inspected, ...rest }, room) {
   render(game.roomContainer, room);
 }
 
-function addtoInventory(event, { name, ...rest }, room) {
+function addtoInventory(event, { name, isAvailable, ...rest }, room) {
   // debugger;
   if (notALockedItem()) {
     return;
+  }
+  if (isAvailable) {
+    //some items can't be added straight to invertory;  hence, checking for existence of property and then running function
+    if (!isAvailable(event)) {
+      return;
+    }
   }
   room[name].found = !room[name].found;
   room.render(game.roomContainer, room);
@@ -316,4 +322,5 @@ export {
   addtoInventory,
   goToRoom,
   closeZoomView,
+  generalGameMessage,
 };

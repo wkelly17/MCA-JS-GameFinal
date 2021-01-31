@@ -268,6 +268,7 @@ img {
   height: 100%;
   width: 60px;
 }
+
 .leftCeiling {
   left: 0;
   top: 0;
@@ -394,18 +395,9 @@ img {
   transform: rotate(90deg);
 }
 
-.filingCabinet {
-  top: 152px;
-  right: 180px;
-}
 .rotatedLock {
   transform: rotate(90deg);
   transition-duration: 0.3s;
-}
-
-.filingCabinet.open {
-  fill: pink;
-  border: solid red 10px;
 }
 
 .keypad {
@@ -510,7 +502,6 @@ img {
 
 .bedroom1_bedUnderView {
   pointer-events: all;
-  fill: pink !important;
 }
 
 .bedroom1_bedUnderView {
@@ -645,6 +636,7 @@ img {
   animation-iteration-count: infinite;
   animation-direction: normal;
   animation-timing-function: linear;
+  pointer-events: none;
 }
 
 @keyframes rotateFan {
@@ -843,6 +835,7 @@ img {
   animation-iteration-count: infinite;
   animation-direction: normal;
   animation-timing-function: linear;
+  pointer-events: none;
 }
 
 .livingRoom_ceilingVent {
@@ -1129,6 +1122,11 @@ img {
   left: 239px;
 }
 
+.study_paperclip {
+  top: 294px;
+  left: 219px;
+}
+
 .study_pen {
   top: 233px;
   left: 156px;
@@ -1204,6 +1202,13 @@ img {
 .study_rightCurtain-inspected {
   transform: translateX(22px);
 }
+.bothCurtainsInspected {
+  /* filter: drop-shadow(300px 5px 70px yellow) drop-shadow(100px 5px 70px yellow)
+    drop-shadow(50px 5px 70px yellow) drop-shadow(10px 5px 70px yellow)
+    drop-shadow(450px 5px 150px yellow); */
+  filter: drop-shadow(510px 9px 40px yellow) drop-shadow(-10px 0px 60px yellow);
+}
+
 .studyWindowBackground {
   top: 90px;
   left: 40px;
@@ -1219,14 +1224,31 @@ img {
   left: 550px;
 }
 
+.study_dryEraseBoardText {
+  top: 150px;
+  left: 555px;
+  font-size: 8px;
+  width: 165px;
+}
+
+.study_secretMessage {
+  top: 199px;
+  left: 564px;
+  color: rgb(11, 199, 20);
+  width: 165px;
+  font-size: 13px;
+}
+
 .study_eraser {
   top: 108px;
   left: 680px;
 }
 .study_expoMarker {
-  top: 106px;
-  left: 560px;
+  top: 86px;
+  left: 580px;
+  transform: rotate(-90deg);
 }
+
 .study_standingLamp {
   top: 106px;
   left: 160px;
@@ -1247,6 +1269,39 @@ img {
   left: 380px;
   transition-duration: 0.2s;
   transform-origin: left;
+}
+.study_ceilingVent {
+  top: 130px;
+  left: 450px;
+}
+.study_ceilingFan {
+  width: 600px;
+  height: 400px;
+  top: 100px;
+  left: 160px;
+  pointer-events: none;
+}
+
+.study_ceilingFan.rotating {
+  animation-name: rotateFan;
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+  animation-direction: normal;
+  animation-timing-function: linear;
+}
+.study_fanSwitch {
+  top: 240px;
+  left: 300px;
+}
+
+.study_fanSwitch-inspected {
+  transform: translateY(-1px);
+}
+
+.study_studyKey {
+  top: 200px;
+  left: 500px;
+  z-index: 1;
 }
 
 /* @@ ------------------------------- */

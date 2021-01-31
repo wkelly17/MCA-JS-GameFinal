@@ -264,7 +264,9 @@ export default function sideWindowWall(room) {
 
  `;
   function rightCurtainClassNames() {
-    if (room.$curtainRight?.inspected) {
+    if (room.$curtainRight?.inspected && room.$curtainLeft.inspected) {
+      return `${room.name}_rightCurtain ${room.name}_rightCurtain-inspected bothCurtainsInspected`;
+    } else if (room.$curtainRight?.inspected) {
       return `${room.name}_rightCurtain ${room.name}_rightCurtain-inspected`;
     } else {
       return `${room.name}_rightCurtain`;

@@ -39,7 +39,7 @@ let game = {
   messageContainer: messageContainer,
 
   // pieces of global game state;
-  currentRoom: livingRoom,
+  currentRoom: bedroom1,
   timer: null,
 
   //   game/non room methods;

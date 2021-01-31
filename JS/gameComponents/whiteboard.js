@@ -8,6 +8,21 @@ export default function dryEraseBoard(room) {
       return `${room.name}_dryEraseBoard`;
     }
   }
+
+  function secretWhiteBoardMessage() {
+    if (
+      room.$curtainLeft.inspected &&
+      room.$curtainRight.inspected &&
+      !room.lightsAreOn &&
+      !room.$lamp.inspected &&
+      !room.$standingLamp.inspected
+    ) {
+      return `${room.name}_secretMessage dVisible`;
+    } else {
+      return `dNone`;
+    }
+  }
+
   // class = 'dryEraseBoardClassNames()}'
   // data-selector = 'dryEraseBoard'
   let dryEraseBoard = `
@@ -45,9 +60,9 @@ export default function dryEraseBoard(room) {
 	 borderopacity="1.0"
 	 inkscape:pageopacity="0.0"
 	 inkscape:pageshadow="2"
-	 inkscape:zoom="2.236773"
-	 inkscape:cx="39.124041"
-	 inkscape:cy="77.31162"
+	 inkscape:zoom="1.7241305"
+	 inkscape:cx="68.274059"
+	 inkscape:cy="137.90869"
 	 inkscape:document-units="px"
 	 inkscape:current-layer="layer1"
 	 inkscape:document-rotation="0"
@@ -73,7 +88,7 @@ export default function dryEraseBoard(room) {
 		 <dc:format>image/svg+xml</dc:format>
 		 <dc:type
 			 rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-		 <dc:title></dc:title>
+		 <dc:title />
 	  </cc:Work>
 	</rdf:RDF>
  </metadata>
@@ -87,12 +102,31 @@ export default function dryEraseBoard(room) {
 		id="$dryEraseBoard"
 		width="45.5061"
 		height="32.581287"
-		x="130.94498"
-		y="-57.986237"
+		x="131.1452"
+		y="-58.095879"
 		ry="2.2917783" />
+	<text
+		xml:space="preserve"
+		style="font-style:normal;font-weight:normal;font-size:3.82884px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.0957211"
+		x="131.31075"
+		y="-46.710144"
+		id="text8160"
+		transform="scale(1.0013728,0.99862909)"><tspan
+		  sodipodi:role="line"
+		  id="tspan8158"
+		  x="131.31075"
+		  y="-46.710144"
+		  style="stroke-width:0.0957211">Porphyria</tspan></text>
+	<rect
+		style="fill:#000000;stroke:#808080;stroke-width:0"
+		id="rect8162"
+		width="17.748194"
+		height="0.49529845"
+		x="131.75671"
+		y="-45.719143" />
  </g>
 </svg>
- `;
+`;
 
   let expoMarker = `
   <svg
@@ -281,8 +315,10 @@ export default function dryEraseBoard(room) {
 		ry="0.95368588" />
  </g>
 </svg>
-
- 
+<p class = ${
+    room.name
+  }_dryEraseBoardText> Porphyria is a group of liver disorders in which substances called porphyrins build up in the body, negatively affecting the skin or nervous system Porphyria may cause <span style = "font-weight: 900; text-decoration: underline;"> blisters in sunlight not artificial light</span> </p>
+<p class = ${secretWhiteBoardMessage()}> Kitchen cabinet, 2nd from right</p>
   `;
 
   return dryEraseBoard.concat(expoMarker).concat(eraser);
