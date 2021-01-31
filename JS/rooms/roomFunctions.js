@@ -211,16 +211,10 @@ function focusView(event, { name, inspected, ...rest }, room) {
   render(game.roomContainer, room);
 }
 
-function addtoInventory(event, { name, isAvailable, ...rest }, room) {
+function addtoInventory(event, { name, ...rest }, room) {
   // debugger;
-  if (notALockedItem()) {
-    return;
-  }
-  if (isAvailable) {
-    //some items can't be added straight to invertory;  hence, checking for existence of property and then running function
-    if (!isAvailable(event)) {
-      return;
-    }
+  if (rest.bypassLockedItemChecker && rest.bypassLockedItemChecker == false) {
+    return notALockedItem();
   }
   room[name].found = !room[name].found;
   room.render(game.roomContainer, room);

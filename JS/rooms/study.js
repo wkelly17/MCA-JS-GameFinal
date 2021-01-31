@@ -163,25 +163,10 @@ let study = {
     found: false,
     // ???????? solves here
     solves: '$breakerBoxDoor',
+    bypassLockedItemChecker: true,
     imgSrc: './Media/svgComponents/key3.svg',
     altText: 'A key I snagged from the air vent',
-    isAvailable: function isAvailable(event) {
-      debugger;
-      let unreachableMessage = "I can't quite reach that";
-      let wrongInventoryMessage = "That does't do anything";
-      console.log(game.inventory);
-      if (!game.inventory.itemInUse || !study.$fanSwitch.inspected) {
-        generalGameMessage(unreachableMessage);
-        return false; //must be accessed via an item
-      } else if (game.inventory.itemInUse != study.$wireHanger) {
-        game.inventory.clearInventoryGlow(event);
-        generalGameMessage(wrongInventoryMessage);
-        return false;
-      } else {
-        return true;
-      }
-    },
-    fxn: addtoInventory,
+    fxn: addVentKeyToInventory,
   },
   $safe: {
     name: '$safe',
@@ -200,6 +185,31 @@ let study = {
 };
 
 // Room Specific functions
+
+function addVentKeyToInventory(event, props, room) {
+  debugger;
+  let unreachableMessage = "I can't quite reach that";
+  let wrongInventoryMessage = "That does't do anything";
+  console.log(game.inventory);
+  if (!game.inventory.itemInUse || study.$fanSwitch.inspected) {
+    generalGameMessage(unreachableMessage);
+    return false; //must be accessed via an item
+  } else if (game.inventory.itemInUse.name != '$wireHanger') {
+    game.inventory.clearInventoryGlow(event);
+    generalGameMessage(wrongInventoryMessage);
+    return false;
+  } else {
+    let selectedItem = game.inventory.itemInUse;
+    selectedItem.nodes.forEach((node) => {
+      node.classList.add('inventoryItemUsed');
+      node.classList.remove('inventoryGlow');
+      node.removeEventListener('click', game.inventory.handleInventoryClick);
+    });
+    // 2nd;  removes item from use;  Must clear dom node first
+    game.inventory.clearInventoryGlow(event);
+    return addtoInventory(event, props, room);
+  }
+}
 
 //@# --------  ROOM HTML VIEWS; ------------
 

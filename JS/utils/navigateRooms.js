@@ -4,7 +4,6 @@ import livingRoom from '../rooms/livingRoom.js';
 import study from '../rooms/study.js';
 
 export default function navigateRooms(direction) {
-  debugger;
   switch (direction) {
     case 'bedroom1':
       return bedroom1;
