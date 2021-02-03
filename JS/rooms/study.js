@@ -28,7 +28,7 @@ import lightSwitch from '../gameComponents/lightSwitch.js';
 import desk from '../gameComponents/officeDesk.js'; //contains more than desk;
 import window from '../gameComponents/window.js';
 
-import whiteBoard from '../gameComponents/whiteBoard.js';
+import whiteBoard from '../gameComponents/whiteboard.js';
 import floorLamp from '../gameComponents/standingLamp.js';
 import printerStation from '../gameComponents/printerStation.js';
 import lamp from '../gameComponents/lamp.js';
