@@ -2,7 +2,7 @@ export default function fanSwitch(room) {
   // functions here
 
   function fanSwitchClassNames() {
-    if (room.$fanSwitch.inspected) {
+    if (room.$fanSwitch?.inspected) {
       return `${room.name}_fanSwitch-inspected`;
     } else {
       return '';

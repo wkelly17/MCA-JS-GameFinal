@@ -8,6 +8,16 @@ export default function kitchenCabinet(room) {
       return `${room.name}_kitchenCabinet`;
     }
   }
+
+  function cabinetDoorClasses(num) {
+    let picked = '$cabinetSet2Door'.concat(num);
+    if (room[picked].inspected) {
+      return `${room.name}_cabinetDoor${num} ${room.name}_lowerCabinetDoor-inspected`;
+    } else {
+      return `${room.name}_cabinetDoor${num}`;
+    }
+  }
+
   // class = 'kitchenCabinetClassNames()}'
   // data-selector = 'kitchenCabinet'
   let cabinet1 = `
@@ -738,473 +748,489 @@ export default function kitchenCabinet(room) {
  </svg>`;
 
   let cabinetDoor1 = `
-	<svg
-	id = '${room.name}_cabinetDoor1'
-	class = '${room.name}_cabinetDoor1'
-	 xmlns:dc="http://purl.org/dc/elements/1.1/"
-	 xmlns:cc="http://creativecommons.org/ns#"
-	 xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-	 xmlns:svg="http://www.w3.org/2000/svg"
-	 xmlns="http://www.w3.org/2000/svg"
-	 xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-	 xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-	 width="65.104195"
-	 height="117.14441"
-	 viewBox="0 0 17.225485 30.994458"
-	 version="1.1"
-	 id="svg2942"
-	 inkscape:version="1.0.1 (c497b03c, 2020-09-10)"
-	 sodipodi:docname="cabinetDoor.svg">
-	<defs
-		id="defs2936" />
-	<sodipodi:namedview
-		id="base"
-		pagecolor="#ffffff"
-		bordercolor="#666666"
-		borderopacity="1.0"
-		inkscape:pageopacity="0.0"
-		inkscape:pageshadow="2"
-		inkscape:zoom="0.32205155"
-		inkscape:cx="139.74588"
-		inkscape:cy="239.65113"
-		inkscape:document-units="px"
-		inkscape:current-layer="layer1"
-		inkscape:document-rotation="0"
-		showgrid="false"
-		units="px"
-		inkscape:window-width="1252"
-		inkscape:window-height="847"
-		inkscape:window-x="0"
-		inkscape:window-y="25"
-		inkscape:window-maximized="0" />
-	<metadata
-		id="metadata2939">
-	  <rdf:RDF>
-		 <cc:Work
-			 rdf:about="">
-			<dc:format>image/svg+xml</dc:format>
-			<dc:type
-				rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-			<dc:title></dc:title>
-		 </cc:Work>
-	  </rdf:RDF>
-	</metadata>
+ <svg
+ id = '${room.name}_cabinetDoor1'
+ class = '${cabinetDoorClasses(1)}'
+ data-selector = 'cabinetSet2Door1'
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:cc="http://creativecommons.org/ns#"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:svg="http://www.w3.org/2000/svg"
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+  xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+  width="65.104195"
+  height="117.14441"
+  viewBox="0 0 17.225485 30.994458"
+  version="1.1"
+  id="svg2942"
+  inkscape:version="1.0.1 (c497b03c, 2020-09-10)"
+  sodipodi:docname="cabinetDoor.svg">
+ <defs
+	 id="defs2936" />
+ <sodipodi:namedview
+	 id="base"
+	 pagecolor="#ffffff"
+	 bordercolor="#666666"
+	 borderopacity="1.0"
+	 inkscape:pageopacity="0.0"
+	 inkscape:pageshadow="2"
+	 inkscape:zoom="0.32205155"
+	 inkscape:cx="139.74588"
+	 inkscape:cy="239.65113"
+	 inkscape:document-units="px"
+	 inkscape:current-layer="layer1"
+	 inkscape:document-rotation="0"
+	 showgrid="false"
+	 units="px"
+	 inkscape:window-width="1252"
+	 inkscape:window-height="847"
+	 inkscape:window-x="0"
+	 inkscape:window-y="25"
+	 inkscape:window-maximized="0" />
+ <metadata
+	 id="metadata2939">
+	<rdf:RDF>
+	  <cc:Work
+		  rdf:about="">
+		 <dc:format>image/svg+xml</dc:format>
+		 <dc:type
+			 rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+		 <dc:title></dc:title>
+	  </cc:Work>
+	</rdf:RDF>
+ </metadata>
+ <g
+	 inkscape:label="Layer 1"
+	 inkscape:groupmode="layer"
+	 id="layer1"
+	 transform="translate(-54.673614,-84.758974)">
 	<g
-		inkscape:label="Layer 1"
-		inkscape:groupmode="layer"
-		id="layer1"
-		transform="translate(-54.673614,-84.758974)">
-	  <g
-		  id="g3976"
-		  transform="matrix(0.86506448,0,0,0.87518243,-80.428521,1.0884093)">
-		 <rect
-			 style="fill:#f7f7f7;fill-opacity:1;stroke:#000000;stroke-width:0.287016;stroke-opacity:1"
-			 id="rect2469-6"
-			 width="19.625355"
-			 height="35.127838"
-			 x="156.31931"
-			 y="95.747078" />
-		 <ellipse
-			 style="fill:#9b9916;fill-opacity:1;stroke-width:0.189253"
-			 id="path3049-5"
-			 cx="172.85654"
-			 cy="113.27518"
-			 rx="1.1775211"
-			 ry="1.6929078" />
-	  </g>
+		id="g3976"
+		transform="matrix(0.86506448,0,0,0.87518243,-80.428521,1.0884093)">
+	  <rect
+		  style="fill:#f7f7f7;fill-opacity:1;stroke:#000000;stroke-width:0.287016;stroke-opacity:1"
+		  id="rect2469-6"
+		  width="19.625355"
+		  height="35.127838"
+		  x="156.31931"
+		  y="95.747078" />
+	  <ellipse
+		  style="fill:#9b9916;fill-opacity:1;stroke-width:0.189253"
+		  id="path3049-5"
+		  cx="172.85654"
+		  cy="113.27518"
+		  rx="1.1775211"
+		  ry="1.6929078" />
 	</g>
- </svg>
-	`;
+ </g>
+</svg>
+ `;
   let cabinetDoor2 = `
-	<svg
-	id = '${room.name}_cabinetDoor2'
-	class = '${room.name}_cabinetDoor2'
-	 xmlns:dc="http://purl.org/dc/elements/1.1/"
-	 xmlns:cc="http://creativecommons.org/ns#"
-	 xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-	 xmlns:svg="http://www.w3.org/2000/svg"
-	 xmlns="http://www.w3.org/2000/svg"
-	 xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-	 xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-	 width="65.104195"
-	 height="117.14441"
-	 viewBox="0 0 17.225485 30.994458"
-	 version="1.1"
-	 id="svg2942"
-	 inkscape:version="1.0.1 (c497b03c, 2020-09-10)"
-	 sodipodi:docname="cabinetDoor.svg">
-	<defs
-		id="defs2936" />
-	<sodipodi:namedview
-		id="base"
-		pagecolor="#ffffff"
-		bordercolor="#666666"
-		borderopacity="1.0"
-		inkscape:pageopacity="0.0"
-		inkscape:pageshadow="2"
-		inkscape:zoom="0.32205155"
-		inkscape:cx="139.74588"
-		inkscape:cy="239.65113"
-		inkscape:document-units="px"
-		inkscape:current-layer="layer1"
-		inkscape:document-rotation="0"
-		showgrid="false"
-		units="px"
-		inkscape:window-width="1252"
-		inkscape:window-height="847"
-		inkscape:window-x="0"
-		inkscape:window-y="25"
-		inkscape:window-maximized="0" />
-	<metadata
-		id="metadata2939">
-	  <rdf:RDF>
-		 <cc:Work
-			 rdf:about="">
-			<dc:format>image/svg+xml</dc:format>
-			<dc:type
-				rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-			<dc:title></dc:title>
-		 </cc:Work>
-	  </rdf:RDF>
-	</metadata>
+ <svg
+ id = '${room.name}_cabinetDoor2'
+ class = '${cabinetDoorClasses(2)}'
+ data-selector = 'cabinetSet2Door2'
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:cc="http://creativecommons.org/ns#"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:svg="http://www.w3.org/2000/svg"
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+  xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+  width="65.104195"
+  height="117.14441"
+  viewBox="0 0 17.225485 30.994458"
+  version="1.1"
+  id="svg2942"
+  inkscape:version="1.0.1 (c497b03c, 2020-09-10)"
+  sodipodi:docname="cabinetDoor.svg">
+ <defs
+	 id="defs2936" />
+ <sodipodi:namedview
+	 id="base"
+	 pagecolor="#ffffff"
+	 bordercolor="#666666"
+	 borderopacity="1.0"
+	 inkscape:pageopacity="0.0"
+	 inkscape:pageshadow="2"
+	 inkscape:zoom="0.32205155"
+	 inkscape:cx="139.74588"
+	 inkscape:cy="239.65113"
+	 inkscape:document-units="px"
+	 inkscape:current-layer="layer1"
+	 inkscape:document-rotation="0"
+	 showgrid="false"
+	 units="px"
+	 inkscape:window-width="1252"
+	 inkscape:window-height="847"
+	 inkscape:window-x="0"
+	 inkscape:window-y="25"
+	 inkscape:window-maximized="0" />
+ <metadata
+	 id="metadata2939">
+	<rdf:RDF>
+	  <cc:Work
+		  rdf:about="">
+		 <dc:format>image/svg+xml</dc:format>
+		 <dc:type
+			 rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+		 <dc:title></dc:title>
+	  </cc:Work>
+	</rdf:RDF>
+ </metadata>
+ <g
+	 inkscape:label="Layer 1"
+	 inkscape:groupmode="layer"
+	 id="layer1"
+	 transform="translate(-54.673614,-84.758974)">
 	<g
-		inkscape:label="Layer 1"
-		inkscape:groupmode="layer"
-		id="layer1"
-		transform="translate(-54.673614,-84.758974)">
-	  <g
-		  id="g3976"
-		  transform="matrix(0.86506448,0,0,0.87518243,-80.428521,1.0884093)">
-		 <rect
-			 style="fill:#f7f7f7;fill-opacity:1;stroke:#000000;stroke-width:0.287016;stroke-opacity:1"
-			 id="rect2469-6"
-			 width="19.625355"
-			 height="35.127838"
-			 x="156.31931"
-			 y="95.747078" />
-		 <ellipse
-			 style="fill:#9b9916;fill-opacity:1;stroke-width:0.189253"
-			 id="path3049-5"
-			 cx="172.85654"
-			 cy="113.27518"
-			 rx="1.1775211"
-			 ry="1.6929078" />
-	  </g>
+		id="g3976"
+		transform="matrix(0.86506448,0,0,0.87518243,-80.428521,1.0884093)">
+	  <rect
+		  style="fill:#f7f7f7;fill-opacity:1;stroke:#000000;stroke-width:0.287016;stroke-opacity:1"
+		  id="rect2469-6"
+		  width="19.625355"
+		  height="35.127838"
+		  x="156.31931"
+		  y="95.747078" />
+	  <ellipse
+		  style="fill:#9b9916;fill-opacity:1;stroke-width:0.189253"
+		  id="path3049-5"
+		  cx="172.85654"
+		  cy="113.27518"
+		  rx="1.1775211"
+		  ry="1.6929078" />
 	</g>
- </svg>
-	`;
+ </g>
+</svg>
+ `;
   let cabinetDoor3 = `
-	<svg
-	id = '${room.name}_cabinetDoor3'
-	class = '${room.name}_cabinetDoor3'
-	 xmlns:dc="http://purl.org/dc/elements/1.1/"
-	 xmlns:cc="http://creativecommons.org/ns#"
-	 xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-	 xmlns:svg="http://www.w3.org/2000/svg"
-	 xmlns="http://www.w3.org/2000/svg"
-	 xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-	 xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-	 width="65.104195"
-	 height="117.14441"
-	 viewBox="0 0 17.225485 30.994458"
-	 version="1.1"
-	 id="svg2942"
-	 inkscape:version="1.0.1 (c497b03c, 2020-09-10)"
-	 sodipodi:docname="cabinetDoor.svg">
-	<defs
-		id="defs2936" />
-	<sodipodi:namedview
-		id="base"
-		pagecolor="#ffffff"
-		bordercolor="#666666"
-		borderopacity="1.0"
-		inkscape:pageopacity="0.0"
-		inkscape:pageshadow="2"
-		inkscape:zoom="0.32205155"
-		inkscape:cx="139.74588"
-		inkscape:cy="239.65113"
-		inkscape:document-units="px"
-		inkscape:current-layer="layer1"
-		inkscape:document-rotation="0"
-		showgrid="false"
-		units="px"
-		inkscape:window-width="1252"
-		inkscape:window-height="847"
-		inkscape:window-x="0"
-		inkscape:window-y="25"
-		inkscape:window-maximized="0" />
-	<metadata
-		id="metadata2939">
-	  <rdf:RDF>
-		 <cc:Work
-			 rdf:about="">
-			<dc:format>image/svg+xml</dc:format>
-			<dc:type
-				rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-			<dc:title></dc:title>
-		 </cc:Work>
-	  </rdf:RDF>
-	</metadata>
+ <svg
+ id = '${room.name}_cabinetDoor3'
+ class = '${cabinetDoorClasses(3)}'
+ data-selector = 'cabinetSet2Door3'
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:cc="http://creativecommons.org/ns#"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:svg="http://www.w3.org/2000/svg"
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+  xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+  width="65.104195"
+  height="117.14441"
+  viewBox="0 0 17.225485 30.994458"
+  version="1.1"
+  id="svg2942"
+  inkscape:version="1.0.1 (c497b03c, 2020-09-10)"
+  sodipodi:docname="cabinetDoor.svg">
+ <defs
+	 id="defs2936" />
+ <sodipodi:namedview
+	 id="base"
+	 pagecolor="#ffffff"
+	 bordercolor="#666666"
+	 borderopacity="1.0"
+	 inkscape:pageopacity="0.0"
+	 inkscape:pageshadow="2"
+	 inkscape:zoom="0.32205155"
+	 inkscape:cx="139.74588"
+	 inkscape:cy="239.65113"
+	 inkscape:document-units="px"
+	 inkscape:current-layer="layer1"
+	 inkscape:document-rotation="0"
+	 showgrid="false"
+	 units="px"
+	 inkscape:window-width="1252"
+	 inkscape:window-height="847"
+	 inkscape:window-x="0"
+	 inkscape:window-y="25"
+	 inkscape:window-maximized="0" />
+ <metadata
+	 id="metadata2939">
+	<rdf:RDF>
+	  <cc:Work
+		  rdf:about="">
+		 <dc:format>image/svg+xml</dc:format>
+		 <dc:type
+			 rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+		 <dc:title></dc:title>
+	  </cc:Work>
+	</rdf:RDF>
+ </metadata>
+ <g
+	 inkscape:label="Layer 1"
+	 inkscape:groupmode="layer"
+	 id="layer1"
+	 transform="translate(-54.673614,-84.758974)">
 	<g
-		inkscape:label="Layer 1"
-		inkscape:groupmode="layer"
-		id="layer1"
-		transform="translate(-54.673614,-84.758974)">
-	  <g
-		  id="g3976"
-		  transform="matrix(0.86506448,0,0,0.87518243,-80.428521,1.0884093)">
-		 <rect
-			 style="fill:#f7f7f7;fill-opacity:1;stroke:#000000;stroke-width:0.287016;stroke-opacity:1"
-			 id="rect2469-6"
-			 width="19.625355"
-			 height="35.127838"
-			 x="156.31931"
-			 y="95.747078" />
-		 <ellipse
-			 style="fill:#9b9916;fill-opacity:1;stroke-width:0.189253"
-			 id="path3049-5"
-			 cx="172.85654"
-			 cy="113.27518"
-			 rx="1.1775211"
-			 ry="1.6929078" />
-	  </g>
+		id="g3976"
+		transform="matrix(0.86506448,0,0,0.87518243,-80.428521,1.0884093)">
+	  <rect
+		  style="fill:#f7f7f7;fill-opacity:1;stroke:#000000;stroke-width:0.287016;stroke-opacity:1"
+		  id="rect2469-6"
+		  width="19.625355"
+		  height="35.127838"
+		  x="156.31931"
+		  y="95.747078" />
+	  <ellipse
+		  style="fill:#9b9916;fill-opacity:1;stroke-width:0.189253"
+		  id="path3049-5"
+		  cx="172.85654"
+		  cy="113.27518"
+		  rx="1.1775211"
+		  ry="1.6929078" />
 	</g>
- </svg>
-	`;
+ </g>
+</svg>
+ `;
+
+  function cabinetDoorClasses2(num) {
+    let picked = '$cabinetSet2Door'.concat(num);
+    if (room[picked].inspected) {
+      return `${room.name}_cabinetDoor${num}Set2 ${room.name}_lowerCabinetDoor-inspected`;
+    } else {
+      return `${room.name}_cabinetDoor${num}Set2`;
+    }
+  }
+
   let cabinetDoor4 = `
-	<svg
-	id = '${room.name}_cabinetDoor4Set2'
-	class = '${room.name}_cabinetDoor4Set2'
-	 xmlns:dc="http://purl.org/dc/elements/1.1/"
-	 xmlns:cc="http://creativecommons.org/ns#"
-	 xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-	 xmlns:svg="http://www.w3.org/2000/svg"
-	 xmlns="http://www.w3.org/2000/svg"
-	 xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-	 xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-	 width="65.104195"
-	 height="117.14441"
-	 viewBox="0 0 17.225485 30.994458"
-	 version="1.1"
-	 id="svg2942"
-	 inkscape:version="1.0.1 (c497b03c, 2020-09-10)"
-	 sodipodi:docname="cabinetDoor.svg">
-	<defs
-		id="defs2936" />
-	<sodipodi:namedview
-		id="base"
-		pagecolor="#ffffff"
-		bordercolor="#666666"
-		borderopacity="1.0"
-		inkscape:pageopacity="0.0"
-		inkscape:pageshadow="2"
-		inkscape:zoom="0.32205155"
-		inkscape:cx="139.74588"
-		inkscape:cy="239.65113"
-		inkscape:document-units="px"
-		inkscape:current-layer="layer1"
-		inkscape:document-rotation="0"
-		showgrid="false"
-		units="px"
-		inkscape:window-width="1252"
-		inkscape:window-height="847"
-		inkscape:window-x="0"
-		inkscape:window-y="25"
-		inkscape:window-maximized="0" />
-	<metadata
-		id="metadata2939">
-	  <rdf:RDF>
-		 <cc:Work
-			 rdf:about="">
-			<dc:format>image/svg+xml</dc:format>
-			<dc:type
-				rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-			<dc:title></dc:title>
-		 </cc:Work>
-	  </rdf:RDF>
-	</metadata>
-	<g
-		inkscape:label="Layer 1"
-		inkscape:groupmode="layer"
-		id="layer1"
-		transform="translate(-54.673614,-84.758974)">
-	  <g
-		  id="g3976"
-		  transform="matrix(0.86506448,0,0,0.87518243,-80.428521,1.0884093)">
-		 <rect
-			 style="fill:#f7f7f7;fill-opacity:1;stroke:#000000;stroke-width:0.287016;stroke-opacity:1"
-			 id="rect2469-6"
-			 width="19.625355"
-			 height="35.127838"
-			 x="156.31931"
-			 y="95.747078" />
-		 <ellipse
-			 style="fill:#9b9916;fill-opacity:1;stroke-width:0.189253"
-			 id="path3049-5"
-			 cx="172.85654"
-			 cy="113.27518"
-			 rx="1.1775211"
-			 ry="1.6929078" />
-	  </g>
-	</g>
- </svg>
-	`;
+  <svg
+  id = '${room.name}_cabinetDoor4'
+  class = '${cabinetDoorClasses2(4)}'
+  data-selector = 'cabinetSet2Door4'
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="65.104195"
+   height="117.14441"
+   viewBox="0 0 17.225485 30.994458"
+   version="1.1"
+   id="svg2942"
+   inkscape:version="1.0.1 (c497b03c, 2020-09-10)"
+   sodipodi:docname="cabinetDoor.svg">
+  <defs
+     id="defs2936" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.32205155"
+     inkscape:cx="139.74588"
+     inkscape:cy="239.65113"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     inkscape:document-rotation="0"
+     showgrid="false"
+     units="px"
+     inkscape:window-width="1252"
+     inkscape:window-height="847"
+     inkscape:window-x="0"
+     inkscape:window-y="25"
+     inkscape:window-maximized="0" />
+  <metadata
+     id="metadata2939">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-54.673614,-84.758974)">
+    <g
+       id="g3976"
+       transform="matrix(0.86506448,0,0,0.87518243,-80.428521,1.0884093)">
+      <rect
+         style="fill:#f7f7f7;fill-opacity:1;stroke:#000000;stroke-width:0.287016;stroke-opacity:1"
+         id="rect2469-6"
+         width="19.625355"
+         height="35.127838"
+         x="156.31931"
+         y="95.747078" />
+      <ellipse
+         style="fill:#9b9916;fill-opacity:1;stroke-width:0.189253"
+         id="path3049-5"
+         cx="172.85654"
+         cy="113.27518"
+         rx="1.1775211"
+         ry="1.6929078" />
+    </g>
+  </g>
+</svg>
+  `;
   let cabinetDoor5 = `
-	<svg
-	id = '${room.name}_cabinetDoor5Set2'
-	class = '${room.name}_cabinetDoor5Set2'
-	 xmlns:dc="http://purl.org/dc/elements/1.1/"
-	 xmlns:cc="http://creativecommons.org/ns#"
-	 xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-	 xmlns:svg="http://www.w3.org/2000/svg"
-	 xmlns="http://www.w3.org/2000/svg"
-	 xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-	 xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-	 width="65.104195"
-	 height="117.14441"
-	 viewBox="0 0 17.225485 30.994458"
-	 version="1.1"
-	 id="svg2942"
-	 inkscape:version="1.0.1 (c497b03c, 2020-09-10)"
-	 sodipodi:docname="cabinetDoor.svg">
-	<defs
-		id="defs2936" />
-	<sodipodi:namedview
-		id="base"
-		pagecolor="#ffffff"
-		bordercolor="#666666"
-		borderopacity="1.0"
-		inkscape:pageopacity="0.0"
-		inkscape:pageshadow="2"
-		inkscape:zoom="0.32205155"
-		inkscape:cx="139.74588"
-		inkscape:cy="239.65113"
-		inkscape:document-units="px"
-		inkscape:current-layer="layer1"
-		inkscape:document-rotation="0"
-		showgrid="false"
-		units="px"
-		inkscape:window-width="1252"
-		inkscape:window-height="847"
-		inkscape:window-x="0"
-		inkscape:window-y="25"
-		inkscape:window-maximized="0" />
-	<metadata
-		id="metadata2939">
-	  <rdf:RDF>
-		 <cc:Work
-			 rdf:about="">
-			<dc:format>image/svg+xml</dc:format>
-			<dc:type
-				rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-			<dc:title></dc:title>
-		 </cc:Work>
-	  </rdf:RDF>
-	</metadata>
-	<g
-		inkscape:label="Layer 1"
-		inkscape:groupmode="layer"
-		id="layer1"
-		transform="translate(-54.673614,-84.758974)">
-	  <g
-		  id="g3976"
-		  transform="matrix(0.86506448,0,0,0.87518243,-80.428521,1.0884093)">
-		 <rect
-			 style="fill:#f7f7f7;fill-opacity:1;stroke:#000000;stroke-width:0.287016;stroke-opacity:1"
-			 id="rect2469-6"
-			 width="19.625355"
-			 height="35.127838"
-			 x="156.31931"
-			 y="95.747078" />
-		 <ellipse
-			 style="fill:#9b9916;fill-opacity:1;stroke-width:0.189253"
-			 id="path3049-5"
-			 cx="172.85654"
-			 cy="113.27518"
-			 rx="1.1775211"
-			 ry="1.6929078" />
-	  </g>
-	</g>
- </svg>
-	`;
+  <svg
+  id = '${room.name}_cabinetDoor5'
+  class = '${cabinetDoorClasses2(5)}'
+  data-selector = 'cabinetSet2Door6'
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="65.104195"
+   height="117.14441"
+   viewBox="0 0 17.225485 30.994458"
+   version="1.1"
+   id="svg2942"
+   inkscape:version="1.0.1 (c497b03c, 2020-09-10)"
+   sodipodi:docname="cabinetDoor.svg">
+  <defs
+     id="defs2936" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.32205155"
+     inkscape:cx="139.74588"
+     inkscape:cy="239.65113"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     inkscape:document-rotation="0"
+     showgrid="false"
+     units="px"
+     inkscape:window-width="1252"
+     inkscape:window-height="847"
+     inkscape:window-x="0"
+     inkscape:window-y="25"
+     inkscape:window-maximized="0" />
+  <metadata
+     id="metadata2939">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-54.673614,-84.758974)">
+    <g
+       id="g3976"
+       transform="matrix(0.86506448,0,0,0.87518243,-80.428521,1.0884093)">
+      <rect
+         style="fill:#f7f7f7;fill-opacity:1;stroke:#000000;stroke-width:0.287016;stroke-opacity:1"
+         id="rect2469-6"
+         width="19.625355"
+         height="35.127838"
+         x="156.31931"
+         y="95.747078" />
+      <ellipse
+         style="fill:#9b9916;fill-opacity:1;stroke-width:0.189253"
+         id="path3049-5"
+         cx="172.85654"
+         cy="113.27518"
+         rx="1.1775211"
+         ry="1.6929078" />
+    </g>
+  </g>
+</svg>
+  `;
   let cabinetDoor6 = `
-	<svg
-	id = '${room.name}_cabinetDoor6Set2'
-	class = '${room.name}_cabinetDoor6Set2'
-	 xmlns:dc="http://purl.org/dc/elements/1.1/"
-	 xmlns:cc="http://creativecommons.org/ns#"
-	 xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-	 xmlns:svg="http://www.w3.org/2000/svg"
-	 xmlns="http://www.w3.org/2000/svg"
-	 xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-	 xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-	 width="65.104195"
-	 height="117.14441"
-	 viewBox="0 0 17.225485 30.994458"
-	 version="1.1"
-	 id="svg2942"
-	 inkscape:version="1.0.1 (c497b03c, 2020-09-10)"
-	 sodipodi:docname="cabinetDoor.svg">
-	<defs
-		id="defs2936" />
-	<sodipodi:namedview
-		id="base"
-		pagecolor="#ffffff"
-		bordercolor="#666666"
-		borderopacity="1.0"
-		inkscape:pageopacity="0.0"
-		inkscape:pageshadow="2"
-		inkscape:zoom="0.32205155"
-		inkscape:cx="139.74588"
-		inkscape:cy="239.65113"
-		inkscape:document-units="px"
-		inkscape:current-layer="layer1"
-		inkscape:document-rotation="0"
-		showgrid="false"
-		units="px"
-		inkscape:window-width="1252"
-		inkscape:window-height="847"
-		inkscape:window-x="0"
-		inkscape:window-y="25"
-		inkscape:window-maximized="0" />
-	<metadata
-		id="metadata2939">
-	  <rdf:RDF>
-		 <cc:Work
-			 rdf:about="">
-			<dc:format>image/svg+xml</dc:format>
-			<dc:type
-				rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-			<dc:title></dc:title>
-		 </cc:Work>
-	  </rdf:RDF>
-	</metadata>
-	<g
-		inkscape:label="Layer 1"
-		inkscape:groupmode="layer"
-		id="layer1"
-		transform="translate(-54.673614,-84.758974)">
-	  <g
-		  id="g3976"
-		  transform="matrix(0.86506448,0,0,0.87518243,-80.428521,1.0884093)">
-		 <rect
-			 style="fill:#f7f7f7;fill-opacity:1;stroke:#000000;stroke-width:0.287016;stroke-opacity:1"
-			 id="rect2469-6"
-			 width="19.625355"
-			 height="35.127838"
-			 x="156.31931"
-			 y="95.747078" />
-		 <ellipse
-			 style="fill:#9b9916;fill-opacity:1;stroke-width:0.189253"
-			 id="path3049-5"
-			 cx="172.85654"
-			 cy="113.27518"
-			 rx="1.1775211"
-			 ry="1.6929078" />
-	  </g>
-	</g>
- </svg>
-	`;
+  <svg
+  id = '${room.name}_cabinetDoor6'
+  class = '${cabinetDoorClasses2(6)}'
+  data-selector = 'cabinetDoor6'
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="65.104195"
+   height="117.14441"
+   viewBox="0 0 17.225485 30.994458"
+   version="1.1"
+   id="svg2942"
+   inkscape:version="1.0.1 (c497b03c, 2020-09-10)"
+   sodipodi:docname="cabinetDoor.svg">
+  <defs
+     id="defs2936" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.32205155"
+     inkscape:cx="139.74588"
+     inkscape:cy="239.65113"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     inkscape:document-rotation="0"
+     showgrid="false"
+     units="px"
+     inkscape:window-width="1252"
+     inkscape:window-height="847"
+     inkscape:window-x="0"
+     inkscape:window-y="25"
+     inkscape:window-maximized="0" />
+  <metadata
+     id="metadata2939">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-54.673614,-84.758974)">
+    <g
+       id="g3976"
+       transform="matrix(0.86506448,0,0,0.87518243,-80.428521,1.0884093)">
+      <rect
+         style="fill:#f7f7f7;fill-opacity:1;stroke:#000000;stroke-width:0.287016;stroke-opacity:1"
+         id="rect2469-6"
+         width="19.625355"
+         height="35.127838"
+         x="156.31931"
+         y="95.747078" />
+      <ellipse
+         style="fill:#9b9916;fill-opacity:1;stroke-width:0.189253"
+         id="path3049-5"
+         cx="172.85654"
+         cy="113.27518"
+         rx="1.1775211"
+         ry="1.6929078" />
+    </g>
+  </g>
+</svg>
+  `;
 
   let toaster = `
   <svg

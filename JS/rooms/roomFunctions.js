@@ -93,11 +93,19 @@ function checkLights(roomContainer, room) {
 
 //@# ===============  ROOM ELEMENT SHARED FUNCTIONS =============
 
-function inspectNoAction(event, { gameMessage }) {
+function inspectNoAction(event, { gameMessage, randomMessages }) {
   if (notALockedItem()) {
     return;
   }
-  generalGameMessage(gameMessage);
+  function getRandomInt(max) {
+    return Math.floor(Math.random() * Math.floor(max));
+  }
+  if (randomMessages) {
+    let random = getRandomInt(randomMessages.length);
+    return generalGameMessage(randomMessages[random]);
+  } else {
+    return generalGameMessage(gameMessage);
+  }
 }
 
 function inspect(event, { name, inspected, specificView, ...rest }, room) {
@@ -137,15 +145,22 @@ function switchLights(event, { name, audio, ...rest }, room) {
 
 function interactLockedItem(
   event,
-  { name, open, lockedMessage, solvedMessage, affectedNodes, ...rest },
+  { name, open, lockedMessage, solvingMessage, affectedNodes, ...rest },
   room
 ) {
+  if (open) {
+    inspect(
+      event,
+      { name, open, affectedNodes, lockedMessage, solvingMessage, ...rest },
+      room
+    );
+  }
   // debugger;
   if (game.inventory.itemInUse) {
     let selectedItem = game.inventory.itemInUse;
 
     if (selectedItem.solves == name) {
-      debugger;
+      // debugger;
       //setting room dom object state;
       room[name].open = true;
 
@@ -157,7 +172,7 @@ function interactLockedItem(
       });
 
       //setting message
-      game.messageContainer.textContent = room[name].solvedMessage;
+      generalGameMessage(solvingMessage);
 
       //styling affectedNodes;
       if (affectedNodes) {
@@ -166,24 +181,16 @@ function interactLockedItem(
           DomSubnode.classList.add(affectedNode.class);
         });
       }
-
+      // option re-render to reflect updated state or proceed by setting the new open = !open.... and continue through the function;
+      if (rest.triggersReRender) {
+        room.render(game.roomContainer, room);
+      }
       return;
-      // re-render to reflect updated state or proceed by setting the new open = !open.... and continue through the function;
     }
   }
   // return if you want person to click adn then click again;  Keep like so if you want to trigger something else; (preferred;) But open is passed in an not reflecting updated object state;
-  if (open) {
-    //   Probably some sort of additional logic if it's already open.. trigger a zoomed or other view? (event.target.cll.toggle(open) or zoom view or ?)
-    //   Triger a re-render to new view or just add an item to inventory or ?... need to see;
-    //if causes re-render... break and re-render in if.. some next.  else add to Inventory obj.addsToInventory?. prop?
-    inspect(
-      event,
-      { name, open, lockedMessage, solvedMessage, affectedNodes, ...rest },
-      room
-    );
-    console.log('i am opened!');
-  } else {
-    if (lockedMessage) {
+  else {
+    if (lockedMessage && !open) {
       generalGameMessage(lockedMessage);
     }
   }
@@ -207,6 +214,9 @@ function focusView(event, { name, inspected, ...rest }, room) {
   // update inspected status to true
   room[name].inspected = true;
 
+  // no arrows in focus for navigating
+  toggleArrows();
+
   //  A zoomed Modal will render due to inspected state having changed;
   render(game.roomContainer, room);
 }
@@ -225,7 +235,15 @@ function addtoInventory(event, { name, ...rest }, room) {
 
 function goToRoom(
   event,
-  { open, directionLeadsTo, roomLeadsTo, gameMessage, lockedMessage, ...rest },
+  {
+    open,
+    directionLeadsTo,
+    roomLeadsTo,
+    gameMessage,
+    lockedMessage,
+    solvedMessage,
+    ...rest
+  },
   room
 ) {
   if (!open && game.inventory.itemInUse) {
@@ -234,7 +252,7 @@ function goToRoom(
   } else if (!open) {
     generalGameMessage(lockedMessage);
   } else {
-    generalGameMessage(gameMessage);
+    generalGameMessage(solvedMessage);
     let pickedRoom = navigateRooms(roomLeadsTo);
     game.currentRoom = pickedRoom;
     // debugger;
@@ -273,20 +291,26 @@ function closeZoomView(
 // UTILs NO EXPORT
 function inspectMessage(
   inspected,
-  { gameMessageWhenInspecting, gameMessageWhenUninspecting }
+  { gameMessageWhenInspecting, gameMessageWhenUninspecting, solvedMessage }
 ) {
-  if (!gameMessageWhenInspecting || !gameMessageWhenUninspecting) {
+  if (
+    (!gameMessageWhenInspecting || !gameMessageWhenUninspecting) &&
+    !solvedMessage
+  ) {
     return;
   }
   // ? running message or replacing?
   let message = document.createElement('p');
   message.classList.add('messageEntry');
-  if (inspected) {
+  if (solvedMessage) {
+    message.textContent = solvedMessage;
+    return game.messageContainer.prepend(message);
+  } else if (inspected) {
     message.textContent = gameMessageWhenUninspecting;
   } else {
     message.textContent = gameMessageWhenInspecting;
   }
-  game.messageContainer.prepend(message);
+  return game.messageContainer.prepend(message);
 }
 
 function generalGameMessage(message) {

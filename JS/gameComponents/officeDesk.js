@@ -1,6 +1,8 @@
 export default function desk(room) {
   // functions here
 
+  let roomName = room.name;
+
   function deskClassNames() {
     if (room.$desk.inspected) {
       return `${room.name}_desk ${room.name}desk-inspected`;
@@ -8,6 +10,14 @@ export default function desk(room) {
       return `${room.name}_desk`;
     }
   }
+  function getClasses(standardClass, roomObj, className) {
+    if (roomObj.inspected) {
+      return `${standardClass} ${className}`;
+    } else {
+      return standardClass;
+    }
+  }
+
   // class = 'deskClassNames()}'
   // data-selector = 'desk'
   let desk = `
@@ -68,7 +78,12 @@ export default function desk(room) {
   let officeChair = `
   <svg
   id = '${room.name}_officeChair'
-  class = '${room.name}_officeChair'
+  class = '${getClasses(
+    roomName.concat('_officeChair'),
+    room.$officeChair,
+    'r20'
+  )}'
+  data-selector = "officeChair"
   xmlns:dc="http://purl.org/dc/elements/1.1/"
   xmlns:cc="http://creativecommons.org/ns#"
   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
@@ -706,7 +721,12 @@ export default function desk(room) {
   let trashCan = `
 <svg
 id = '${room.name}_trashCan'
-class = '${room.name}_trashCan'
+class = '${getClasses(
+    roomName.concat('_trashCan'),
+    room.$officeTrashCan,
+    'd20'
+  )}'
+data-selector = "officeTrashCan"
    xmlns:dc="http://purl.org/dc/elements/1.1/"
    xmlns:cc="http://creativecommons.org/ns#"
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"

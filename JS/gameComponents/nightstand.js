@@ -1,13 +1,6 @@
 export default function nightStand(room) {
   // functions here
 
-  function nightStandClassNames() {
-    if (room.$nightStand.inspected) {
-      return `${room.name}_nightStand ${room.name}_nightStand-inspected`;
-    } else {
-      return `${room.name}_nightStand`;
-    }
-  }
   // id = '${room.name}thing'
   // class = '${thingClassNames()}
   // data-selector = 'THING'
@@ -15,6 +8,7 @@ export default function nightStand(room) {
   <svg 
   id = '${room.name}thing'
   class = ${room.name}_nightStand
+  data-selector = "nightStand"
   xmlns="http://www.w3.org/2000/svg"
   width="118.02872"
   height="148.22025"

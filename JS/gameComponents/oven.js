@@ -838,7 +838,7 @@ class = '${room.name}_oven'
  `;
   function ovenDoorClassNames() {
     if (room.$ovenDoor.inspected) {
-      return `${room.name}_ovenDoor ${room.name}_ovenDoor-inspected`;
+      return `${room.name}_ovenDoor x135`;
     } else {
       return `${room.name}_ovenDoor`;
     }
@@ -847,7 +847,9 @@ class = '${room.name}_oven'
   let ovenDoor = `
   <svg
   id = '${room.name}_ovenDoor'
-  class = '${room.name}_ovenDoor'
+  class = '${ovenDoorClassNames()}'
+  style = "transform-origin: bottom;"
+  data-selector = "ovenDoor"
   xmlns:dc="http://purl.org/dc/elements/1.1/"
   xmlns:cc="http://creativecommons.org/ns#"
   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"

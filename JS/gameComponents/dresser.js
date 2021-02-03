@@ -16,6 +16,7 @@ export default function dresser(room) {
   <svg
   id = '${room.name}_dresser'
   class = '${room.name}_dresser'
+  data-selector = "clothesDresser"
   xmlns="http://www.w3.org/2000/svg"
   width="172.45032"
   height="205.39964"

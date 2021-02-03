@@ -3,7 +3,7 @@ export default function ceilingFan(room) {
 
   function ceilingFanClassNames() {
     if (room.$fanSwitch?.inspected) {
-      return `${room.name}_ceilingFan ${room.name}_ceilingFan rotating`;
+      return `${room.name}_ceilingFan ${room.name}_ceilingFan  rotatingFan`;
     } else {
       return `${room.name}_ceilingFan`;
     }
@@ -17,6 +17,8 @@ export default function ceilingFan(room) {
   id = '${room.name}_ceilingFan'
   class = '${ceilingFanClassNames()}'
   xmlns="http://www.w3.org/2000/svg" 
+  width="600";
+  height="400"
   viewBox="0 0 119.38429 137.81685"
   >
   <g inkscape:label="Layer 1" inkscape:groupmode="layer" id="layer1" transform="translate(-55.345042,-5.1812471)">

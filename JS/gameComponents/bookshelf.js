@@ -95,8 +95,6 @@ export default function bookShelf(room) {
 	  <rect
 		  style="opacity:1;fill:#008000;fill-opacity:1;stroke:none;stroke-width:0.701381;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
 		  id="$book"
-		  class = '${specialBookClass()}'
-		  data-selector = 'specialBook'
 		  width="4.3160386"
 		  height="13.879036"
 		  x="-131.48784"
@@ -199,6 +197,8 @@ export default function bookShelf(room) {
 		 <rect
 			 style="opacity:1;fill:#abc837;fill-opacity:1;stroke:none;stroke-width:0.595405;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
 			 id="rect75345-9-2"
+			 class = '${specialBookClass()}'
+			 data-selector = 'specialBook'
 			 width="3.110369"
 			 height="13.878736"
 			 x="-144.40408"

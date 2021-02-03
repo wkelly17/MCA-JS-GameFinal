@@ -57,11 +57,13 @@ export default function closet(room) {
 		  <rect style="fill:#b3b3b3;fill-opacity:1;stroke:none;stroke-width:1.01867" id="rect2987" width="79.628548"
 			  height="2.8496673" x="60.454559" y="43.247635" ry="1.4248337" />
 		  <path
+		  data-selector = "clothes"
 			  style="fill:#008000;stroke:#000000;stroke-width:0.370353px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
 			  d="m 64.590254,47.470462 c 3.342775,3.511461 5.137352,0.967385 6.97192,-1.420281 l 6.245678,9.373905 -2.759719,5.113046 -4.066952,-6.249281 0.290496,17.32753 -7.84341,0.284048 -0.145247,-16.475343 -3.340713,5.965218 -1.597731,-6.533327 z"
 			  id="path2993" sodipodi:nodetypes="ccccccccccc" />
 		  <g id="$closetFrame" transform="translate(-0.1452498,-0.39132156)">
 			  <path
+			  data-selector = "clothes"
 				  style="fill:#6c5d53;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
 				  d="M 61.582089,109.08188 V 37.868972 L 58.094371,34.127779 57.83349,109.26152 Z" id="path9356" />
 			  <path
@@ -78,14 +80,17 @@ export default function closet(room) {
 			  d="m 67.126924,49.323746 v -4.666051 c -0.04155,-2.859662 0.571724,-2.18569 1.080835,-2.073801 l 0.216167,7.258302 z"
 			  id="path2995" sodipodi:nodetypes="ccccc" />
 		  <path
+  data-selector = "clothes"
 			  style="fill:#000080;stroke:#000000;stroke-width:0.370353px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
 			  d="m 76.555176,47.440849 c 3.342775,3.511461 5.137352,0.967385 6.97192,-1.420281 l 6.245678,9.373905 -2.759719,5.113046 -4.066952,-6.249281 0.290496,17.327531 -7.843411,0.284047 -0.145247,-16.475343 -3.340712,5.965219 -1.597731,-6.533328 z"
 			  id="path2993-5" sodipodi:nodetypes="ccccccccccc" />
 		  <path
+		  data-selector = "clothes"
 			  style="fill:#550000;stroke:#000000;stroke-width:0.370353px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
 			  d="m 87.873959,48.166413 c 3.342775,3.511461 5.137352,0.967385 6.97192,-1.420281 l 5.955451,21.273138 -3.63039,1.775456 -2.906054,-14.810924 0.290496,17.327526 -7.843411,0.28405 1.015654,-17.636242 -4.646726,14.38175 -2.758631,-2.325062 z"
 			  id="path2993-58" sodipodi:nodetypes="ccccccccccc" />
 		  <path
+		  data-selector = "clothes"
 			  style="fill:#000080;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
 			  d="m 120.82456,48.724343 c 4.35338,1.30718 8.70676,0.5425 13.06013,-0.43534 l 2.75715,29.74809 c -1.35399,-0.72357 -5.243,1.69503 -6.23985,2.75714 l -0.14511,-27.13606 -4.35338,0.29022 c -0.0967,9.04535 0.38697,14.56564 0.29023,26.84583 -1.20927,-0.63851 -6.33659,-1.42979 -7.54586,-1.01578 z"
 			  id="path3059" sodipodi:nodetypes="ccccccccc" />

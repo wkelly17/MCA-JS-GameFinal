@@ -114,6 +114,7 @@ export default function couch(room) {
  <rect
     style="opacity:1;fill:#5d2e00;fill-opacity:1;stroke:#000000;stroke-width:0.926042;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
     id="$couchBack"
+    data-selector = "couchBack"
     width="58.717255"
     height="26.533321"
     x="106.48322"

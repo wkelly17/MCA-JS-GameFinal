@@ -44,7 +44,7 @@ export default function safeKeypadZoom(room) {
     <button data-selector = "safeKeypadBtn" class="safeKeypad-button">M</button>
   </div>
   <button data-selector = "safeKeypadBtn" class="submitEntry" data-fxn = "submit" >Submit</button>
-  <button data-selector = "safeKeypadBtn" class = 'closeSafeKeypadBtn' data-fxn = "close"> X <button>
+  <button data-selector = "safeKeypadBtn" class = 'closeSafeKeypadBtn' data-fxn = "close"> X </button>
 </div>
  `;
   return html;

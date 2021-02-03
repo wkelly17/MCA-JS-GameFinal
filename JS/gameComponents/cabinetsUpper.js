@@ -8,6 +8,16 @@ export default function kitchenUpperCabinet(room) {
       return `${room.name}_kitchenUpperCabinet`;
     }
   }
+
+  function kitchenUpperCabinetClassNames(num) {
+    let picked = '$uppercabinetDoor'.concat(num);
+    if (room[picked].inspected) {
+      return `${room.name}_upperCabinetDoor${num} ${room.name}_cabinetDoor-inspected`;
+    } else {
+      return `${room.name}_upperCabinetDoor${num}`;
+    }
+  }
+
   // class = 'kitchenUpperCabinetClassNames()}'
   // data-selector = 'kitchenUpperCabinet'
   let kitchenUpperCabinet = `
@@ -204,7 +214,8 @@ export default function kitchenUpperCabinet(room) {
   let cabinetDoor1 = `
   <svg
   id = '${room.name}_upperCabinetDoor1'
-  class = '${room.name}_upperCabinetDoor1'
+  class = '${kitchenUpperCabinetClassNames(1)}'
+  data-selector = 'uppercabinetDoor1'
    xmlns:dc="http://purl.org/dc/elements/1.1/"
    xmlns:cc="http://creativecommons.org/ns#"
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
@@ -397,7 +408,8 @@ export default function kitchenUpperCabinet(room) {
   let cabinetDoor2 = `
   <svg
   id = '${room.name}_upperCabinetDoor2'
-  class = '${room.name}_upperCabinetDoor2'
+  class = '${kitchenUpperCabinetClassNames(2)}'
+  data-selector = 'uppercabinetDoor2'
    xmlns:dc="http://purl.org/dc/elements/1.1/"
    xmlns:cc="http://creativecommons.org/ns#"
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
@@ -587,10 +599,12 @@ export default function kitchenUpperCabinet(room) {
   </g>
 </svg>
  `;
+
   let cabinetDoor3 = `
   <svg
   id = '${room.name}_upperCabinetDoor3'
-  class = '${room.name}_upperCabinetDoor3'
+  class = '${kitchenUpperCabinetClassNames(3)}'
+  data-selector = 'uppercabinetDoor3'
    xmlns:dc="http://purl.org/dc/elements/1.1/"
    xmlns:cc="http://creativecommons.org/ns#"
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
@@ -780,10 +794,12 @@ export default function kitchenUpperCabinet(room) {
   </g>
 </svg>
  `;
+
   let cabinetDoor4 = `
   <svg
   id = '${room.name}_upperCabinetDoor4'
-  class = '${room.name}_upperCabinetDoor4'
+  class = '${kitchenUpperCabinetClassNames(4)}'
+  data-selector = 'uppercabinetDoor4'
    xmlns:dc="http://purl.org/dc/elements/1.1/"
    xmlns:cc="http://creativecommons.org/ns#"
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"

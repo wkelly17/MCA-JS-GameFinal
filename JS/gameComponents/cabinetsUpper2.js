@@ -1,11 +1,12 @@
 export default function kitchenUpperCabinet2(room) {
   // functions here
 
-  function kitchenUpperCabinetClassNames() {
-    if (room.$kitchenUpperCabinet.inspected) {
-      return `${room.name}_kitchenUpperCabinet ${room.name}kitchenUpperCabinet-inspected`;
+  function kitchenUpperCabinetClassNames(num) {
+    let picked = '$uppercabinetSet2Door'?.concat(num);
+    if (room[picked].inspected) {
+      return `${room.name}_upperCabinetDoor${num} ${room.name}_cabinetDoor-inspected`;
     } else {
-      return `${room.name}_kitchenUpperCabinet`;
+      return `${room.name}_upperCabinetDoor${num}`;
     }
   }
   // class = 'kitchenUpperCabinetClassNames()}'
@@ -204,7 +205,8 @@ export default function kitchenUpperCabinet2(room) {
   let cabinetDoor1 = `
   <svg
   id = '${room.name}_upperCabinetDoor1'
-  class = '${room.name}_upperCabinetDoor1'
+  class = '${kitchenUpperCabinetClassNames(1)}'
+  data-selector = 'uppercabinetSet2Door1'
    xmlns:dc="http://purl.org/dc/elements/1.1/"
    xmlns:cc="http://creativecommons.org/ns#"
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
@@ -397,7 +399,8 @@ export default function kitchenUpperCabinet2(room) {
   let cabinetDoor2 = `
   <svg
   id = '${room.name}_upperCabinetDoor2'
-  class = '${room.name}_upperCabinetDoor2'
+  class = '${kitchenUpperCabinetClassNames(2)}'
+  data-selector = 'uppercabinetSet2Door2'
    xmlns:dc="http://purl.org/dc/elements/1.1/"
    xmlns:cc="http://creativecommons.org/ns#"
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
@@ -587,10 +590,12 @@ export default function kitchenUpperCabinet2(room) {
   </g>
 </svg>
  `;
+
   let cabinetDoor3 = `
   <svg
   id = '${room.name}_upperCabinetDoor3'
-  class = '${room.name}_upperCabinetDoor3'
+  class = '${kitchenUpperCabinetClassNames(3)}'
+  data-selector = 'uppercabinetSet2Door3'
    xmlns:dc="http://purl.org/dc/elements/1.1/"
    xmlns:cc="http://creativecommons.org/ns#"
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
@@ -780,10 +785,12 @@ export default function kitchenUpperCabinet2(room) {
   </g>
 </svg>
  `;
+
   let cabinetDoor4 = `
   <svg
   id = '${room.name}_upperCabinetDoor4'
-  class = '${room.name}_upperCabinetDoor4'
+  class = '${kitchenUpperCabinetClassNames(4)}'
+  data-selector = 'uppercabinetSet2Door4'
    xmlns:dc="http://purl.org/dc/elements/1.1/"
    xmlns:cc="http://creativecommons.org/ns#"
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"

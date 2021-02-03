@@ -255,10 +255,20 @@ export default function fridge(room) {
  </g>
 </svg>`;
 
+  function fridgeClassNames() {
+    if (room.$fridgeDoor.inspected) {
+      return `${room.name}_fridgeDoor y135`;
+    } else {
+      return `${room.name}_fridgeDoor`;
+    }
+  }
+
   let fridgeDoor = `
   <svg
   id = '${room.name}_fridgeDoor'
-  class = '${room.name}_fridgeDoor'
+  class = '${fridgeClassNames()}'
+  data-selector = "fridgeDoor"
+  style = "transform-origin: left;"
   xmlns:dc="http://purl.org/dc/elements/1.1/"
   xmlns:cc="http://creativecommons.org/ns#"
   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
@@ -339,10 +349,20 @@ export default function fridge(room) {
  </g>
 </svg>`;
 
+  function freezerClassNames() {
+    if (room.$freezerDoor.inspected) {
+      return `${room.name}_freezerDoor y135`;
+    } else {
+      return `${room.name}_freezerDoor`;
+    }
+  }
+
   let freezerDoor = `
   <svg
   id = '${room.name}_freezerDoor'
-  class = '${room.name}_freezerDoor'
+  class = '${freezerClassNames()}'
+  data-selector = "freezerDoor"
+  style = "transform-origin: left;"
    xmlns:dc="http://purl.org/dc/elements/1.1/"
    xmlns:cc="http://creativecommons.org/ns#"
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"

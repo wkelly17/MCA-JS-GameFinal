@@ -40,6 +40,7 @@ import safeKeypadZoom from '../gameComponents/safeKeypadZoom.js';
 // back
 import couch from '../gameComponents/couch.js';
 // todo ? side table?
+import fanSwitch from '../gameComponents/fanSwitch.js';
 
 // ceiling:
 import ceilingFan from '../gameComponents/ceilingFan.js';
@@ -50,6 +51,7 @@ import door2 from '../gameComponents/door2.js';
 import door3 from '../gameComponents/door3.js';
 import lightSwitch from '../gameComponents/lightSwitch.js';
 import journal from '../gameComponents/journal.js';
+import toggleArrows from '../utils/toggleArrows.js';
 // import X from '../gameComponents/';
 
 let livingRoom = {
@@ -66,15 +68,7 @@ let livingRoom = {
 
   // @# DOM ELEMENTS DEFINED BELOW
   //  NOTES; nodes plural used even for singluar items to query Select ALL on items that will be plural; nodes dynamically selected.  I like using the null placeholder here for visual reference;
-  $blanket: {
-    name: '$blanket',
-    nodes: null,
-    selector: '#Blanket',
-    inspected: false,
-    className: 'inspected',
-    listenerType: 'click',
-    fxn: inspect,
-  },
+
   $lightSwitch: {
     name: '$lightSwitch',
     nodes: null,
@@ -92,6 +86,7 @@ let livingRoom = {
     listenerType: 'click',
     directionLeadsTo: 'right',
     roomLeadsTo: 'study',
+    solvedMessage: 'You go to the office',
     open: true,
     fxn: goToRoom,
   },
@@ -102,6 +97,7 @@ let livingRoom = {
     listenerType: 'click',
     directionLeadsTo: 'back',
     roomLeadsTo: 'bedroom1',
+    solvedMessage: 'You go to the living room',
     open: true,
     fxn: goToRoom,
   },
@@ -112,8 +108,24 @@ let livingRoom = {
     listenerType: 'click',
     directionLeadsTo: 'left',
     roomLeadsTo: 'kitchen',
-    open: true,
+    gameMessage: 'You feel the key catch in the lock and spring open',
+    lockedMessage:
+      "Hmm.. it's locked;  I need to figure out how to open it though.",
+    solvedMessage: 'You go to the kitchen',
+    isSolvedBy: '$couchKey',
+    // todo: change to false when ready
+    open: false,
     fxn: goToRoom,
+  },
+  $couchBack: {
+    name: '$couchBack',
+    nodes: null,
+    selector: '[data-selector = "couchBack"]',
+    // inspected: false,
+    // className: 'inspected',
+    listenerType: 'click',
+    gameMessage: 'Fine fine leather..',
+    fxn: inspectNoAction,
   },
   $mediaStandDoorLeft: {
     name: '$mediaStandDoorLeft',
@@ -147,8 +159,13 @@ let livingRoom = {
     triggerSpecificInventoryFunction: true,
     inventorySpecificFunction: function InventorySpecific() {
       debugger;
-
-      game.roomContainer.innerHTML += journal(livingRoom);
+      if (
+        //only adding 1 book;
+        !game.roomContainer.lastElementChild.dataset.selector
+      ) {
+        game.roomContainer.innerHTML += journal(livingRoom);
+        toggleNavArrows();
+      }
       let pages = document.querySelectorAll('.page');
       let hiddenLetters = document.querySelectorAll('.hiddenLetter');
       let closeZoomButton = document.querySelector(
@@ -199,7 +216,9 @@ let livingRoom = {
         let child = document.querySelector(
           '[data-selector = "readableJournal"]'
         );
+        toggleArrows();
         game.roomContainer.removeChild(child);
+        game.currentRoom.render(game.roomContainer, game.currentRoom);
       });
     },
     fxn: addtoInventory,
@@ -212,7 +231,7 @@ let livingRoom = {
     listenerType: 'click',
     found: false,
     // ???????? solves here
-    solves: '$kitchenFinalDoor',
+    solves: '$kitchenKeypadCardSlot',
     imgSrc: './Media/svgComponents/safeKeyCard.svg',
     altText: 'keyCard from the safe',
     triggerSpecificInventoryFunction: false,
@@ -226,7 +245,7 @@ let livingRoom = {
     listenerType: 'click',
     found: false,
     // ???????? solves here must match object name in other room;
-    solves: '$kitchenEntryDoor',
+    solves: '$door3', //to kitchen
     imgSrc: './Media/svgComponents/key2.svg',
     altText: 'keyCard from the safe',
     triggerSpecificInventoryFunction: false,
@@ -330,9 +349,9 @@ let livingRoom = {
     //  subnodes are affected when the main node is solved;
     affectedNodes: [],
     open: false,
-    isSolvedBy: 'x',
     lockedMessage: "It's a safe, but I can't get into it right now.",
-    solvedMessage: 'You manage to open the safe',
+    solvedMessage: 'You open up the safe',
+    solvingMessage: 'You hear the safe pop loose',
     listenerType: 'click',
     fxn: interactLockedItem,
   },
@@ -343,11 +362,12 @@ let livingRoom = {
     inspected: false,
     //  subnodes are affected when the main node is solved;
     affectedNodes: [],
-    open: true,
+    // open: true,
     // ? What code for keypad?
-    isSolvedBy: 'B',
+    isSolvedBy: 'GRANDCANAL',
     lockedMessage: "It's a safe, but I can't get into it right now.",
-    solvedMessage: 'You manage to open the safe',
+    solvedMessage: 'You open up the safe',
+    solvingMessage: 'You hear the safe pop loose',
     listenerType: 'click',
     fxn: focusView,
   },
@@ -359,11 +379,18 @@ let livingRoom = {
     inspected: false,
     fxn: manageKeypad,
   },
+  $fanSwitch: {
+    name: '$fanSwitch',
+    nodes: null,
+    selector: '[data-selector = "fanSwitch"]',
+    inspected: true,
+    listenerType: 'click',
+    fxn: inspect,
+  },
 };
 
 // Room Specific functions
 function manageKeypad(event, obj, room) {
-  //   Can make card slot a puzzle...
   if (notALockedItem()) {
     return;
   }
@@ -382,6 +409,7 @@ function manageKeypad(event, obj, room) {
       livingRoom.$safe.open = true;
       livingRoom.modalBlur = false;
       display.classList.add('correct');
+      toggleNavArrows();
       setTimeout(() => {
         livingRoom.render(game.roomContainer, livingRoom);
       }, 400);
@@ -447,6 +475,7 @@ livingRoom.backHTML = function backHTML() {
 	${couch(livingRoom)}
 	${door2(livingRoom)}
 	${lightSwitch(livingRoom)}
+	${fanSwitch(livingRoom)}
 
 	<p>I'M THE back! </p>
 	`;

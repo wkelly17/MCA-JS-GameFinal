@@ -97,6 +97,41 @@ img {
   z-index: 2;
 }
 
+.gameOverScene {
+  width: 900px;
+  height: 600px;
+  background: rgb(121, 121, 121);
+  opacity: 0.6;
+  color: white;
+  padding: 3em;
+  font-size: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  transition-property: all;
+  transition-duration: 3s;
+  z-index: 100;
+}
+
+.gameOverScene.fadingOut {
+  transition-property: all;
+  transition-duration: 3s;
+  background: black;
+  opacity: 1;
+}
+
+.startOverButton {
+  border-radius: 10px;
+  background: red;
+  color: white;
+  padding: 10px 20px;
+  font-size: 24px;
+  box-shadow: none;
+  border: none;
+  cursor: pointer;
+}
+
 /* ? Maybe do this since I've been resizing to canvas thus far for svgs; So When i translate or animate they do not cut off...display */
 
 /* svg {
@@ -130,7 +165,7 @@ img {
 }
 
 #RoomContainer.flashLightOn {
-  cursor: url(/Media/imgs/BigGradientCursor.png) 50 50, auto;
+  cursor: url(/Media/imgs/BigGradientCursor.png) 70 50, auto;
   pointer-events: all;
 }
 
@@ -302,12 +337,44 @@ img {
   background: var(--color-frontWall);
 }
 
+/* @#===============  StartingScene   =============   */
+.startingScene {
+  border: solid black 1px;
+  width: 900px;
+  height: 600px;
+  background: black;
+  color: white;
+  padding: 3em;
+  font-size: 28px;
+}
+.startingSceneNextButton {
+  display: block;
+  margin: 10px auto;
+  padding: 10px 20px;
+  background: blue;
+  color: white;
+  font-size: 22px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
 /* @#===============  INVENTORY   =============   */
 .inventory {
   grid-area: inv;
-  border: solid 1px rgb(219, 72, 72);
+  background: rgb(70, 70, 70);
+}
+.inventoryItemsContainer {
   display: flex;
   flex-wrap: wrap;
+  align-content: flex-start;
+}
+.inventoryTitle {
+  text-align: center;
+  display: block;
+  font-size: 22px;
+  color: white;
+  border-bottom: solid white 2px;
+  margin-bottom: 1px;
 }
 
 .inventoryItemUsed {
@@ -317,20 +384,20 @@ img {
 
 /* leave strange phantom space between flex-rows */
 
-.inventory > * {
-  width: 62px;
-  height: 62px;
+.inventoryItemsContainer > * {
+  width: 82px;
+  height: 82px;
   object-fit: contain;
-  border: solid 1px white;
   display: block;
   padding: 0;
   margin: 0;
   padding: 5px;
   text-align: center;
   font-size: 14px;
-  background: rgb(143, 140, 140);
+  background: rgb(129, 129, 129);
   color: white;
   z-index: 2;
+  border: solid 1px rgb(70, 69, 69);
 }
 
 .inventoryGlow {
@@ -342,38 +409,52 @@ img {
 /* @# ===============  messages section   =============   */
 
 .messagesArea {
-  border: solid green 1px;
-  padding: 0 0.25em;
   text-align: center;
   font-size: 18px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
+  background: rgb(16, 1, 83);
+  color: white;
 }
 
 .messagesHeader {
   font-size: 22px;
   margin-bottom: 10px;
+  align-self: stretch;
+  border-bottom: white solid 2px;
 }
 
 .messageContainer {
   width: 100%;
-  overflow: scroll;
+  overflow-y: scroll;
   text-align: left;
+  padding: 5px;
+  font-family: 'Gentium Plus', sans-serif;
 }
 
 .messageContent {
   text-align: left;
 }
 .messageEntry {
-  border-bottom: solid 1px gray;
+  border-bottom: solid 1px rgb(216, 214, 214);
+  padding: 4px 0;
 }
 
 /* @#===============  TIMER   =============   */
-.timer {
+.timerContainer {
   grid-area: timer;
-  border: solid 1px blue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgb(0, 73, 0);
+  color: white;
+  font-family: 'Gentium Plus', sans-serif;
+}
+.timerDisplay {
+  font-size: 32px;
+  margin: 0 5px;
 }
 
 /* @#===============  GAME COMPONENTS   =============   */
@@ -430,49 +511,6 @@ img {
   font-size: 22px;
   color: white;
   cursor: pointer;
-}
-
-.keypad-controls {
-  display: flex;
-  justify-content: space-between;
-  margin: 0 auto;
-}
-
-.keypadBtnsContainer {
-  /* width: 90%; */
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-}
-
-.display {
-  height: 60px;
-  background: green;
-  color: white;
-  text-align: right;
-  letter-spacing: 4px;
-  line-height: 65px;
-  padding: 5px;
-  margin-bottom: 20px;
-  font-size: 55px;
-  font-family: 'Courier New', Courier, monospace;
-}
-
-.keypadButton {
-  width: 90px;
-  height: 90px;
-  border-radius: 50%;
-  margin-top: 10px;
-  margin-bottom: 20px;
-  margin-right: 5px;
-  font-size: 30px;
-}
-
-.card-slot {
-  width: 15px;
-  height: 300px;
-  background: #555555;
-  border-radius: 5px;
-  /* margin-left: 30px; */
 }
 
 /* @@ ------------------------------- */
@@ -541,6 +579,11 @@ img {
   top: 180px;
   left: 70px;
 }
+.bedroom1_nightStandContents {
+  top: 180px;
+  left: 100px;
+}
+
 .bedroom1_roomWindow {
   top: 85px;
   left: 143px;
@@ -824,7 +867,13 @@ img {
   z-index: 2;
 }
 
-.livingRoom .livingRoom_ceilingFan {
+.livingRoom_fanSwitch {
+  top: 190px;
+  left: 184px;
+  height: 42px;
+}
+
+.livingRoom_ceilingFan {
   width: 600px;
   height: 400px;
   top: 100px;
@@ -917,6 +966,7 @@ img {
   border-left: solid black 3px;
   padding: 1em;
   z-index: 3;
+  font-size: 26px;
 }
 .journalCover {
   background: rgb(59, 36, 3);
@@ -985,8 +1035,7 @@ img {
   font-size: 28px;
 }
 .messageShown {
-  color: rgb(8, 219, 8);
-  font-size: 30px;
+  color: rgb(0, 255, 85);
 }
 
 /* .livingRoom_couch {
@@ -1282,19 +1331,21 @@ img {
   pointer-events: none;
 }
 
-.study_ceilingFan.rotating {
+.rotatingFan {
   animation-name: rotateFan;
   animation-duration: 1.5s;
   animation-iteration-count: infinite;
   animation-direction: normal;
   animation-timing-function: linear;
 }
+
 .study_fanSwitch {
   top: 240px;
   left: 300px;
 }
 
-.study_fanSwitch-inspected {
+.study_fanSwitch-inspected,
+.livingRoom_fanSwitch-inspected {
   transform: translateY(-1px);
 }
 
@@ -1326,32 +1377,47 @@ img {
   left: 462px;
 }
 
+.kitchen_cabinetDoor1 {
+  top: 18px;
+  left: 171px;
+  transform-origin: left;
+  z-index: 1;
+}
 .kitchen_kitchenUpperCabinet {
   top: 0px;
   left: 132px;
 }
-.kitchen_cabinetDoor1 {
-  top: 18px;
-  left: 171px;
-}
 .kitchen_upperCabinetDoor1 {
   top: 18px;
   left: 171px;
+  transform-origin: left;
+  z-index: 1;
 }
 .kitchen_upperCabinetDoor2 {
   top: 18px;
   left: 334px;
+  transform-origin: left;
+  z-index: 1;
 }
 .kitchen_upperCabinetDoor3 {
   top: 18px;
   left: 497px;
+  transform-origin: left;
+  z-index: 1;
 }
 .kitchen_upperCabinetDoor4 {
   top: 18px;
   left: 658px;
+  transform-origin: left;
+  z-index: 1;
 }
 .kitchen_cabinetDoor-inspected {
-  transform: rotateY(180deg);
+  transform: rotateY(140deg);
+  transform-origin: left;
+  transition-duration: 0.3s;
+}
+.kitchen_lowerCabinetDoor-inspected {
+  transform: rotateY(120deg);
   transform-origin: left;
   transition-duration: 0.3s;
 }
@@ -1397,42 +1463,43 @@ img {
 }
 .kitchen_table {
   top: 323px;
-  left: 204px;
+  left: 144px;
 }
+
 .kitchen_fruitBowl {
   top: 273px;
-  left: 254px;
+  left: 194px;
 }
 
 .kitchen_kitchenChair1 {
   top: 306px;
-  left: 172px;
+  left: 112px;
 }
 .kitchen_pepperShaker {
   top: 301px;
-  left: 372px;
+  left: 312px;
 }
 .kitchen_saltShaker {
   top: 301px;
-  left: 392px;
+  left: 332px;
 }
 
 .kitchen_kitchenChair2 {
   top: 306px;
-  left: 386px;
+  left: 326px;
   transform: rotateY(180deg);
 }
 .kitchen_coffeeStand {
   top: 310px;
-  left: 550px;
+  left: 590px;
 }
 .kitchen_coffeeMaker {
   top: 254px;
-  left: 640px;
+  left: 690px;
 }
 .kitchen_blender {
   top: 229px;
-  left: 560px;
+  left: 600px;
 }
 .kitchen_kitchenCabinetry2 {
   top: 225px;
@@ -1463,7 +1530,35 @@ img {
 
 .kitchen_toaster {
   top: 187px;
-  left: 151px;
+  left: 191px;
+}
+
+.kitchen_receptacle1 {
+  height: 30px;
+  top: 54px;
+  left: 540px;
+}
+.behindReceptacle1Message {
+  font-family: 'Herculanum';
+  font-size: 5px;
+  top: 68px;
+  left: 541px;
+  transform: rotate(90deg);
+  color: rgb(102, 61, 23);
+}
+.receptacleHole {
+  top: 55px;
+  left: 549px;
+  background: rgb(22, 22, 22);
+  padding: 10px 8px;
+  border-radius: 5px;
+  border: solid rgb(172, 170, 170) 4px;
+}
+
+.kitchen-receptacle-inspected {
+  transform: rotateY(95deg);
+  transform-origin: left;
+  transition-duration: 0.3s;
 }
 
 .kitchen_knifeBlock {
@@ -1487,6 +1582,22 @@ img {
   left: 148px;
 }
 
+.kitchen_breakerInside {
+  top: 100px;
+  left: 678px;
+}
+.kitchen_breakerDoor {
+  top: 105px;
+  left: 679px;
+}
+.kitchen_trippedBreaker-inspected {
+  transform: translate(0px, -0.00779952px);
+}
+.kitchen_breakerDoor-inspected {
+  transform: rotateY(180deg);
+  transform-origin: left;
+}
+
 .kitchen_lightSwitch {
   top: 210px;
   left: 158px;
@@ -1497,14 +1608,118 @@ img {
   transition-duration: 0.2s;
   transform-origin: left;
 }
+
 .kitchen_doorBackground {
   top: 194px;
   left: 558px;
+}
+.kitchen_door2,
+.kitchen_doorBackground2 {
+  top: 194px;
+  left: 428px;
+  transition-duration: 0.2s;
+  transform-origin: left;
 }
 
 .kitchen_ceilingVent {
   top: 150px;
   left: 150px;
+}
+
+.kitchen_keypad {
+  top: 200px;
+  left: 710px;
+}
+
+.kitchen_keypadZoomed {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  height: 500px;
+  margin: 0 auto;
+  border: solid 1px gray;
+  padding: 30px;
+  background: gray;
+  z-index: 7;
+}
+
+.kitchen.keypad-controls {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+
+.keypad-buttons {
+  /* width: 90%; */
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  width: 90%;
+}
+
+.kitchen_display {
+  height: 60px;
+  background: rgb(73, 85, 73);
+  color: white;
+  text-align: right;
+  letter-spacing: 4px;
+  line-height: 65px;
+  padding: 5px;
+  margin-bottom: 20px;
+  font-size: 35px;
+  font-family: 'Courier New', Courier, monospace;
+}
+.kitchen_displayActivated {
+  background: rgb(24, 42, 204);
+}
+.kitchen_display.correct {
+  background: green;
+}
+
+.keypadButton {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-top: 10px;
+  margin-right: 5px;
+  font-size: 26px;
+}
+
+.card-slot {
+  width: 35px;
+  height: 300px;
+  background: #555555;
+  border-radius: 5px;
+  margin-top: 20px;
+  border: inset rgb(68, 67, 67) 10px;
+}
+.kitchen_cardSlotFilled {
+  width: 9px;
+  height: 273px;
+  position: absolute;
+  top: 145px;
+  left: 345px;
+  background: blue;
+  border-radius: 10px;
+}
+
+.keypadLetters {
+  display: block;
+}
+
+.kitchen_keypadZoomed [data-fxn='close'] {
+  position: absolute;
+  top: 3px;
+  right: 5px;
+  background: none;
+  border: none;
+  font-size: 22px;
+  color: white;
+  cursor: pointer;
+}
+.kitchen_keypadZoomed [data-fxn='close']:hover {
+  color: red;
 }
 
 /* ! ===============  GLOBALS BOTTOM OF CASCADE   =============   */
@@ -1518,14 +1733,79 @@ img {
 .y180 {
   transform: rotateY(180deg);
 }
+.y135 {
+  transform: rotateY(135deg);
+}
 
 .x180 {
   transform: rotateX(180deg);
+}
+
+.x135 {
+  transform: rotateX(135deg);
 }
 .r90 {
   transform: rotate(90deg);
   transition-duration: 0.3s;
 }
+
+.u2 {
+  transform: translateY(-2px);
+}
+
+.u5 {
+  transform: translateY(-5px);
+  transition-duration: 0.3s;
+}
+.u10 {
+  transform: translateY(-10px);
+  transition-duration: 0.3s;
+}
+.d2 {
+  transform: translateY(2px);
+}
+
+.d5 {
+  transform: translateY(5px);
+  transition-duration: 0.3s;
+}
+.d10 {
+  transform: translateY(10px);
+  transition-duration: 0.3s;
+}
+.d20 {
+  transform: translateY(20px);
+  transition-duration: 0.3s;
+}
+.l2 {
+  transform: translateX(-2px);
+}
+
+.l5 {
+  transform: translateX(-5px);
+  transition-duration: 0.3s;
+}
+.l10 {
+  transform: translateX(-10px);
+  transition-duration: 0.3s;
+}
+
+.r2 {
+  transform: translateX(2px);
+}
+.r5 {
+  transform: translateX(5px);
+  transition-duration: 0.3s;
+}
+.r10 {
+  transform: translateX(10px);
+  transition-duration: 0.3s;
+}
+.r20 {
+  transform: translateX(20px);
+  transition-duration: 0.3s;
+}
+
 /*  Causes weird animations due to forced re-rendering
 @keyframes y180 {
   0% {

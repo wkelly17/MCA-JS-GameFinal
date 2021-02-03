@@ -1,32 +1,40 @@
 export default function journal(room) {
   // functions here
 
-  function journalClassNames() {
-    if (room.$journal.inspected) {
-      return `${room.name}_journal 
-${room.name}_journal-inspected`;
-    } else {
-      return `${room.name}_journal`;
-    }
-  }
   // class = 'journalClassNames()}'
   // data-selector = 'journal'
   let html = `
   
 <div class="book" data-selector = 'readableJournal' >
 <div class="modal-blur"></div>
-      <div class="page journalCover page-active">I'm the front of the book</div>
-      <div class="page blank">Blank white page</div>
+      <div class="page journalCover page-active" style = "font-size: 44px; text-align: center; color: white;">Musings</div>
+      <div class="page blank"></div>
       <div class="page">
-        <span class="hidden">
-          Lo<span class="hiddenLetter">r</span>em ipsum dol<span
+          <span class="hiddenLetter">G</span>ood things come those who wait... At least that it what they say.  I for one, have neve<span
             class="hiddenLetter"
-            >o</span
-          >r sit amet conse<span class="hiddenLetter">c</span>tetur adipisicing
-          elit. Place<span class="hiddenLetter">a</span>t, quidem.
-        </span>
+            >r</span> enjoyed waiting...Perh<span
+            class="hiddenLetter"
+            >a</span>ps that is what led me to my life of dark<span
+            class="hiddenLetter"
+            >n</span>ess and crime.
       </div>
-      <div class="page">2</div>
+      <div class="page"> I never asked for these car<span
+      class="hiddenLetter"
+      >d</span>s I was dealt.  <span
+      class="hiddenLetter"
+      >C</span>ould <span
+      class="hiddenLetter"
+      >a</span>nyone really blame me after all? Abandoned at a young age... Left to fend for my self on the street...
+      </div>
+      <div class="page"> 
+      <span
+      class="hiddenLetter"
+      >N</span>ow there is no going back.   I'm in too deep and my h<span
+      class="hiddenLetter"
+      >a</span>nds are too dirty. But I try.. I try to simply live <span
+      class="hiddenLetter"
+      >l</span>ife and enjoy.  Unfortunately my my tastes are too expensive now.  Is there any hope?
+      </div>
 		<div class="page journalBack"></div>
 		<button class = 'closeZoomButton' data-selector = "closeZoomButton"> X </button>
 	 </div>

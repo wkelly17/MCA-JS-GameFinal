@@ -12,25 +12,52 @@
         <!-- top row -->
         <div class="navBtnsContainer" id="navBtnsContainer"></div>
         <div class="room" id="RoomContainer">
+          <!-- <div class="startingScene">
+            <p>
+              "Oww.... My head is killing me. And where am I?" You realize that
+              you're in a room, but it's not a room you've ever seen before. You
+              are a spy who was assigned to gather intel on the infamous
+              criminal Giorgio Lamparella. He specializes in art crimes, but
+              he's willing to make a deal for anything if the price is right.
+              You notice a note in front of you. It says, "Shame shame... I'm
+              not a violent man. I really prefer to enjoy art and share it, and
+              you want to go and ruin that. Now you know too much, and your time
+              has come to an unfortunate end. Nevertheless, I like to give
+              everyone a second chance... Find your way out of this house in the
+              next 30 minutes, and your life is yours... Should you not, well...
+              Let's say there is a bomb with your name on it in this building...
+              Yours truly, con amore Signor G
+            </p>
+            <button
+              data-role="startingSceneNextButton"
+              class="startingSceneNextButton"
+            >
+              Next
+            </button>
+          </div> -->
           <!-- <div class="frontWall"></div>
           <div class="rightWall"></div>
           <div class="leftWall"></div>
           <div class="floor"></div> -->
-          <img src="/Media/imgs/BigGradientCursor.png" alt="" />
         </div>
 
         <!-- !Modal blur works:  Apply when looking at "Close Scenes" -->
         <!-- <div class="modal-blur"></div> -->
         <!-- ! Could use some stylistic tweaking -->
-        <div class="inventory"></div>
+        <div class="inventory">
+          <h2 class="inventoryTitle">Inventory</h2>
+          <div class="inventoryItemsContainer"></div>
+        </div>
         <div class="messagesArea">
           <h2 class="messagesHeader">Messages</h2>
           <div class="messageContainer" data-role="messageFeedbackContainer">
             <p class="messageContent">I'm the message</p>
-            <!-- <img src='' alt=''> -->
           </div>
         </div>
-        <div class="timer" style="text-align: center">Timer</div>
+        <div class="timerContainer" style="text-align: center">
+          <h2>Timer</h2>
+          <p class="timerDisplay" data-role="timerDisplay"></p>
+        </div>
       </div>
     </div>
 

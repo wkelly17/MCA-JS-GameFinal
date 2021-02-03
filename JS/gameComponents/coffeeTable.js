@@ -79,7 +79,7 @@ export default function coffeeTable(room) {
            id="tspan3874"
            x="120.16231"
            y="273.03625"
-           style="stroke-width:0.191262">ideas</tspan></text>
+           style="stroke-width:0.191262">Ideas</tspan></text>
     </g>
   </g>
 </svg>

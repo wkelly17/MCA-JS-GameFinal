@@ -10,7 +10,7 @@ function lightSwitch(room) {
   let html = `
  <svg
 		width="50.901567"
-		height="62.102417"
+		height="42.102417"
 		viewBox="0 0 5.5302066 8.4937645"
 		id="${room.name}_lightSwitch"
 		class="${room.name}_lightSwitch"

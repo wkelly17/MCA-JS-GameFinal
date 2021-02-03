@@ -22,13 +22,42 @@ import navigate from './utils/navigation.js';
 //@#=============== DOM SKELETON ELEMENTS  =============
 const gameContainer = document.querySelector('#gameContainer');
 const roomContainer = document.querySelector('#RoomContainer');
-const inventoryContainer = document.querySelector('.inventory');
+const inventoryContainer = document.querySelector('.inventoryItemsContainer');
 const messageContainer = document.querySelector(
   '[data-role = messageFeedbackContainer]'
 ); // holds nav controls;
 const navBtnsContainer = document.querySelector('#navBtnsContainer');
 navBtnsContainer.innerHTML += navControls;
 const navArrows = [...document.querySelectorAll('[data-role = "nav-arrow"]')];
+const timerContainer = document.querySelector('[data-role = "timerDisplay"]');
+// todo: uncomment when ready  to make game official.
+// let startingSceneNextButton = document.querySelector(
+//   '[data-role = "startingSceneNextButton"]'
+// );
+
+// function showInstructions() {
+//   roomContainer.innerHTML = ``;
+//   let instructions = `
+//   <div class="startingScene">
+//             <p>
+//             The goal of the game is to escape within the alloted time on the timer in the bottom right corner;  The arrows are the left, top, right, and bottom of the screen will cause you to look around the room.  You may also use your directional keys on your keyboard.  The items in the room are interactive to clicks.  As you interact, pay attention to the messages container on the right side (in blue).  Some items can be picked up.  These items will be moved to your inventory.  Click on items in your inventory to use them on other items in the room to solve the various puzzles that have you locked in this house. Pay attention, and be diligent, and you just might escape.
+//             </p>
+//               <button
+//                 data-role="startingSceneNextButton"
+//                 class="startingSceneNextButton"
+//               >
+//                 Start Game
+//               </button>
+//   `;
+//   roomContainer.innerHTML = instructions;
+//   // has changed dom nodes
+//   startingSceneNextButton = document.querySelector(
+//     '[data-role = "startingSceneNextButton"]'
+//   );
+//   startingSceneNextButton.addEventListener('click', game.init);
+// }
+
+// startingSceneNextButton.addEventListener('click', showInstructions);
 
 let game = {
   gameContainer: gameContainer,
@@ -37,14 +66,50 @@ let game = {
   navArrows: navArrows,
   inventoryContainer: inventoryContainer,
   messageContainer: messageContainer,
+  timerContainer: timerContainer,
+  won: false,
 
   // pieces of global game state;
-  currentRoom: bedroom1,
-  timer: null,
+  currentRoom: kitchen,
+  timerSeconds: 1200,
+  runTimer: function runTimer() {
+    let interval = setInterval(() => {
+      let minutes = Math.floor(game.timerSeconds / 60);
+      let seconds = game.timerSeconds % 60;
+      timerContainer.textContent = `${minutes}:${
+        seconds <= 9 ? '0' : ''
+      }${seconds}`;
+      game.timerSeconds--;
+      if (game.timerSeconds < 0) {
+        clearInterval(interval);
+        game.endGame();
+      } else if (game.won) {
+        clearInterval(interval);
+      }
+    }, 1000);
+    return interval;
+  },
+  endGame: function endGame() {
+    document.body.removeEventListener('keyup', navigate);
+    let gameOverScene = `<div class='gameOverScene'></div>`;
+    game.roomContainer.innerHTML += gameOverScene;
+    let gameOverMessage = document.createElement('p');
+    gameOverMessage.textContent = 'Game Over';
+    let restartBtn = document.createElement('button');
+    restartBtn.textContent = 'Start Over';
+    restartBtn.classList.add('startOverButton');
+    restartBtn.addEventListener('click', () => location.reload());
+
+    let gameOverNode = document.querySelector('.gameOverScene');
+    setTimeout(() => {
+      gameOverNode.classList.add('fadingOut');
+      gameOverNode.appendChild(gameOverMessage);
+      gameOverNode.appendChild(restartBtn);
+    }, 900);
+  },
 
   //   game/non room methods;
   init: function () {
-    // debugger;
     // hook up clickable navigation;
     game.navArrows.forEach((arrow) =>
       arrow.addEventListener('click', function (event) {
@@ -63,6 +128,9 @@ let game = {
 
     //render first room
     game.currentRoom.render(game.roomContainer, game.currentRoom);
+
+    // start time
+    game.runTimer();
   },
 
   inventory: {

@@ -177,6 +177,23 @@ let bedroom1 = {
     inspected: false,
     listenerType: 'click',
     gameMessage: "Amexa says, 'I cannot help you with that'",
+    randomMessages: [
+      "Amexa says, 'I cannot help you with that'",
+      'Amexa says, What to hear a limerick?',
+      "Amexa says, You're looking good today Giorgio",
+      'Amexa says, You have a package arriving today from Amazon',
+      'Amexa says, did you know today is groundhog day?',
+    ],
+    fxn: inspectNoAction,
+  },
+  $clothesDresser: {
+    name: '$clothesDresser',
+    nodes: null,
+    selector: '[data-selector = "clothesDresser"]',
+    inspected: false,
+    listenerType: 'click',
+    gameMessage:
+      "I'd rather not snoop in Giorgio's clothes to be honest.  He's to0 sophisticated to hide something there",
     fxn: inspectNoAction,
   },
   $closetDoorLeft: {
@@ -231,12 +248,97 @@ let bedroom1 = {
     // inspected: false,
     // className: 'inspected',
     listenerType: 'click',
-    gameMessageWhenInspecting: null,
-    gameMessageWhenUninspecting: null,
     gameMessage:
       'Nothing good on the TV anyway; Besides, I better figure out how to get out of here',
     fxn: inspectNoAction,
     //  fxn: inspect,
+  },
+  $clothes: {
+    name: '$clothes',
+    nodes: null,
+    selector: '[data-selector = "clothes"]',
+    // inspected: false,
+    // className: 'inspected',
+    listenerType: 'click',
+    gameMessage: 'What a snazzy shirt.  Giorgio has good taste',
+    randomMessages: [
+      'Wow, these are snazzy',
+      'Giorgio has some solid taste,',
+      'I wish I had this much style',
+    ],
+    fxn: inspectNoAction,
+  },
+  $nightStand: {
+    name: '$nightStand',
+    nodes: null,
+    selector: '[data-selector = "nightStand"]',
+    // inspected: false,
+    // className: 'inspected',
+    listenerType: 'click',
+    gameMessage: 'An essential piece of furniture--the nightstand',
+    fxn: inspectNoAction,
+  },
+  $nightStandpencil: {
+    name: '$nightStandpencil',
+    nodes: null,
+    selector: '[data-selector = "nightStandpencil"]',
+    // inspected: false,
+    // className: 'inspected',
+    listenerType: 'click',
+    gameMessage: 'A handy dandy pencil;  #2--Only the finest',
+    fxn: inspectNoAction,
+  },
+  $nightStandChapstick: {
+    name: '$nightStandChapstick',
+    nodes: null,
+    selector: '[data-selector = "nightStandChapstick"]',
+    // inspected: false,
+    // className: 'inspected',
+    listenerType: 'click',
+    gameMessage: 'Perfect for chapped lips',
+    fxn: inspectNoAction,
+  },
+  $nightStandChargingCord: {
+    name: '$nightStandChargingCord',
+    nodes: null,
+    selector: '[data-selector = "nightStandChargingCord"]',
+    // inspected: false,
+    // className: 'inspected',
+    listenerType: 'click',
+    gameMessage:
+      "Hmm.. maybe this goes to something? But I don't have a phone to charge anyway",
+    fxn: inspectNoAction,
+  },
+  $nightStandScissors: {
+    name: '$nightStandScissors',
+    nodes: null,
+    selector: '[data-selector = "nightStandScissors"]',
+    // inspected: false,
+    // className: 'inspected',
+    listenerType: 'click',
+    gameMessage: 'Better not run with these',
+    fxn: inspectNoAction,
+  },
+  $bedPillow: {
+    name: '$bedPillow',
+    nodes: null,
+    selector: '[data-selector = "bedPillow"]',
+    listenerType: 'click',
+    gameMessage: 'An essential piece of furniture--the nightstand',
+    gameMessageWhenInspecting: 'You pick the pillow up',
+    gameMessageWhenUninspecting: 'You put the pillow down',
+    fxn: inspect,
+  },
+
+  $lamp: {
+    name: '$lamp',
+    nodes: null,
+    selector: '[data-selector = "lamp"]',
+    inspected: false,
+    listenerType: 'click',
+    gameMessageWhenInspecting: 'You turn on the the lamp',
+    gameMessageWhenUninspecting: 'You turn off the the lamp',
+    fxn: inspect,
   },
   $door: {
     name: '$door',
@@ -247,7 +349,8 @@ let bedroom1 = {
     roomLeadsTo: 'livingRoom',
     open: false,
     isSolvedBy: '$underBedKey',
-    gameMessage: 'You feel the key catch in the lock and spring open',
+    solvingMessage: 'You feel the key catch in the lock and spring open',
+    solvedMessage: 'You go to the living room',
     lockedMessage: "Hmm.. it's locked somehow",
     fxn: goToRoom,
   },
@@ -314,7 +417,7 @@ function manageKeypad(event, obj, room) {
   }
 
   //room for abstraction;
-  let display = document.querySelector('.display');
+  let display = document.querySelector('.kitchen.display');
   let btnPressed = event.target;
   if (btnPressed.dataset.fxn == 'close') {
     bedroom1.modalBlur = false; //room1

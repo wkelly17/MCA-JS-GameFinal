@@ -8,6 +8,16 @@ export default function kitchenCabinet(room) {
       return `${room.name}_kitchenCabinet`;
     }
   }
+
+  function cabinetDoorClasses(num) {
+    let picked = '$cabinetDoor'.concat(num);
+    if (room[picked].inspected) {
+      return `${room.name}_cabinetDoor${num} ${room.name}_lowerCabinetDoor-inspected`;
+    } else {
+      return `${room.name}_cabinetDoor${num}`;
+    }
+  }
+
   // class = 'kitchenCabinetClassNames()}'
   // data-selector = 'kitchenCabinet'
   let cabinet1 = `
@@ -740,7 +750,8 @@ export default function kitchenCabinet(room) {
   let cabinetDoor1 = `
   <svg
   id = '${room.name}_cabinetDoor1'
-  class = '${room.name}_cabinetDoor1'
+  class = '${cabinetDoorClasses(1)}'
+  data-selector = 'cabinetDoor1'
    xmlns:dc="http://purl.org/dc/elements/1.1/"
    xmlns:cc="http://creativecommons.org/ns#"
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
@@ -818,7 +829,8 @@ export default function kitchenCabinet(room) {
   let cabinetDoor2 = `
   <svg
   id = '${room.name}_cabinetDoor2'
-  class = '${room.name}_cabinetDoor2'
+  class = '${cabinetDoorClasses(2)}'
+  data-selector = 'cabinetDoor2'
    xmlns:dc="http://purl.org/dc/elements/1.1/"
    xmlns:cc="http://creativecommons.org/ns#"
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
@@ -896,7 +908,8 @@ export default function kitchenCabinet(room) {
   let cabinetDoor3 = `
   <svg
   id = '${room.name}_cabinetDoor3'
-  class = '${room.name}_cabinetDoor3'
+  class = '${cabinetDoorClasses(3)}'
+  data-selector = 'cabinetDoor3'
    xmlns:dc="http://purl.org/dc/elements/1.1/"
    xmlns:cc="http://creativecommons.org/ns#"
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
@@ -974,7 +987,8 @@ export default function kitchenCabinet(room) {
   let cabinetDoor4 = `
   <svg
   id = '${room.name}_cabinetDoor4'
-  class = '${room.name}_cabinetDoor4'
+  class = '${cabinetDoorClasses(4)}'
+  data-selector = 'cabinetDoor4'
    xmlns:dc="http://purl.org/dc/elements/1.1/"
    xmlns:cc="http://creativecommons.org/ns#"
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
@@ -1052,7 +1066,8 @@ export default function kitchenCabinet(room) {
   let cabinetDoor5 = `
   <svg
   id = '${room.name}_cabinetDoor5'
-  class = '${room.name}_cabinetDoor5'
+  class = '${cabinetDoorClasses(5)}'
+  data-selector = 'cabinetDoor5'
    xmlns:dc="http://purl.org/dc/elements/1.1/"
    xmlns:cc="http://creativecommons.org/ns#"
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
@@ -1130,7 +1145,8 @@ export default function kitchenCabinet(room) {
   let cabinetDoor6 = `
   <svg
   id = '${room.name}_cabinetDoor6'
-  class = '${room.name}_cabinetDoor6'
+  class = '${cabinetDoorClasses(6)}'
+  data-selector = 'cabinetDoor6'
    xmlns:dc="http://purl.org/dc/elements/1.1/"
    xmlns:cc="http://creativecommons.org/ns#"
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
