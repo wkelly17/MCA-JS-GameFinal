@@ -165,7 +165,7 @@ img {
 }
 
 #RoomContainer.flashLightOn {
-  cursor: url(/Media/imgs/BigGradientCursor.png) 70 50, auto;
+  cursor: url(../Media/imgs/BigGradientCursor.png) 70 50, auto;
   pointer-events: all;
 }
 
