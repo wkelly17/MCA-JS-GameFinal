@@ -131,7 +131,6 @@ let bedroom1 = {
     altText: 'flashLight',
     triggerSpecificInventoryFunction: true,
     inventorySpecificFunction: function InventorySpecific() {
-      debugger;
       if (game.roomContainer.classList.contains('flashLightOn')) {
         game.roomContainer.classList.remove('flashLightOn');
       } else {
@@ -407,8 +406,6 @@ let bedroom1 = {
 
 // Will abstract out if needed in more than one room;
 function manageKeypad(event, obj, room) {
-  debugger;
-
   //   Can make card slot a puzzle...
   if (notALockedItem()) {
     return;
