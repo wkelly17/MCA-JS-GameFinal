@@ -1,8 +1,8 @@
 //@#=============== IMPORTS  =============
 
 import bedroom1 from './rooms/bedroom1.js';
-import livingRoom from './rooms/livingRoom.js';
 import kitchen from './rooms/kitchen.js';
+import livingRoom from './rooms/livingRoom.js';
 import study from './rooms/study.js';
 import navControls from './utils/navDefs.js';
 import navigate from './utils/navigation.js';
@@ -98,6 +98,7 @@ let game = {
 
   //   game/non room methods;
   init: function () {
+    debugger;
     // hook up clickable navigation;
     game.navArrows.forEach((arrow) =>
       arrow.addEventListener('click', function (event) {
@@ -182,8 +183,6 @@ let game = {
       triggerSpecificInventoryFunction,
       inventorySpecificFunction
     ) {
-      // debugger;
-
       if (!game.inventory.itemInUse) {
         if (triggerSpecificInventoryFunction) {
           inventorySpecificFunction();

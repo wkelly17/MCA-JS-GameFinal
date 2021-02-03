@@ -109,7 +109,7 @@ function inspectNoAction(event, { gameMessage, randomMessages }) {
 }
 
 function inspect(event, { name, inspected, specificView, ...rest }, room) {
-  // debugger;
+  // clearing inventory item in use if trying to use an inv item
   if (notALockedItem()) {
     return;
   }
@@ -128,7 +128,6 @@ function switchLights(event, { name, audio, ...rest }, room) {
   if (notALockedItem()) {
     return;
   }
-  // debugger;
   //   Room state change
   room.lightsAreOn = !room.lightsAreOn;
 
@@ -155,12 +154,10 @@ function interactLockedItem(
       room
     );
   }
-  // debugger;
   if (game.inventory.itemInUse) {
     let selectedItem = game.inventory.itemInUse;
 
     if (selectedItem.solves == name) {
-      // debugger;
       //setting room dom object state;
       room[name].open = true;
 
@@ -197,7 +194,6 @@ function interactLockedItem(
 }
 
 function notALockedItem() {
-  // debugger;
   if (game.inventory.itemInUse) {
     game.inventory.clearInventoryGlow();
     game.messageContainer.textContent = "Hmm.. that doesn't work";
@@ -222,7 +218,7 @@ function focusView(event, { name, inspected, ...rest }, room) {
 }
 
 function addtoInventory(event, { name, ...rest }, room) {
-  // debugger;
+  // rest use since only one Object has that prop instead of destructuring
   if (rest.bypassLockedItemChecker && rest.bypassLockedItemChecker == false) {
     return notALockedItem();
   }
@@ -255,7 +251,6 @@ function goToRoom(
     generalGameMessage(solvedMessage);
     let pickedRoom = navigateRooms(roomLeadsTo);
     game.currentRoom = pickedRoom;
-    // debugger;
     game.currentRoom.directionFacing = directionLeadsTo;
 
     //@# door styling
@@ -274,9 +269,9 @@ function closeZoomView(
   { objectToChange, property, closingMessage },
   room
 ) {
-  // debugger;
+  // only one of these in game at moment
   room[objectToChange][property] = !room[objectToChange][property];
-  // clsoing specific zoomed view
+  // closing specific zoomed view
   room.specificViewActivated = false;
   // message
   generalGameMessage(closingMessage);

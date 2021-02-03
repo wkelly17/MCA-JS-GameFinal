@@ -71,7 +71,7 @@ let kitchen = {
     nodes: null,
     selector: '[data-selector = "door"]',
     listenerType: 'click',
-    open: false,
+    open: true,
     fxn: endGame,
   },
   $door2: {

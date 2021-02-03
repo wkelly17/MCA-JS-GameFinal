@@ -159,7 +159,8 @@ let livingRoom = {
       debugger;
       if (
         //only adding 1 book;
-        !game.roomContainer.lastElementChild.dataset.selector
+        game.roomContainer.lastElementChild.dataset.selector !=
+        'readableJournal'
       ) {
         game.roomContainer.innerHTML += journal(livingRoom);
         toggleNavArrows();
