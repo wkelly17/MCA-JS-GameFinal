@@ -71,7 +71,7 @@ let kitchen = {
     nodes: null,
     selector: '[data-selector = "door"]',
     listenerType: 'click',
-    open: true,
+    open: false,
     fxn: endGame,
   },
   $door2: {
@@ -402,7 +402,6 @@ function manageKeypad(event, obj, room) {
   if (notALockedItem()) {
     return;
   }
-
   // @# Exiting out before bail out below
   let display = document.querySelector('.kitchen_display');
   let btnPressed = event.target;
@@ -417,13 +416,10 @@ function manageKeypad(event, obj, room) {
   // todo; Early bail out if conditions not Met; Just uncomment
   if (
     !kitchen.$trippedBreaker.inspected ||
-    !kitchen.$kitchenKeypadCardSlot.inspected
+    !kitchen.$kitchenKeypadCardSlot.open
   ) {
     return;
-  }
-
-  //@# deleting on keypad
-  else if (btnPressed.dataset.fxn == 'delete') {
+  } else if (btnPressed.dataset.fxn == 'delete') {
     display.textContent = display.textContent.slice(0, -1);
   } else if (btnPressed.dataset.fxn == 'submit') {
     if (display.textContent == kitchen.$keypad.isSolvedBy) {

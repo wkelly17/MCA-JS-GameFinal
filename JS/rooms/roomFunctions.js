@@ -156,12 +156,11 @@ function interactLockedItem(
   }
   if (game.inventory.itemInUse) {
     let selectedItem = game.inventory.itemInUse;
-
     if (selectedItem.solves == name) {
       //setting room dom object state;
       room[name].open = true;
 
-      //styling INventory Item;  Plural due to some objects having multiple nodes
+      //styling Inventory Item;  Plural due to some objects having multiple nodes
       selectedItem.nodes.forEach((node) => {
         node.classList.add('inventoryItemUsed');
         node.classList.remove('inventoryGlow');

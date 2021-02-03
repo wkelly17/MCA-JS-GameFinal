@@ -206,10 +206,8 @@ let study = {
 // Room Specific functions
 
 function addVentKeyToInventory(event, props, room) {
-  debugger;
   let unreachableMessage = "I can't quite reach that";
   let wrongInventoryMessage = "That does't do anything";
-  console.log(game.inventory);
   if (!game.inventory.itemInUse || study.$fanSwitch.inspected) {
     generalGameMessage(unreachableMessage);
     return false; //must be accessed via an item

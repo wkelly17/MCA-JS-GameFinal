@@ -98,7 +98,6 @@ let game = {
 
   //   game/non room methods;
   init: function () {
-    debugger;
     // hook up clickable navigation;
     game.navArrows.forEach((arrow) =>
       arrow.addEventListener('click', function (event) {
