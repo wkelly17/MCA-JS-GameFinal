@@ -20,7 +20,7 @@ export default function bookShelf(room) {
   // class = 'bookShelfClassNames()}'
   // class = '${room.name}_bookShelf'
   // data-selector = 'bookShelf'
-  //   todo: CHANGE WHICH BOOK IS SECRET;
+
   let html = `
   <svg
   id = '${room.name}_bookShelf'

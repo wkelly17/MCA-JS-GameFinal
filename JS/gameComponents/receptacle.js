@@ -2,7 +2,7 @@ export default function receptacle(room, num) {
   // functions here
 
   function receptacleClassNames() {
-    if (room.$receptacle.inspected) {
+    if (room.$receptacle.open) {
       return `${room.name}_receptacle${num} ${room.name}-receptacle-inspected`;
     } else {
       return `${room.name}_receptacle${num}`;

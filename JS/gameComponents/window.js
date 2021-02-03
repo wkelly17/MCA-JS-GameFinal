@@ -1,5 +1,3 @@
-// todo: take out base 64 embedded img from Window svg and absolutely position your own img in a div;
-
 export default function roomWindow(room) {
   // functions here
 

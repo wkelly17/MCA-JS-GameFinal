@@ -39,7 +39,6 @@ import safeKeypadZoom from '../gameComponents/safeKeypadZoom.js';
 
 // back
 import couch from '../gameComponents/couch.js';
-// todo ? side table?
 import fanSwitch from '../gameComponents/fanSwitch.js';
 
 // ceiling:
@@ -113,7 +112,6 @@ let livingRoom = {
       "Hmm.. it's locked;  I need to figure out how to open it though.",
     solvedMessage: 'You go to the kitchen',
     isSolvedBy: '$couchKey',
-    // todo: change to false when ready
     open: false,
     fxn: goToRoom,
   },
@@ -282,7 +280,6 @@ let livingRoom = {
     name: '$thermostatSwitch',
     nodes: null,
     selector: '[data-selector = "thermostatSwitch"]',
-    // todo: will connect to an air vent key
     inspected: false,
     gameMessageWhenInspecting: 'You turn the air on.  That breeze feels nice',
     gameMessageWhenUninspecting:
@@ -434,8 +431,6 @@ livingRoom.frontHTML = function frontHTML() {
   ${coffeeTable(livingRoom)}
   ${mediaStand(livingRoom)}
   ${television(livingRoom)}
-
-
 	`;
 
   return html;
@@ -448,8 +443,6 @@ livingRoom.rightHTML = function () {
 	${standingLamp(livingRoom)}
 	${thermostat(livingRoom)}
 	${door(livingRoom)}
-	
-	<p>I'M THE RIGHT! </p>
 	`;
   return html;
 };
@@ -462,10 +455,9 @@ livingRoom.leftHTML = function leftHTML() {
   ${safeKeypadZoom(livingRoom)}
 	${bookCase(livingRoom)}
   ${door3(livingRoom)}
-	<p>I'M THE Left! </p>
-	
+
   `;
-  //
+
   return html;
 };
 
@@ -476,8 +468,6 @@ livingRoom.backHTML = function backHTML() {
 	${door2(livingRoom)}
 	${lightSwitch(livingRoom)}
 	${fanSwitch(livingRoom)}
-
-	<p>I'M THE back! </p>
 	`;
   return html;
 };
@@ -487,7 +477,6 @@ livingRoom.ceilingHTML = function backHTML() {
 	${ceilingView}
 	${ceilingVent(livingRoom)}
 	${ceilingFan(livingRoom)}
-	<p>I'M THE ceiling!!! </p>
 	`;
   return html;
 };

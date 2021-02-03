@@ -210,7 +210,6 @@ export default function kitchenUpperCabinet(room) {
 </svg>
 
  `;
-  // todo: inspected class name for doors
   let cabinetDoor1 = `
   <svg
   id = '${room.name}_upperCabinetDoor1'

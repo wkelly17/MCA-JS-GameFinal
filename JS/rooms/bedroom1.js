@@ -75,7 +75,7 @@ let bedroom1 = {
     specificView: bedUnderView,
     fxn: inspect,
   },
-  //todo:   needs styling
+
   $closeBedZoomButton: {
     name: '$closeBedZoomButton',
     nodes: null,
@@ -86,7 +86,6 @@ let bedroom1 = {
     closingMessage: 'You crawl back out from under the bed.',
     fxn: closeZoomView,
   },
-  //   todo: lamp, fix nightStand (got saved over), fir top down Drawer view; data selectors in svgs themselves;
   $nightStandDrawer: {
     name: '$nightStandDrawer',
     nodes: null,
@@ -130,7 +129,6 @@ let bedroom1 = {
     solves: 'secretMessage',
     imgSrc: './Media/svgComponents/flashlight.svg',
     altText: 'flashLight',
-    //  todo: toggle body classList specific use function
     triggerSpecificInventoryFunction: true,
     inventorySpecificFunction: function InventorySpecific() {
       debugger;
@@ -443,14 +441,8 @@ bedroom1.frontHTML = function frontHTML() {
   ${nightStand(bedroom1)}
   ${topDownDrawer(bedroom1)}
   ${lamp(bedroom1)}
-
-  <p class = 'huge'> I'm the front' </p>
-
 	`;
-  // ${underBed(bedroom1)}
-  // ${nightStand(bedroom1)}
-  // ${topDownDrawer(bedroom1)}
-  // ${lamp(bedroom1)}
+
   return html;
 };
 
@@ -459,11 +451,8 @@ bedroom1.rightHTML = function () {
 	${defaultRoom}
   ${roomWindow(bedroom1)}
   ${alexa(bedroom1)}
-  <p class = 'huge'> I'm the right' </p>
 
 	`;
-  // ${alexa(bedroom1)}
-  // ${glassWindow(bedroom1)}
 
   return html;
 };
@@ -473,11 +462,10 @@ bedroom1.leftHTML = function leftHTML() {
 	${defaultRoom}
 	${closet(bedroom1)}
 	${hamper(bedroom1)}
-	<p class = 'huge'> I'm the left </p>
+
 	
 	`;
-  // ${closet(bedroom1)}
-  // ${hamper(bedroom1)}
+
   return html;
 };
 
@@ -488,11 +476,7 @@ bedroom1.backHTML = function backHTML() {
 	${lightSwitch(bedroom1)}
 	${television(bedroom1)}
 	${door(bedroom1)}
-	<p class = 'huge'> I'm the back </p>
 	`;
-  // ${dresser(bedroom1)}
-  // ${lightSwitch(bedroom1)}
-  // ${tv(bedroom1)}
 
   return html;
 };
@@ -504,10 +488,7 @@ bedroom1.ceilingHTML = function backHTML() {
 	${ceilingVent(bedroom1)}
 	${ceilingFan(bedroom1)}
 
-	<p class = 'huge'> I'm the ceiling </p>
 	`;
-  // ${ceilingFan(bedroom1)}
-  // ${ceilingVent(bedroom1)}
 
   return html;
 };

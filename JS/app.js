@@ -1,15 +1,3 @@
-/* todos
-
-todo: Refine message box and add a random wrong message function...;
-todo: hook up doors, and Plot puzzles;
-
-todo: clean up css naming when I redo the artwork
-
-todo:  develop Story line //puzzles
-todo: timer functionality for game
-todo: 
-
-*/
 //@#=============== IMPORTS  =============
 
 import bedroom1 from './rooms/bedroom1.js';
@@ -31,33 +19,33 @@ navBtnsContainer.innerHTML += navControls;
 const navArrows = [...document.querySelectorAll('[data-role = "nav-arrow"]')];
 const timerContainer = document.querySelector('[data-role = "timerDisplay"]');
 // todo: uncomment when ready  to make game official.
-// let startingSceneNextButton = document.querySelector(
-//   '[data-role = "startingSceneNextButton"]'
-// );
+let startingSceneNextButton = document.querySelector(
+  '[data-role = "startingSceneNextButton"]'
+);
 
-// function showInstructions() {
-//   roomContainer.innerHTML = ``;
-//   let instructions = `
-//   <div class="startingScene">
-//             <p>
-//             The goal of the game is to escape within the alloted time on the timer in the bottom right corner;  The arrows are the left, top, right, and bottom of the screen will cause you to look around the room.  You may also use your directional keys on your keyboard.  The items in the room are interactive to clicks.  As you interact, pay attention to the messages container on the right side (in blue).  Some items can be picked up.  These items will be moved to your inventory.  Click on items in your inventory to use them on other items in the room to solve the various puzzles that have you locked in this house. Pay attention, and be diligent, and you just might escape.
-//             </p>
-//               <button
-//                 data-role="startingSceneNextButton"
-//                 class="startingSceneNextButton"
-//               >
-//                 Start Game
-//               </button>
-//   `;
-//   roomContainer.innerHTML = instructions;
-//   // has changed dom nodes
-//   startingSceneNextButton = document.querySelector(
-//     '[data-role = "startingSceneNextButton"]'
-//   );
-//   startingSceneNextButton.addEventListener('click', game.init);
-// }
+function showInstructions() {
+  roomContainer.innerHTML = ``;
+  let instructions = `
+  <div class="startingScene">
+            <p>
+            The goal of the game is to escape within the alloted time on the timer in the bottom right corner;  The arrows are the left, top, right, and bottom of the screen will cause you to look around the room.  You may also use your directional keys on your keyboard.  The items in the room are interactive to clicks.  As you interact, pay attention to the messages container on the right side (in blue).  Some items can be picked up.  These items will be moved to your inventory.  Click on items in your inventory to use them on other items in the room to solve the various puzzles that have you locked in this house. You may need to zoom to see some things more closely. Pay attention, and be diligent, and you just might escape.
+            </p>
+              <button
+                data-role="startingSceneNextButton"
+                class="startingSceneNextButton"
+              >
+                Start Game
+              </button>
+  `;
+  roomContainer.innerHTML = instructions;
+  // has changed dom nodes
+  startingSceneNextButton = document.querySelector(
+    '[data-role = "startingSceneNextButton"]'
+  );
+  startingSceneNextButton.addEventListener('click', game.init);
+}
 
-// startingSceneNextButton.addEventListener('click', showInstructions);
+startingSceneNextButton.addEventListener('click', showInstructions);
 
 let game = {
   gameContainer: gameContainer,
@@ -70,7 +58,7 @@ let game = {
   won: false,
 
   // pieces of global game state;
-  currentRoom: kitchen,
+  currentRoom: bedroom1,
   timerSeconds: 1200,
   runTimer: function runTimer() {
     let interval = setInterval(() => {
@@ -234,7 +222,7 @@ let game = {
   },
 };
 
-game.init();
+// game.init();
 // console.log(game);
 
 //@#=============== EXPORTS  =============

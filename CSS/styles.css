@@ -1526,7 +1526,6 @@ img {
   top: 265px;
   left: 592px;
 }
-/* todo add x rotation for door */
 
 .kitchen_toaster {
   top: 187px;
@@ -1667,7 +1666,7 @@ img {
   line-height: 65px;
   padding: 5px;
   margin-bottom: 20px;
-  font-size: 35px;
+  font-size: 30px;
   font-family: 'Courier New', Courier, monospace;
 }
 .kitchen_displayActivated {

@@ -64,7 +64,6 @@ let study = {
     listenerType: 'click',
     fxn: switchLights,
   },
-  //   todo: change door leads to here
   $door: {
     name: '$door',
     nodes: null,
@@ -250,8 +249,6 @@ study.rightHTML = function () {
   ${whiteBoard(study)}
   ${floorLamp(study)}
   ${sideWallWindow(study)}
-	
-	<p>I'M THE RIGHT! </p>
 	`;
   return html;
 };
@@ -263,8 +260,6 @@ study.leftHTML = function leftHTML() {
 	${printerStation(study)}
 	${lamp(study)}
 	${lightSwitch(study)}
-	<p>I'M THE Left! </p>
-	
 	`;
   return html;
 };
@@ -274,8 +269,6 @@ study.backHTML = function backHTML() {
 	${defaultRoom}
 	${door(study)}
 	${fanSwitch(study)}
-
-	<p>I'M THE back! </p>
 	`;
   return html;
 };
@@ -285,7 +278,6 @@ study.ceilingHTML = function backHTML() {
   ${ceilingView}
 	${ceilingVentWithKey(study)}
   ${ceilingFan(study)}
-	<p>I'M THE ceiling!!! </p>
 	`;
   return html;
 };

@@ -1,8 +1,6 @@
 export default function thermostat(room) {
   // functions here
 
-  //   todo: zoom view puzzle on this later?
-
   function thermostatSwitchClassNames() {
     if (room.$thermostatSwitch.inspected) {
       return `${room.name}_Switch-Inspected`;

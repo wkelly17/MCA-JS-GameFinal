@@ -66,7 +66,6 @@ let kitchen = {
     listenerType: 'click',
     fxn: switchLights,
   },
-  //   todo: change door leads to here to an ending scene
   $kitchenDoor: {
     name: '$kitchenDoor',
     nodes: null,
@@ -82,6 +81,7 @@ let kitchen = {
     listenerType: 'click',
     directionLeadsTo: 'right',
     roomLeadsTo: 'livingRoom',
+    solvedMessage: 'You go to the living Room',
     open: true,
     fxn: goToRoom,
   },
@@ -106,8 +106,7 @@ let kitchen = {
     inspected: false,
     //  subnodes are affected when the main node is solved;
     affectedNodes: [],
-    // todo: change back to false
-    open: true,
+    open: false,
     isSolvedBy: '$paperclip',
     lockedMessage: "It's a receptacle",
     solvedMessage:
@@ -348,7 +347,7 @@ let kitchen = {
     //  subnodes are affected when the main node is solved;
     affectedNodes: [],
     // ? What code for keypad?
-    isSolvedBy: '9444666633777',
+    isSolvedBy: '88333555522666',
     solved: false,
     solvedMessage: 'You hear the magnetic lock click open',
     listenerType: 'click',
@@ -399,9 +398,6 @@ let kitchen = {
 
 // Room Specific functions
 function manageKeypad(event, obj, room) {
-  // todo: breaker turned on;
-  //todo: keycard inserted;
-
   // @# Can't use wrong inventory item on keypad
   if (notALockedItem()) {
     return;
@@ -419,12 +415,12 @@ function manageKeypad(event, obj, room) {
   }
 
   // todo; Early bail out if conditions not Met; Just uncomment
-  // if (
-  //   !kitchen.$trippedBreaker.inspected ||
-  //   !kitchen.$kitchenKeypadCardSlot.inspected
-  // ) {
-  //   return;
-  // }
+  if (
+    !kitchen.$trippedBreaker.inspected ||
+    !kitchen.$kitchenKeypadCardSlot.inspected
+  ) {
+    return;
+  }
 
   //@# deleting on keypad
   else if (btnPressed.dataset.fxn == 'delete') {
@@ -460,7 +456,11 @@ function insertKeyCard(event) {
 }
 
 function endGame() {
-  debugger;
+  if (!kitchen.$kitchenDoor.open) {
+    generalGameMessage("It's locked... Have to open it somehow");
+    return;
+  }
+  generalGameMessage('You slip through the door into freedom!');
   document.body.removeEventListener('keyup', navigate);
   game.won = true;
   let gameOverScene = `<div class='gameOverScene'></div>`;
@@ -501,9 +501,6 @@ kitchen.rightHTML = function () {
   ${coffeeStand(kitchen)}
   ${breaker(kitchen)}
   ${door2(kitchen)}
-
-	
-	<p>I'M THE RIGHT! </p>
 	`;
   return html;
 };
@@ -514,10 +511,6 @@ kitchen.leftHTML = function leftHTML() {
 	${cabinets2(kitchen)}
 	${cabinetsUpper2(kitchen)}
   ${dishwasher(kitchen)}
-
-  
-	<p>I'M THE Left! </p>
-	
 	`;
   return html;
 };
@@ -531,9 +524,6 @@ kitchen.backHTML = function backHTML() {
 	${door(kitchen)}
 	${keypad(kitchen)}
 	${keypadZoom(kitchen)}
-
-
-	<p>I'M THE back! </p>
 	`;
   return html;
 };
@@ -542,7 +532,6 @@ kitchen.ceilingHTML = function backHTML() {
   let html = `
 	${ceilingView}
 	${ceilingVent(kitchen)}
-	<p>I'M THE ceiling!!! </p>
 	`;
   return html;
 };

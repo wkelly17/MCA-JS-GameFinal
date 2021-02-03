@@ -1077,7 +1077,7 @@ export default function kitchenCabinet(room) {
   <svg
   id = '${room.name}_cabinetDoor5'
   class = '${cabinetDoorClasses2(5)}'
-  data-selector = 'cabinetSet2Door6'
+  data-selector = 'cabinetSet2Door5'
    xmlns:dc="http://purl.org/dc/elements/1.1/"
    xmlns:cc="http://creativecommons.org/ns#"
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
@@ -1156,7 +1156,7 @@ export default function kitchenCabinet(room) {
   <svg
   id = '${room.name}_cabinetDoor6'
   class = '${cabinetDoorClasses2(6)}'
-  data-selector = 'cabinetDoor6'
+  data-selector = 'cabinetSet2Door6'
    xmlns:dc="http://purl.org/dc/elements/1.1/"
    xmlns:cc="http://creativecommons.org/ns#"
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
