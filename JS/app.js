@@ -59,7 +59,7 @@ let game = {
 
   // pieces of global game state;
   currentRoom: bedroom1,
-  timerSeconds: 1200,
+  timerSeconds: 1800,
   runTimer: function runTimer() {
     let interval = setInterval(() => {
       let minutes = Math.floor(game.timerSeconds / 60);
