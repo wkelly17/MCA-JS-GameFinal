@@ -1,10 +1,8 @@
 export default function journal(room) {
   // functions here
-
   // class = 'journalClassNames()}'
   // data-selector = 'journal'
   let html = `
-  
 <div class="book" data-selector = 'readableJournal' >
 <div class="modal-blur"></div>
       <div class="page journalCover page-active" style = "font-size: 44px; text-align: center; color: white;">Musings</div>

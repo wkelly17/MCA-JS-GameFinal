@@ -155,15 +155,18 @@ let livingRoom = {
     imgSrc: './Media/svgComponents/bookSpine.svg',
     altText: 'a Book',
     triggerSpecificInventoryFunction: true,
-    inventorySpecificFunction: function InventorySpecific() {
-      debugger;
+    inventorySpecificFunction: function journalSpecific() {
+      // early bail out from ceiling edge case or already in a modal situation;  The modal blur is built into the book;
+      if (room.returnFromCeiling || room.modalBlur) {
+        return;
+      }
       if (
         //only adding 1 book;
         game.roomContainer.lastElementChild.dataset.selector !=
         'readableJournal'
       ) {
         game.roomContainer.innerHTML += journal(livingRoom);
-        toggleNavArrows();
+        toggleNavArrows(); //no running around w/ a book;
       }
       let pages = document.querySelectorAll('.page');
       let hiddenLetters = document.querySelectorAll('.hiddenLetter');

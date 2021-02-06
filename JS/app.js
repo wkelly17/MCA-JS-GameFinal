@@ -23,6 +23,9 @@ let startingSceneNextButton = document.querySelector(
   '[data-role = "startingSceneNextButton"]'
 );
 
+// todo: make it to where you can't look at book from ceiling;
+// todo: make it to where you can't look at book from safe or other zoomed view since that toggles arrows;
+
 function showInstructions() {
   roomContainer.innerHTML = ``;
   let instructions = `
