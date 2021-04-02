@@ -157,7 +157,7 @@ let livingRoom = {
     triggerSpecificInventoryFunction: true,
     inventorySpecificFunction: function journalSpecific() {
       // early bail out from ceiling edge case or already in a modal situation;  The modal blur is built into the book;
-      if (room.returnFromCeiling || room.modalBlur) {
+      if (game.currentRoom.returnFromCeiling || game.currentRoom.modalBlur) {
         return;
       }
       if (
